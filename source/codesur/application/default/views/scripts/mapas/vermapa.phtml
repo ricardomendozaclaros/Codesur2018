@@ -1,0 +1,36 @@
+ <div class="col-md-12">
+        <a style="cursor: pointer;" id="boton_mapa"> ver escenarios</a> 
+    </div>
+<div class="col-md-12"  style="padding:0px;">
+   
+    <div class="col-md-12 img-rounded img-thumbnail" style="border: 2px solid #000; height: 600px;padding:0px;" id="trabajo">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121835.82370769409!2d-66.23391603339533!3d-17.39404688751041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e373e0d9e4ab27%3A0xa2719ae9532c3e65!2sCochabamba!5e0!3m2!1ses-419!2sbo!4v1465842223961" width="100%" height="450" frameborder="0" style="border:1" allowfullscreen></iframe> 
+    </div>
+</div>
+
+<script language="JavaScript">
+var mapa_ = jQuery.noConflict();
+   
+   mapa_("#boton_mapa").click(function(){
+          escroll.ajax({
+                async:true,
+                url:"/mapas/escenario",
+                data:{"cat":"cat"},
+                beforeSend:function() { 
+//                    $("#conten-extjs").html("");
+                },
+                dataType:"json",			
+                success:function(res){
+                    if(res.estado){
+                      //  mapa_("#mapa_trabajo").html("");
+                        mapa_("#trabajo").html(res.html);
+                    }                       
+                }
+            }); 
+    }); 
+ 
+//});
+
+// alert (screen.width);
+
+</script> 

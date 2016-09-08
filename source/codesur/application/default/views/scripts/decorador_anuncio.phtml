@@ -1,0 +1,28 @@
+<?php  
+        $attribs = $this->element->getAttribs(); 
+        $label = $this->element->getLabel();
+if(($label!='')&&$attribs['helper']!='formSubmit'){?>
+<tr>
+	<td>
+    	<span class="label"><?php echo $label;?></span>
+        <?php  
+        if ($this->element->isRequired()) 
+        {  
+        	echo "<span class='obligatorio'>*</span>";
+        }?>
+    </td>
+	<td> 
+    	<?php 
+    	echo $this->content."<br/>";
+    	if ($this->element->getMessages()) {
+    		
+    		echo '<div class="errores">';   
+            echo implode('<br />', array_map($this->translate,$this->element->getMessages()));
+            echo '</div>';
+    	}  
+    ?> 
+    </td>    
+ </tr>
+ <?php }
+  elseif($attribs['helper']=='formSubmit'){echo "<tr ><td></td><td>".$this->content."</td></tr>";}
+  else{echo "<tr class='oculto'><td colspan='2'>".$this->content."</td></tr>";}?>

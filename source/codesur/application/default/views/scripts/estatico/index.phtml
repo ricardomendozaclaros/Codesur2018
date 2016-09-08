@@ -1,0 +1,20 @@
+<!-- CENTRO-->
+<div id="lateral_iz">
+	<?php echo $this->partial("layoutizquierda/izquierda.phtml",array('pais'=>$this->pais,'ciudad'=>$this->ciudad));?>
+ </div><!--fin lateral izquierda -->
+<div id="centro">
+ <div class="estatico_contenedor">
+  <div class="div_titulos">
+  
+  <h1 class="est_titulo">
+  	<?php echo $this->estatico['est_nombre'];?>
+  </h1>
+  </div>
+
+<div class="bajar"></div>
+  <?php
+
+    echo  '<div class="estatico_contenedor_g1">'.$this->estatico['est_contenido'].'</div>';
+  ?>
+  </div>
+</div><!-- fin centro-->

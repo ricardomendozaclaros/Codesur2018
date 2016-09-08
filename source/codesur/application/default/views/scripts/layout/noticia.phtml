@@ -1,0 +1,81 @@
+ 
+  <style type="text/css">
+div#wn { 
+   height: 1071px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    float: left;
+  
+    }
+</style>
+<script src="/noticia/dw_con_scroller.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+if ( DYN_WEB.Scroll_Div.isSupported() ) {
+	
+	DYN_WEB.Event.domReady( function() {
+		
+		// arguments: id of scroll area div, id of content div
+		var wndo = new DYN_WEB.Scroll_Div('wn', 'lyr');
+		// see info online at http://www.dyn-web.com/code/scrollers/continuous/documentation.php
+		wndo.makeSmoothAuto( {axis:'v', bRepeat:true, repeatId:'rpt', speed:30, bPauseResume:true} );
+		
+	});
+}
+
+</script>
+<div class="col-md-8" style="padding: 0px;">
+        <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+            <h3><?php echo $this->translate("noticias destacas")?>
+	        <a class="link_a" href="<?php echo $this->url(array('idioma'=>$this->idioma,"pagina"=>"pagina01"),'mas_noticias_'.$this->idioma)?>">
+	            <?php echo $this->translate("ver mas")?>
+	        </a>
+	    </h3>
+        </div>
+    
+<div class="scrollable vertical">
+  <div class="items">
+      <div id="wn">
+    <div id="lyr">
+      <?php if($this->principal){
+          $dat=$this->principal; $jj=1;
+          foreach ($dat as $d){
+              $enlace=$this->url(array('idioma'=>$this->idioma,'alias_noticia'=>$d['not_alias_'.$this->idioma]),'noticia_completa_'.$this->idioma);
+              ?>
+                <div class="caja_noticia">
+                    <div class="caja_img col-md-4 thumbnail">
+                        <img src="/upload/noticia/thumb/s<?php echo $d["not_img"]?>" title="<?php echo $d["not_titulo_".$this->idioma]?>" style="border-radius:14px;" />
+                    </div>
+                    <div class="col-md-8 caja_decripcion">
+                    <h3>
+                        <a href="<?php echo $enlace?>"><?php echo $d["not_titulo_".$this->idioma]?></a></h3>
+                        <p style="text-align: justify;"><?php echo Util_Cortartexto::cortar_texto($d["not_cuerpo_".$this->idioma], 300);?></p> 
+                    </div>
+
+                </div>
+        <?php } 
+        
+        foreach ($dat as $dd){   
+            $enlace=$this->url(array('idioma'=>$this->idioma,'alias_noticia'=>$dd['not_alias_'.$this->idioma]),'noticia_completa_'.$this->idioma);
+            ?>
+         <div class="caja_noticia"  id="rpt">
+                    <div class="caja_img col-md-4 thumbnail">
+                        <img src="/upload/noticia/thumb/s<?php echo $dd["not_img"]?>" title="<?php echo $dd["not_titulo_".$this->idioma]?>" style="border-radius:14px;" />
+                    </div>
+                    <div class="col-md-8 caja_decripcion">
+                    <h3>
+                        <a href="<?php echo $enlace?>"><?php echo $dd["not_titulo_".$this->idioma]?></a></h3>
+                        <p style="text-align: justify;"><?php echo Util_Cortartexto::cortar_texto($dd["not_cuerpo_".$this->idioma], 300);?></p> 
+                    </div>
+
+                </div>
+        <?php }
+          }else{     ?>
+      <h3> <?php echo $this->translate("No se tiene informacion")?></h3>
+      <?php }?>
+          </div>
+</div>
+  </div>
+</div>
+  </div>

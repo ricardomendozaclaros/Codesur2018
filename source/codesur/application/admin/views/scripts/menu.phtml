@@ -1,0 +1,49 @@
+<ul class="navigation">
+<?php 
+
+$paginas=clone $this->container;
+foreach ($paginas as $page) 
+{	
+	if($page->hasPages()){
+
+		$iterator = new RecursiveIteratorIterator(clone $page,
+                                    RecursiveIteratorIterator::SELF_FIRST);
+ 
+        foreach ($iterator as $page2) {
+  
+            if (!$this->navigation()->accept($page2)) {
+                $page->removePage($page2);
+            }
+        }	
+	}
+}	
+
+
+
+foreach ($this->container as $page) 
+{	
+	if($page->hasPages()){
+	echo "<li>";
+	echo "<a class='head' href='$page->uri'>$page->label</a>";
+	echo "<ul class='level2'>";
+	foreach ($page as $page2)
+	{		
+		//var_dump($this->navigation()->accept($page));
+		//var_dump($this->navigation()->accept($page2));
+		//var_dump($page2->getResource());
+		if($this->navigation()->accept($page2))
+		{
+			echo "<li>";		
+			echo "<a href='$page2->uri'>$page2->label</a>";
+			echo "</li>";
+		}
+	}
+	echo "</ul>";
+	echo "</li>";
+	}
+	
+}
+
+
+?>
+</ul>

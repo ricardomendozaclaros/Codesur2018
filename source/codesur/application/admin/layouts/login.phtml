@@ -1,0 +1,58 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+		
+		<?php
+		echo $this->headTitle();
+		echo $this->headLink()->setStylesheet('/css/admin.login.css')
+		->prependStylesheet('/css/bootstrap/bootstrap.min.css') ;
+		?>
+	</head>
+	<body>
+		 <div class="container-fluid">
+                     <div class="col-md-2"></div>
+     <div class="container col-md-8 jumbotron" style="margin-top: 100px;">
+            <div style="float: left;" class="img-thumbnail col-md-6">
+                        <img src="/images/MARCA.png" alt="Marca"  class="img-thumbnail"/>
+            </div>
+            <div class="form-group has-warning col-md-6">
+                <form action="" method="post" enctype="application/x-www-form-urlencoded" id="loginForm" class="img-thumbnail" 
+                      style="  float: left;    margin-left: 12px;    padding: 30px 10px 40px 10px;">
+		<table>
+		<tr>
+                    <td style="float: right;  padding-right: 10px;"><label class="control-label" for="inputWarning1">NOMBRE</label></td>
+			<td><?php echo $this->form->user;?></td>			
+		</tr>
+		<tr>
+			<td style="float: right;  padding-right: 10px;"><label class=" control-label">CONTRASE&#209;A</label></td>
+			<td><?php echo $this->form->pass;?></td>			
+		</tr>
+		<tr>
+			<td></td>
+			<td align="center">
+                                <img alt="captcha" src="/captcha/cap" vspace='5' id='idc'/>
+                            <!--<img alt="captcha" src="/admin/captcha/index?sid=<?php // echo md5(uniqid(time()));?>" vspace='5' id='idc'/>-->
+                        </td>			
+		</tr>
+		<tr>
+			<td></td>
+			<td align="center"><label class="col-sm-12 control-label">Ingresa el código</label></td>			
+		</tr>
+		<tr>
+			<td></td>
+			<td align="center"><?php echo $this->form->captcha;?></td>			
+		</tr>
+		<tr>
+			<td></td>
+			<td align="center"><?php echo $this->form->login;?></td>			
+		</tr>
+		</table>
+                </form>
+	    </div>
+     </div>
+                      <div class="col-md-2"></div>
+                 </div>
+            <script src="/js/bootstrap/assets/ie10-viewport-bug-workaround.js"></script>
+	</body>
+</html>
+

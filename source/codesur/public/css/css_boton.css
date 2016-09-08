@@ -1,0 +1,883 @@
+	.clearfix:after {  content: "."; display:block; font-size:0; line-height:0; height:0; clear:both; visibility:hidden; }
+	.clearfix { display:inline-block; }		
+	* html .clearfix { height:1%; }
+	.clearfix { display:block; }
+
+	body {margin:0; background:#FFF url(../img/body.png); -webkit-text-size-adjust:100%; -moz-text-size-adjust:100%; padding:10px 2%; font:14px/24px 'Open Sans', Helvetica, Arial, sans-serif  ; color:#000;}	
+	#wrapper { background:#FFF; width:1200px; margin:0 auto; border:solid 0px #E7E7E7; border-top:5px solid #0088cc; border-radius:6px; box-shadow:0 0 3px rgba(0,0,0,0.2), inset 0 4px 0 #ededed }
+	#header { padding:30px 20px; border-bottom:solid 1px #e0e0e0; margin-bottom:20px; text-align:center; font-family:'Open Sans', sans-serif;}
+	#logo { display:inline-block; font-weight:300;  margin:0 0 0px; font-size:30px; line-height:24px;  color:#000; text-decoration:none; position:relative;  }
+	#logo span{ color:#0088cc;}
+	
+	section { padding:0 20px 20px}
+	h2, h3{ font:300 22px/30px 'Open Sans', sans-serif;  margin:0 0 10px 0; padding:0}
+	h2 span{color:#0088cc;}
+    h3 { font-size:18px; margin:20px 0 5px 0;}
+    
+	.classname { display:block;  padding:20px;  border:solid 2px #CCC; text-align:center;}
+        /********************************************************/
+        .switch {
+	background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #eeeeee, #ffffff 25px) repeat scroll 0 0;
+    border-radius: 15px;
+    box-shadow: 0 -1px white inset, 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    cursor: pointer;
+    display: block;
+    height: 47px;
+    margin: 1px 0;
+    padding: 3px;
+    position: relative;
+    vertical-align: top;
+    width: 77px;
+     border: 1px solid #cdcdcd;
+}
+.switch-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.switch-label {
+	position: relative;
+	display: block;
+	height: inherit;
+	font-size: 10px;
+	text-transform: uppercase;
+	background: #eceeef;
+	border-radius: inherit;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+}
+.switch-label:before, .switch-label:after {
+	position: absolute;
+	top: 50%;
+	margin-top: -.5em;
+	line-height: 1;
+	-webkit-transition: inherit;
+	-moz-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+}
+.switch-label:before {
+	content: attr(data-off);
+	right: 11px;
+	color: #aaaaaa;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+.switch-label:after {
+	content: attr(data-on);
+	left: 11px;
+	color: #FFFFFF;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+}
+.switch-input:checked ~ .switch-label {
+	background: #E1B42B;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch-input:checked ~ .switch-label:before {
+	opacity: 0;
+}
+.switch-input:checked ~ .switch-label:after {
+	opacity: 1;
+}
+.switch-handle {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 28px;
+	height: 28px;
+	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+	border-radius: 100%;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.switch-handle:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -6px;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+	border-radius: 6px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+.switch-input:checked ~ .switch-handle {
+	left: 74px;
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+/* Switch Left Right
+==========================*/
+.switch-left-right .switch-label {
+	overflow: hidden;
+}
+.switch-left-right .switch-label:before, .switch-left-right .switch-label:after {
+	width: 20px;
+	height: 20px;
+	top: 4px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 11px 0 0 0;
+	text-indent: -12px;
+	border-radius: 20px;
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.switch-left-right .switch-label:before {
+	background: #eceeef;
+	text-align: left;
+	padding-left: 80px;
+}
+.switch-left-right .switch-label:after {
+	text-align: left;
+	text-indent: 9px;
+	background: #FF7F50;
+	left: -100px;
+	opacity: 1;
+	width: 100%;
+}
+.switch-left-right .switch-input:checked ~ .switch-label:before {
+	opacity: 1;
+	left: 100px;
+}
+.switch-left-right .switch-input:checked ~ .switch-label:after {
+	left: 0;
+}
+.switch-left-right .switch-input:checked ~ .switch-label {
+	background: inherit;
+}
+/* Switch Flat
+==========================*/
+.switch-flat {
+	padding: 0;
+	background: #FFF;
+	background-image: none;
+}
+.switch-flat .switch-label {
+	background: #FFF;
+	border: solid 2px #eceeef;
+	box-shadow: none;
+}
+.switch-flat .switch-label:after {
+	color: #0088cc;
+}
+.switch-flat .switch-handle {
+	top: 6px;
+	left: 6px;
+	background: #dadada;
+	width: 22px;
+	height: 22px;
+	box-shadow: none;
+}
+.switch-flat .switch-handle:before {
+	background: #eceeef;
+}
+.switch-flat .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0088cc;
+}
+.switch-flat .switch-input:checked ~ .switch-handle {
+	left: 72px;
+	background: #0088cc;
+	box-shadow: none;
+}
+/* Switch Yes No
+==========================*/
+.switch-yes-no {
+	padding: 0;
+	margin: 15px 0 0;
+	background: #FFF;
+	border-radius: 0;
+	background-image: none;
+}
+.switch-yes-no .switch-label {
+	box-shadow: none;
+	background: none;
+}
+.switch-yes-no .switch-label:after, .switch-yes-no .switch-label:before {
+	width: 100%;
+	height: 70%;
+	top: 5px;
+	left: 0;
+	text-align: center;
+	padding-top: 10%;
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.switch-yes-no .switch-label:after {
+	color: #FFFFFF;
+	background: #32CD32;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+}
+.switch-yes-no .switch-label:before {
+	background: #eceeef;
+	backface-visibility: hidden;
+}
+.switch-yes-no .switch-handle {
+	display: none;
+}
+.switch-yes-no .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0088cc;
+}
+.switch-yes-no .switch-input:checked ~ .switch-label:before {
+	transform: rotateY(180deg)
+}
+.switch-yes-no .switch-input:checked ~ .switch-label:after {
+	transform: rotateY(0)
+}
+/* Switch Slide
+==========================*/
+.switch-slide {
+	padding: 0;
+	background: #FFF;
+	border-radius: 0;
+	background-image: none;
+}
+.switch-slide .switch-label {
+	box-shadow: none;
+	background: none;
+	overflow: hidden;
+}
+.switch-slide .switch-label:after, .switch-slide .switch-label:before {
+	width: 100%;
+	height: 65%;
+	top: 5px;
+	left: 0;
+	text-align: center;
+	padding-top: 10%;
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.switch-slide .switch-label:after {
+	color: #FFFFFF;
+	background: #87CEEB;
+	left: -100px;
+}
+.switch-slide .switch-label:before {
+	background: #eceeef;
+}
+.switch-slide .switch-handle {
+	display: none;
+}
+.switch-slide .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0088cc;
+}
+.switch-slide .switch-input:checked ~ .switch-label:before {
+	left: 100px;
+}
+.switch-slide .switch-input:checked ~ .switch-label:after {
+	left: 0;
+}
+/* Switch Light
+==========================*/
+.switch-light {
+	padding: 0 0 0 5px;
+	background: #FFF;
+	background-image: none;
+}
+.switch-light .switch-label {
+	background: #FFF;
+	border: solid 2px #eceeef;
+	box-shadow: none;
+}
+.switch-light .switch-label:after {
+	color: #9370DB;
+}
+.switch-light .switch-label:before {
+	right: inherit;
+	left: 11px;
+}
+.switch-light .switch-handle {
+	background: #dadada none repeat scroll 0 0;
+    box-shadow: none;
+    height: 22px;
+ left: 48px;
+    top: 13px;
+    width: 22px;
+}
+.switch-light .switch-handle:before {
+	background: #eceeef;
+}
+.switch-light .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #9370DB;
+}
+.switch-light .switch-input:checked ~ .switch-handle {
+	 background: #eb2020 none repeat scroll 0 0;
+    box-shadow: none;
+    left: 48px;
+}
+.switch-light .switch-input:checked ~ .switch-handle:before {
+	background: rgba(255,255,255,0.7);
+}
+/* Transition
+============================================================ */
+.switch-label, .switch-handle {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+/*******************************************************************************************/
+.switch-flat .switch-handle {
+	top: 6px;
+	left: 6px;
+	background: #dadada;
+	width: 22px;
+	height: 22px;
+	box-shadow: none;
+}
+.switch-flat .switch-handle:before {
+	background: #eceeef;
+}
+.switch-flat .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0088cc;
+}
+.switch-flat .switch-input:checked ~ .switch-handle {
+	left: 72px;
+	background: #0088cc;
+	box-shadow: none;
+}
+.switch-yes-no .switch-handle {
+	display: none;
+}
+.switch-slide .switch-handle {
+	display: none;
+}
+.switch-light .switch-handle {
+	background: #dadada none repeat scroll 0 0;
+    box-shadow: none;
+    height: 22px;
+ left: 48px;
+    top: 13px;
+    width: 22px;
+}
+.switch-light .switch-handle:before {
+	background: #eceeef;
+}
+.switch-light .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #9370DB;
+}
+.switch-light .switch-input:checked ~ .switch-handle {
+	 background: #eb2020 none repeat scroll 0 0;
+    box-shadow: none;
+    left: 48px;
+}
+.switch-light .switch-input:checked ~ .switch-handle:before {
+	background: rgba(255,255,255,0.7);
+}
+/* Transition
+============================================================ */
+.switch-label, .switch-handle {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+/***************************************************************************************************************************************************************************/
+/***************************************************************************************************************************************************************************/
+/***************************************************************************************************************************************************************************/
+/***************************************************************************************************************************************************************************/
+.switch-handle_izq {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 28px;
+	height: 28px;
+	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+	border-radius: 100%;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.switch-handle_izq:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -6px;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+	border-radius: 6px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+.switch-input:checked ~ .switch-handle_izq {
+	left: 74px;
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch-flat .switch-handle_izq {
+	top: 6px;
+	left: 6px;
+	background: #dadada;
+	width: 22px;
+	height: 22px;
+	box-shadow: none;
+}
+.switch-flat .switch-handle_izq:before {
+	background: #eceeef;
+}
+
+.switch-flat .switch-input:checked ~ .switch-handle_izq {
+	left: 72px;
+	background: #0088cc;
+	box-shadow: none;
+}
+
+.switch-yes-no .switch-handle_izq {
+	display: none;
+}
+
+.switch-slide .switch-handle_izq {
+	display: none;
+}
+
+.switch-light .switch-handle_izq {
+	background: #dadada none repeat scroll 0 0;
+    box-shadow: none;
+    height: 22px;
+ left: 4px;
+    top: 13px;
+    width: 22px;
+}
+.switch-light .switch-handle_izq:before {
+	background: #eceeef;
+}
+
+.switch-light .switch-input:checked ~ .switch-handle_izq {
+	 background: #eb2020 none repeat scroll 0 0;
+    box-shadow: none;
+    left: 6px;
+}
+.switch-light .switch-input:checked ~ .switch-handle_izq:before {
+	background: rgba(255,255,255,0.7);
+}
+/* Transition
+============================================================ */
+.switch-label, .switch-handle_izq {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+/*******************************************************************************************/
+.switch-flat .switch-handle_izq {
+	top: 6px;
+	left: 6px;
+	background: #dadada;
+	width: 22px;
+	height: 22px;
+	box-shadow: none;
+}
+.switch-flat .switch-handle_izq:before {
+	background: #eceeef;
+}
+
+.switch-flat .switch-input:checked ~ .switch-handle_izq {
+	left: 72px;
+	background: #0088cc;
+	box-shadow: none;
+}
+.switch-yes-no .switch-handle_izq {
+	display: none;
+}
+.switch-slide .switch-handle_izq {
+	display: none;
+}
+
+.switch-light .switch-handle_izq:before {
+	background: #eceeef;
+}
+
+/* Transition
+============================================================ */
+.switch-label, .switch-handle_izq {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+.img_izq_pic img{
+      margin-left: 27px;
+}
+/******************************************************************************************************************************/
+/******************************************************************************************************************************/
+/******************************************************************************************************************************/
+/******************************************************************************************************************************/
+         .switch_boot {
+ background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #eeeeee, #ffffff 25px) repeat scroll 0 0;
+    border: 1px solid #cdcdcd;
+    border-radius: 15px;
+    box-shadow: 0 -1px white inset, 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    cursor: pointer;
+    display: block;
+    height: 70px;
+    margin: 1px 3px 0 0;
+    padding: 3px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    width: 69px;
+}
+.switch-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.switch-label {
+	position: relative;
+	display: block;
+	height: inherit;
+	font-size: 10px;
+	text-transform: uppercase;
+	background: #eceeef;
+	border-radius: inherit;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+}
+.switch-label:before, .switch-label:after {
+	position: absolute;
+	top: 50%;
+	margin-top: -.5em;
+	line-height: 1;
+	-webkit-transition: inherit;
+	-moz-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+}
+.switch-label:before {
+	content: attr(data-off);
+	right: 11px;
+	color: #aaaaaa;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+.switch-label:after {
+	content: attr(data-on);
+	left: 11px;
+	color: #FFFFFF;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+}
+.switch-input:checked ~ .switch-label {
+	background: #E1B42B;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch-input:checked ~ .switch-label:before {
+	opacity: 0;
+}
+.switch-input:checked ~ .switch-label:after {
+	opacity: 1;
+}
+.switch-handle_boot {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 28px;
+	height: 28px;
+	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+	border-radius: 100%;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.switch-handle_boot:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -6px;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+	border-radius: 6px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+.switch-input:checked ~ .switch-handle_boot {
+	left: 74px;
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+/* Switch Left Right
+==========================*/
+.switch-left-right .switch-label {
+	overflow: hidden;
+}
+.switch-left-right .switch-label:before, .switch-left-right .switch-label:after {
+	width: 20px;
+	height: 20px;
+	top: 4px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 11px 0 0 0;
+	text-indent: -12px;
+	border-radius: 20px;
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.switch-left-right .switch-label:before {
+	background: #eceeef;
+	text-align: left;
+	padding-left: 80px;
+}
+.switch-left-right .switch-label:after {
+	text-align: left;
+	text-indent: 9px;
+	background: #FF7F50;
+	left: -100px;
+	opacity: 1;
+	width: 100%;
+}
+.switch-left-right .switch-input:checked ~ .switch-label:before {
+	opacity: 1;
+	left: 100px;
+}
+.switch-left-right .switch-input:checked ~ .switch-label:after {
+	left: 0;
+}
+.switch-left-right .switch-input:checked ~ .switch-label {
+	background: inherit;
+}
+/* Switch Flat
+==========================*/
+.switch-flat {
+	padding: 0;
+	background: #FFF;
+	background-image: none;
+}
+.switch-flat .switch-label {
+	background: #FFF;
+	border: solid 2px #eceeef;
+	box-shadow: none;
+}
+.switch-flat .switch-label:after {
+	color: #0088cc;
+}
+.switch-flat .switch-handle_boot {
+	top: 6px;
+	left: 6px;
+	background: #dadada;
+	width: 22px;
+	height: 22px;
+	box-shadow: none;
+}
+.switch-flat .switch-handle_boot:before {
+	background: #eceeef;
+}
+.switch-flat .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0088cc;
+}
+.switch-flat .switch-input:checked ~ .switch-handle_boot {
+	left: 72px;
+	background: #0088cc;
+	box-shadow: none;
+}
+/* Switch Yes No
+==========================*/
+.switch-yes-no {
+	padding: 0;
+	margin: 15px 0 0;
+	background: #FFF;
+	border-radius: 0;
+	background-image: none;
+}
+.switch-yes-no .switch-label {
+	box-shadow: none;
+	background: none;
+}
+.switch-yes-no .switch-label:after, .switch-yes-no .switch-label:before {
+	width: 100%;
+	height: 70%;
+	top: 5px;
+	left: 0;
+	text-align: center;
+	padding-top: 10%;
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.switch-yes-no .switch-label:after {
+	color: #FFFFFF;
+	background: #32CD32;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+}
+.switch-yes-no .switch-label:before {
+	background: #eceeef;
+	backface-visibility: hidden;
+}
+.switch-yes-no .switch-handle_boot {
+	display: none;
+}
+.switch-yes-no .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0088cc;
+}
+.switch-yes-no .switch-input:checked ~ .switch-label:before {
+	transform: rotateY(180deg)
+}
+.switch-yes-no .switch-input:checked ~ .switch-label:after {
+	transform: rotateY(0)
+}
+/* Switch Slide
+==========================*/
+.switch-slide {
+	padding: 0;
+	background: #FFF;
+	border-radius: 0;
+	background-image: none;
+}
+.switch-slide .switch-label {
+	box-shadow: none;
+	background: none;
+	overflow: hidden;
+}
+.switch-slide .switch-label:after, .switch-slide .switch-label:before {
+	width: 100%;
+	height: 65%;
+	top: 5px;
+	left: 0;
+	text-align: center;
+	padding-top: 10%;
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.switch-slide .switch-label:after {
+	color: #FFFFFF;
+	background: #87CEEB;
+	left: -100px;
+}
+.switch-slide .switch-label:before {
+	background: #eceeef;
+}
+.switch-slide .switch-handle_boot {
+	display: none;
+}
+.switch-slide .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0088cc;
+}
+.switch-slide .switch-input:checked ~ .switch-label:before {
+	left: 100px;
+}
+.switch-slide .switch-input:checked ~ .switch-label:after {
+	left: 0;
+}
+/* Switch Light
+==========================*/
+.switch-light_boot {
+	padding: 0 0 0 0px;
+	background: #FFF;
+	background-image: none;
+}
+.switch-light_boot .switch-label {
+	background: #FFF;
+	border: solid 2px #eceeef;
+	box-shadow: none;
+}
+.switch-light_boot .switch-label:after {
+	color: #9370DB;
+}
+.switch-light_boot .switch-label:before {
+	right: inherit;
+	left: 11px;
+}
+.switch-light_boot .switch-handle_boot {
+	background: #dadada none repeat scroll 0 0;
+    box-shadow: none;
+    height: 22px;
+ left: 48px;
+    top: 13px;
+    width: 22px;
+}
+.switch-light_boot .switch-handle_boot:before {
+	background: #eceeef;
+}
+.switch-light_boot .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #9370DB;
+}
+.switch-light_boot .switch-input:checked ~ .switch-handle_boot {
+	 background: #eb2020 none repeat scroll 0 0;
+    box-shadow: none;
+    left: 48px;
+}
+.switch-light_boot .switch-input:checked ~ .switch-handle_boot:before {
+	background: rgba(255,255,255,0.7);
+}
+/* Transition
+============================================================ */
+.switch-label, .switch-handle_boot {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+/*******************************************************************************************/
+.switch-flat .switch-handle_boot {
+	top: 6px;
+	left: 6px;
+	background: #dadada;
+	width: 22px;
+	height: 22px;
+	box-shadow: none;
+}
+.switch-flat .switch-handle_boot:before {
+	background: #eceeef;
+}
+.switch-flat .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0088cc;
+}
+.switch-flat .switch-input:checked ~ .switch-handle_boot {
+	left: 72px;
+	background: #0088cc;
+	box-shadow: none;
+}
+.switch-yes-no .switch-handle_boot {
+	display: none;
+}
+.switch-slide .switch-handle_boot {
+	display: none;
+}
+.switch-light_boot .switch-handle_boot {
+	background: #dadada none repeat scroll 0 0;
+    box-shadow: none;
+    height: 22px;
+ left: 21px;
+    top: 43px;
+    width: 22px;
+}
+.switch-light_boot .switch-handle_boot:before {
+	background: #eceeef;
+}
+.switch-light_boot .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #9370DB;
+}
+.switch-light_boot .switch-input:checked ~ .switch-handle_boot {
+	 background: #eb2020 none repeat scroll 0 0;
+    box-shadow: none;
+    left: 21px;
+}
+.switch-light_boot .switch-input:checked ~ .switch-handle_boot:before {
+	background: rgba(255,255,255,0.7);
+}
+/* Transition
+============================================================ */
+.switch-label, .switch-handle_boot {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+.switch_boot img{
+    margin: 3px 0px 0px 0px;
+}
+.img_izq_pic img{
+    margin: 3px 0 0 27px;
+}
+.img_der_pic img{
+    margin: 3px 0 0 0px;
+}

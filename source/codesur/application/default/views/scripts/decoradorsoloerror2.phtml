@@ -1,0 +1,10 @@
+<div class="ele_form_cont_edi">
+    	<?php echo $this->content; ?>
+    	   <?php if ($this->element->getMessages()) { ?>    
+    <div class="bajar"></div>
+    <div class="errores2">   
+            <?php  echo implode('<br />', array_map($this->translate,$this->element->getMessages()));?>
+     </div>             
+    <?php }?>
+</div>    
+ 

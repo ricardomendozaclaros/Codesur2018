@@ -1,0 +1,29 @@
+
+<div class="selector_ciudades">
+<div class="titulo_g1_cont" style="margin: 0">
+ 		<div class="titulo_g1_iz"></div>
+ 		<div class="titulo_g1">
+ 		<h1 style="margin: 0;color: #373737;font-size: 14px;text-align: center;width: 180px"><a href="#" id="iz_todas_categorias">Todas las categorias</a></h1>
+ 		</div>
+ 		<div class="titulo_g1_de"></div>
+</div>
+ <div class="selector_cat_subcat" id="izq_categorias">
+<?php 
+foreach ($this->categorias as $cat) 
+{
+		if($this->ciudad)
+			$enlace_categoria=$this->url(array('pais'=>$this->pais,'ciudad'=>$this->ciudad,'categoria'=>$cat['cat_alias']),'anuncio_categoria');
+		else
+			$enlace_categoria=$this->url(array('pais'=>$this->pais,'categoria'=>$cat['cat_alias']),'anuncio_categoria');
+	$estilo='';
+	if($cat['cat_alias']==$this->cat['cat_alias'])
+		$estilo='class="negrilla"';				
+	echo "<a href='$enlace_categoria'' $estilo>".$cat['cat_nombre']." (".$cat['nro_anuncios'].")</a>";
+	
+	
+}
+?>
+</div>
+<div id="selector_ciudades_pie"></div>
+</div>
+<br/>

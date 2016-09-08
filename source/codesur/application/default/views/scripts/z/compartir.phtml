@@ -1,0 +1,36 @@
+<?php 
+	$url="http://".$_SERVER['SERVER_NAME'].$this->enlace;
+?>
+<div class="comparte_esta_noticia">
+<span>Compartir:</span>
+		<a onclick="target='_blank'" href="http://del.icio.us/post?title=;url=<?php echo $url;?>">
+
+			<img style="border:none" alt="" src="/img/compartir/ico_delicious.gif"/>
+		</a>
+		<a onclick="target='_blank'" href="http://myweb2.search.yahoo.com/myresults/bookmarklet?u=<?php echo $url;?>&amp;t=<?php echo $this->titulo;?>">
+			<img style="border:none" alt="" src="/img/compartir/ico_yahoo.gif"/>
+		</a>
+		<a onclick="target='_blank'" href="http://www.digg.com/submit?url=<?php echo $url;?>">
+			<img style="border:none" alt="" src="/img/compartir/ico_digg.gif"/>
+		</a>
+		<a onclick="target='_blank'" href="http://www.technorati.com/faves?add=<?php echo $url;?>">
+			<img style="border:none" alt="" src="/img/compartir/ico_technorati.gif"/>
+
+		</a>
+		<a onclick="target='_blank'" href="http://meneame.net/submit.php?url=<?php echo $url;?>">
+			<img style="border:none" alt="" src="/img/compartir/ico_meneame.gif"/>
+		</a>
+		<a onclick="target='_blank'" href="http://www.wikio.es/sharethis?url=<?php echo $url;?>&amp;title=<?php echo $this->titulo;?>">
+			<img style="border:none" alt="" src="/img/compartir/ico_wikio.gif"/>
+		</a>
+		<a onclick="target='_blank'" href="http://latafanera.net/submit.php?url=<?php echo $url;?>">
+			<img style="border:none" alt="" src="/img/compartir/ico_latafanera.jpg"/>
+		</a>
+		<a onclick="target='_blank'" href="http://www.facebook.com/share.php?u=<?php echo $url;?>">
+
+			<img style="border:none" alt="" src="/img/compartir/ico_facebook.gif"/>
+		</a>
+		<a onclick="target='_blank'" href="http://twitthis.com/twit?url=<?php echo $url;?>">
+			<img style="border:none" alt="" src="/img/compartir/ico_twitter.gif"/>
+		</a>
+</div>

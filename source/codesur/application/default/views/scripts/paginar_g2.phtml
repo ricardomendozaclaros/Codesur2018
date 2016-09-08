@@ -1,0 +1,30 @@
+<?php 
+if ($this->pageCount) {
+    echo '<nav> <ul class="pagination">';
+    if (isset($this->previous))//{
+    echo '
+    <li>
+        <a href="'.$this->url(array('pagina'=>$this->translate("pagina").$this->previous)).'" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>';
+		
+	foreach ($this->pagesInRange as $page) {
+		if ($page != $this->current)
+                    echo '  <li  ><a href="'.$this->url(array('pagina'=>$this->translate("pagina").$page)).'">'.$page.'</a></li>';
+//			echo '<span class="pag_noactivo"><a href="'.$this->url(array('pagina'=>$this->translate("pagina").$page)).'" class="a_pag1">'.$page.'</a></span> ';
+		else
+                    echo ' <li class="active"><span>'.$page.'</span></li> ';
+			//echo "<span class='pag_activo'><span class='a_pag2'>".$page."</span></span> ";
+	}
+        if (isset($this->next)){
+        echo '
+    <li>
+      <a href="'.$this->url(array('pagina'=>$this->translate("pagina").$this->next)).'" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+        </li>';}
+        echo '</ul> 
+        </nav>';
+}
+?>

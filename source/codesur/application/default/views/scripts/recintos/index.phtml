@@ -1,0 +1,44 @@
+<link rel="stylesheet" id="headway-general-css" href="/img/general-83fd56f.css" type="text/css" media="all">
+<script type="text/javascript" src="/js/mapa/jquery_007.js"></script>
+<div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+    <h3><?php echo $this->translate("RECINTOS")?></h3>
+    <p><?php //echo $this->translate("escenario deportivos y los lugares")?></p>
+  </div>
+<?php if($this->tablaa){ 
+    foreach ($this->tabla as $p){
+        $enlace=$this->url(array('idioma'=>$this->idioma,'alias_recinto'=>$p['rec_alias_'.$this->idioma]),'recinto_completa_'.$this->idioma);
+        ?>
+
+<div class="col-md-6">
+    <div style="position: relative;">
+        <img src="/upload/recintos/<?php echo $p["rec_img"]?>" class="img-thumbnail"alt="<?php echo $p["rec_titulo_".$this->idioma]?>" />
+        <div class="detalle_rec hvr-wobble-to-bottom-right" >
+            <h4 style="">
+                <a href="<?php echo $enlace;?>" style="color: #fff;"><?php echo $p["rec_titulo_".$this->idioma]?></a>
+            </h4>
+    <p> <?php echo Util_Cortartexto::cortar_texto($p["rec_descripcion_".$this->idioma], 80)?></p>
+    <p><?php echo $p["rec_direccion_".$this->idioma]?></p>  
+    </div>
+    </div>
+    
+   
+</div>
+    <?php } ?>
+    
+    
+    <div class="bajar"></div>
+<div id="not_paginacion">
+   <div class="paginador_g3">	<?php	echo $this->paginationControl($this->tabla,'Sliding',	'paginar_g2.phtml');?>	</div>  
+</div>
+   <?php }else{    ?>
+<h4 style="text-align: center;">
+   <?php //echo $this->translate("No se tiene informacion")?> 
+   <img src="/img/SitioEnConstruccion.gif  " alt="Sito en construccion">
+</h4>
+
+<?php }?>
+
+
+
+
+

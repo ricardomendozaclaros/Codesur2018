@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmx version="2.0" xmlns="http://www.lisa.org/tmx20">
+  <header adminlang="en" creationtool="locale4j" creationtoolversion="1.1" o-tmf="unknown" segtype="block" srclang="*all*"/>
+  <body>
+    <tu tuid="fileUploadErrorFormSize">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>El archivo '%value%' excede el tamaño maximo permitido</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="fileExtensionFalse">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>El archivo '%value%' tiene una extension incorrecta</seg>
+      </tuv>
+    </tu>
+    <tu tuid="fileExtensionNotFound">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>El archivo '%value%' no existe</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="fileSizeTooBig">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>Maximo tamaño permitido para el archivo '%value% [ %size% ]' es de '%max%'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="fileSizeTooSmall">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>Minimo tamaño permitido para el archivo '%value% [ %size% ]' es de '%min%'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="fileSizeNotFound">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>The file '%value%' could not be found</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="fileCountTooMuch">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>Demasiados archivos: '%count%', maximo permitido: '%max%'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="fileCountTooLess">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>Pocos archivos: '%count%', minimo permitido: '%min%'</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="stringLengthTooShort">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>'%value%' tiene menos de %min% caracteres de longitud</seg>
+      </tuv>
+    </tu>
+    <tu tuid="stringLengthTooLong">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>'%value%' tiene mas de %max% caracteres de longitud</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="isEmpty">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>Este valor es requerido</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="emailAddressInvalid">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>'%value%' no es una dirección de email valida</seg>
+      </tuv>
+    </tu>
+    <tu tuid="emailAddressInvalidFormat">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>e-mail No Valido</seg>
+      </tuv>
+    </tu>
+    <tu tuid="emailAddressInvalidHostname">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>e-mail No Valido</seg>
+      </tuv>
+    </tu>
+    <tu tuid="emailAddressInvalidMxRecord">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>e-mail No Valido</seg>
+      </tuv>
+    </tu>
+    <tu tuid="emailAddressDotAtom">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>e-mail No Valido</seg>
+      </tuv>
+    </tu>
+    <tu tuid="emailAddressQuotedString">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>e-mail No Valido</seg>
+      </tuv>
+    </tu>
+    <tu tuid="emailAddressInvalidLocalPart">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>e-mail No Valido</seg>
+      </tuv>
+    </tu>
+    <tu tuid="emailAddressLengthExceeded">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>e-mail No Valido</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="passwordInvalid">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>Debe contener solo numeros o letras</seg>
+      </tuv>
+    </tu>
+    <tu tuid="passwordInvalidShort">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>Debe ser de al menos '%min%' caracteres</seg>
+      </tuv>
+    </tu>
+    <tu tuid="passwordInvalidLong">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>Debe ser no mas de '%max%' caracteres</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="fieldNotMatch">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>Debe conicidir con %fieldLabel%.</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="uniqueInvalid">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>'%value%' ya esta registrado.</seg>
+      </tuv>
+    </tu>
+
+    <tu tuid="notInt">
+      <tuv xml:lang="en">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+      <tuv xml:lang="es">
+        <seg>'%value%' no es un valor numerico valido.</seg>
+      </tuv>
+    </tu>
+
+  </body>
+</tmx>

@@ -1,0 +1,44 @@
+ <div id="cuerpo_inicio">
+<!-- CENTRO-->
+<div id="centro_inicio">
+<a class="prev sig browse left"></a>
+  <div id="mascara_scroll">
+  <div class='scroll'>
+	<div class='items'>
+	<?php foreach ($this->tabla_rotador as $fila){?>
+			<div class="item">
+				<img src="/upload/rotador/<?php echo $fila['rot_img'];?>" title="<?php echo $fila['rot_nombre_'.$this->idioma];?>" alt="<?php echo $fila['rot_nombre_'.$this->idioma];?>" style="float: left;"/>
+				<div>
+					<h2 class="rotador_titulo"><?php echo $fila['rot_nombre_'.$this->idioma];?></h2>
+					<?php echo $fila['rot_descripcion_'.$this->idioma];?>
+				</div>				
+			</div>
+	<?php }?>			
+	</div>
+  </div>
+  </div>
+<a class="next ant browse right"></a>
+  
+  
+<div class="bajar"></div>
+</div><!-- fin centro-->
+<div class="bajar"></div>			
+</div><!-- fin cuerpo -->
+
+
+<!-- PIE -->
+<div id="pie">
+<?php foreach ($this->tabla_links as $fila){?>
+<div class="link_pie_contenedor">
+<a href="<?php echo (($fila['est_id']==7 || $fila['est_id']==8)?"":$this->idioma).$fila['est_link'];?>" class="link_pie_titulo"><?php echo $fila['est_nombre_'.$this->idioma];?></a>
+<a href="<?php echo (($fila['est_id']==7 || $fila['est_id']==8)?"":$this->idioma).$fila['est_link'];?>" class="link_pie_texto"><?php echo $fila['est_contenido_'.$this->idioma];?></a>	
+</div>
+<?php }?>
+
+
+
+<div class="creditos">
+	<div style="float: left;">© 2011 COMPANEX S.A.  ® <?php echo $this->translate("Todos los derechos reservados")?></div>  
+	<div style="float: right;"><?php echo $this->translate("Sitio desarrollado por")?> <a target="_blank" href="http://www.desteco.net" style="color: #2bdbf9;">DESTECO SRL</a></div>
+</div>
+</div><!-- fin pie -->

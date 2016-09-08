@@ -1,0 +1,133 @@
+<div  style="background: #c9e4f9;width: 100%;"> 
+
+</div>
+
+
+<div class="principal">
+<?php $form=$this->form->getElements();?>   
+    <div class="row" style="background: #c9e4f9;padding: 2px 0 0; margin: 5px 0"> 
+        <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info" style="    ">
+            <h3><?php echo $this->translate('CONTACTOS')?></h3>
+          </div> 
+        <div class="well" style="  margin-bottom: 10px;      padding: 5px;">
+        <div class="row">
+            <div class="col-md-6 text-right"><p style="margin: 0px; font-weight: bold;"><?php echo $this->translate('para consultas acerca')?> :</p></div> 
+            <div class="col-md-6"><p  style="margin: 0px ; " class="small_c">info@cochabamba2018.bo</p></div> 
+             <div class="col-md-6 text-right"><p style="margin: 0px;   font-weight: bold;"><?php echo $this->translate('para consultas eventos')?> :</p></div> 
+            <div class="col-md-6"><p  style="margin: 0px;" class="small_c">comunicacion@cochabamba2018.bo</p></div> 
+        </div>
+      
+    </div>
+     <div class=" col-md-6 text-center  " style="     border: 0 none; text-align: center;">
+         <div style="width: 100%; text-align: center;">
+            <img src="/img/oficina.png" alt="<?php echo $this->translate('oficina central')?>" class="img-thumbnail"/> 
+         </div>
+         
+      </div>
+<div class=" col-md-6" style=" ">
+      <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><?php echo $this->translate('formulario contactos')?></h3>
+            </div>
+            <div class="panel-body" style="text-align: justify;">
+                  <form action="" method="post" >
+                 <div class="form-group">
+                     <table style="width: 100%;">
+                        <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('nombre')?>: </label></td>
+                            <td><?php echo $this->form->getElement('con_nombre');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['con_nombre']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label  class="col-lg-12 control-label"><?php echo $this->translate('apellidos')?>: </label></td>
+                            <td><?php echo $this->form->getElement('con_paterno');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['con_paterno']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="col-lg-12 control-label">E-mail: </label></td>
+                            <td><?php echo $this->form->getElement('con_email');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['con_email']->getMessages());?></span>
+                            </td>
+                        </tr>
+                          <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('asunto')?>: </label></td>
+                            <td><?php echo $this->form->getElement('con_asunto');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['con_asunto']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr><td><label class="col-lg-12 control-label"><?php echo $this->translate('mensaje')?>: </label></td>
+                            <td ><?php echo $this->form->getElement('con_mensaje');?>
+                                <span class="texto_error1"><?php echo implode('-',$form['con_mensaje']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center;">
+                                <input type="submit" class="btn btn-primary" name="reset" value="<?php echo $this->translate('enviar comentario')?>"/>
+                                <input type="reset" class="btn btn-primary" name="reset" value="<?php echo $this->translate('limpiar')?>"/></td>
+                        </tr>
+                    </table>
+                               </div>
+                </form> 
+            </div>
+          </div> 
+             
+         
+                </div>
+        </div>
+           
+    <div class="bajar"></div>
+    <div class="row">
+    <div class="col-md-4">
+       <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><?php echo $this->translate('direccion')?></h3>
+            </div>
+            <div class="panel-body" style="height: 107px;">
+              <?php echo $this->translate('venida juan de la rosa')?>
+            </div>
+          </div>   
+    </div>
+    <div class="col-md-4">
+       <div class="panel panel-primary">
+           <div class="panel-heading">
+              <h3 class="panel-title"><?php echo $this->translate('telefono')?></h3>
+            </div>
+            <div class="panel-body" style="height: 107px;text-align: justify;">
+                
+                <p style="margin: 0px;"><?php echo $this->translate('telefono_1')?></p>
+                <p style="margin: 0px;"><?php echo $this->translate('telefono_2')?></p>
+                <p style="margin: 0px;"><?php echo $this->translate('telefono_3')?></p>
+                <p style="margin: 0px;"><?php echo $this->translate('telefono_4')?></p>
+            </div>
+          </div>   
+    </div> 
+        <div class="col-md-4">
+       <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><?php echo $this->translate('redes_sociales')?></h3>
+            </div>
+           <div class="panel-body" style="height: 107px;">
+
+                    <div class="links_social">
+                      <a class="social_link social_twitter   hvr-wobble-vertical" href="https://twitter.com/Cocha2018"><img src="/img/red_twiter.png" alt="Twiter" /></a>
+                      <a class="social_link social_facebook  hvr-wobble-vertical" href="https://www.facebook.com/cochabamba2018"><img src="/img/red_face.png" alt="Facebook" /></a>
+                      <a class="social_link social_google    hvr-wobble-vertical" href="https://plus.google.com/b/115687049646032220513/115687049646032220513/posts"><img src="/img/red_gmail.png" alt="Google" /></a>
+                      <a class="social_link social_youtube   hvr-wobble-vertical" href="https://www.youtube.com/channel/UCn5RwB9I-dzPn4y4s2F-Jaw"><img src="/img/red_you.png" alt="Youtobe" /></a>
+                      <a class="social_link social_instagram hvr-wobble-vertical" href="https://www.instagram.com/cochabamba2018/"><img src="/img/red_instagram.png" alt="Twiter" /></a>
+                    </div>
+                  </div>
+            
+          </div>   
+    </div>
+        </div>
+    <div class="contact_map col-md-12">
+<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3807.679043404321!2d-66.1631499!3d-17.3791705!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ses!4v1459521294643" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+</div>
+    <!--</div>-->
+   
+</div>
+<!--</div>-->
+ 

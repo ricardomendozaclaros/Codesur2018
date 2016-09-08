@@ -1,0 +1,20 @@
+<div class="selector_ciudades">
+<div class="titulo_g1_cont" style="margin: 0">
+ 		<div class="titulo_g1_iz"></div>
+ 		<div class="titulo_g1">
+ 		<h1 style="margin: 0;color: #373737;font-size: 14px;text-align: center;width: 180px">Buscar</h1>
+ 		</div>
+ 		<div class="titulo_g1_de"></div>
+</div>
+ <div id="selector_ciudades">
+<form action="/anuncio/buscador" method="post">
+<div style="text-align: center;">
+	<input type="hidden" value="<?php echo $this->pais;?>" name="pais"/>
+	<input type="hidden" value="<?php if($this->ciudad)echo $this->ciudad;else echo DEFAULT_NO_CIUDAD;?>" name="ciudad"/>
+	<input type="text" name="txt_bus" /><br/>
+ 	<input type="submit" value="" id="buscador_iz_submit"/>
+</div>
+</form>
+</div>
+<div id="selector_ciudades_pie"></div>
+</div>

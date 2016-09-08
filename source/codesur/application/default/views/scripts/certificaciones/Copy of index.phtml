@@ -1,0 +1,52 @@
+<div id="contenido_gen">
+	<div id="gen_cuadro_izq">		
+		<div id="gen_banner">		
+			<?php echo $this->partial('banner/general.phtml',array('pos_id'=>6,'tipo'=>2,'idioma'=>$this->idioma));?>
+		</div>
+	</div>
+	<div id="gen_cuadro_der">	
+			
+			<h1 class="direc tit_pri"><?php echo $this->translate('Certificaciones');?></h1>
+			<?php 
+			//$fila=$this->certificaciones;
+			//var_dump($fila);
+			?>
+			<?php 
+			$i=0;
+			foreach ($this->certificaciones as $fila){
+			?>
+			
+			<div id="cer_cuadro_fondo">
+				<div id="cer_cuadro_arriba">
+					<?php if($fila['cer_img']){?>					
+					<div class="cer_img"><img class="cer_img" src="/upload/certificaciones/<?php echo $fila['cer_img'];?>" alt="<?php echo $fila['cer_img'];?>"/></div>
+					<?php }?>
+					<div class="cer_txt">						
+						<?php echo $fila['cer_descripcion_'.$this->idioma];?>						 
+					</div>
+				</div>
+				<div id="cer_cuadro_abajo"><?php echo $fila['cer_titulo_'.$this->idioma];?></div>				
+			</div>
+			<?php $i++;
+			
+			if($i%3==0){	
+			?>
+			 <div class="bajar"></div>
+			
+			
+			<?php }
+			}?>
+			
+			<!--  paginacion -->
+				 <div class="bajar"></div>
+			<div class="paginador_g2">
+<?php
+echo $this->paginationControl($this->certificaciones,
+									'Sliding',
+									'paginar_g1.phtml');
+?>
+</div>
+		
+	</div>
+	<div class="bajar"></div>
+</div>

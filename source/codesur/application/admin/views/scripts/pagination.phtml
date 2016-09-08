@@ -1,0 +1,17 @@
+<?php
+if ($this->pageCount) {
+	echo '<div class="paginationControl">';
+	if (isset($this->previous))
+		echo '<a href="'.$this->url(array('page'=>$this->previous,'cat'=>$this->cat)).'">< Anterior</a> | ';
+
+	foreach ($this->pagesInRange as $page) {
+		if ($page != $this->current)
+			echo ' <a href="'.$this->url(array('page'=>$page,'cat'=>$this->cat)).'">'.$page.'</a> ';
+		else
+			echo ' [ '.$page.' ] ';
+	}
+
+	if (isset($this->next))
+		echo ' | <a href="'.$this->url(array('page'=>$this->next,'cat'=>$this->cat)).'">Siguiente ></a>';
+	echo '</div>';
+}

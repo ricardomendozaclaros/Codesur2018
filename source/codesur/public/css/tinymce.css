@@ -1,0 +1,10 @@
+ul 
+{
+	list-style-image: url("../img/vineta.png");
+	margin: 5px;	
+}
+.servicios h6
+{
+	font-size: 12px;
+	margin-bottom: 0;
+}

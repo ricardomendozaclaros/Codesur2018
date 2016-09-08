@@ -1,0 +1,46 @@
+<div id="contenido_gen">   
+<h1 class="gen_titulo1"><span class="flecha_roja"></span><?php echo $this->translate('NOTICIAS');?> - <?php echo $this->translate('Listado de Noticias');?></h1>
+<div class="noticia_fondo">
+<div class="not_contenedor">        	
+        	<?php
+		        foreach ($this->secundaria as $fila) {
+		        $enlace=$this->url(array('idioma'=>$this->idioma,'alias_noticia'=>$fila['not_alias_'.$this->idioma]),'noticia_completa_'.$this->idioma);
+		        ?>           
+		               <div class="not_listada">
+		                    <?php if($fila['not_img']){?>
+		                            <img class="not_imagen" src="/upload/noticia/thumb/s<?php echo $fila['not_img'];?>" alt="<?php echo $fila['not_img'];?>" align="left"/>
+		                    <?php }?>
+		                    <div class="not_fecha"><?php 
+			                    $date=new Zend_Date(strtotime($fila['not_fecha_creacion']));							
+								$fecha_ultima_actualizacion=$date->toString("dd MMMM yyyy");
+			                    echo $fecha_ultima_actualizacion?></div>
+		                    <h2 class="not_tit_lista"><a href="<?php echo $enlace;?>"><?php echo $fila['not_titulo_'.$this->idioma]?></a></h2>		                    
+		               		<div class="not_entradilla_lista"><?php echo $fila['not_entradilla_'.$this->idioma]?></div>
+		               		<div> 
+		                		<a class="not_leermas" href="<?php echo $enlace;?>"><?php echo $this->translate("Leer más");?>&nbsp;&nbsp;|&nbsp;+</a>
+		                		<div class="bajar"></div>		                		 
+		                	</div>
+		                	
+		                	<div class="not_linea"></div>
+		                	 <div class="bajar"></div> 
+		                </div>		                
+		               
+		            <?php		            		            
+		        }   
+		    ?>
+<div id="not_paginacion">
+        			<div class="paginador_g3">
+					<?php
+					echo $this->paginationControl($this->secundaria,
+														'Sliding',
+														'paginar_g2.phtml');
+					?>
+					</div>  
+</div>
+		    
+</div> 
+<div class="bajar"></div>
+</div>
+
+
+</div>

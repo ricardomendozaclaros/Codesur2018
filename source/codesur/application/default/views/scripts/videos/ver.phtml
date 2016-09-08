@@ -1,0 +1,113 @@
+<div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+    <h3><?php echo $this->translate("Video")?>    </h3>
+   
+</div>
+<div class="galeria_videos col-md-12 jumbotron" style=" margin: 0;    padding: 32px;    text-align: center;">
+<?php    if($this->video)    {
+        $videos=$this->video;    ?>
+    <?php      
+   $vi= str_replace("watch?v=", "embed/", $videos['vid_youtube']);
+    ?>
+      <div class="col-md-6 jumbotron" style="  margin: 0;    padding: 32px;    text-align: center;"> 
+          <iframe id="ytplayer" type="text/html"   width="500" height="400"    src="<?php echo $vi?>"     frameborder="0"/></iframe>
+      </div>
+               
+<div class="galeria_videos col-md-6 jumbotron" style=" margin: 0;    padding: 43px 0 0;    text-align: center;">
+    <img src="/img/deportes/NUNA-TIRO-PISTOLA-COLOR.png" alt="" class="example-image img-thumbnail"/>
+    
+</div>          
+ </div>        
+<?php }
+      else
+      { ?>
+            <?php echo $this->translate("No se tiene informacion")?></h3>                                 
+                                         
+ <?php     }  ?>
+
+
+<script>
+//    /*$(document).ready(function(){
+//    $("#galeria_video img").click(function(){
+//    var youtubeID=$(this).attr("id");   
+//    $("#caja_youtube").empty();
+//    $("#caja_youtube").append("<object width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://www.youtube.com/v/+youtubeID+&rel=1\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/"+youtubeID+"&rel=1\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"490\" height=\"406\"></embed></object>");
+//    });
+//    });*/
+//
+//   
+//    window.onload=function() {
+//        
+//            $('#galeria_foto a').lightBox();               
+//            //$('.img_hemeroteca a').lightBox();
+//            //$('.link_hemeroteca a').lightBox();
+//            //$('.caja_imagen_boletin a').lightBox();
+//        
+//            //-----------------------------------
+//            //BORDES REDONDEADOS
+//            //DD_roundies.addRule('.hemeroteca_nro', '5px 5px 0 0',true)
+//        
+//            //---------------------------------------------------------
+//            // TRANSPARENCIAS
+//            //DD_belatedPNG.fix ('.img_play')
+//       
+//            //-------------------------------
+//      
+//    };
+//    
+//    
+//    function buscarCategoria(elemento)
+//    {
+//       var index=elemento.selectedIndex;
+//       if(index > 0)
+//       {
+//         //document.getElementById("form_categoria").setAttribute('action','/').submit();
+//         var pagina="/videos//"+elemento.value;
+//         document.location.href=pagina;
+//       }
+//       else
+//       {
+//        alert("Debe seleccionar una categoria..!");
+//       }
+//       // document.getElementById()
+//    }
+//    
+//
+//    function evento(selectobj)
+//    {
+//        var valor=selectobj.value;
+//        //alert(valor);
+//    	var aux=$.ajax({url:"galerias/categoriafotos",
+//        type: 'post',
+//        data: 'id_categoria='+valor,
+//	    dataType: 'json',		
+//        beforeSend: cargando,
+//    	complete: completado,
+//    	error : errores })
+//    }
+//    
+//    function errores()
+//	{
+//		//$("#resultados").text('Problemas en el servidor.');
+//
+//	}
+//	
+//	function cargando()
+//	{
+//		//alert("se esta cargando");
+//	}
+//	
+//	function completado(datos)
+//	{
+//        
+//           var conten = document.getElementById("galeria_foto");
+//           conten.html=datos;
+//           var img=document.createElement("img");
+//                        img.setAttribute('alt', 'dsadas');
+//                        img.setAttribute('src', '');
+//                        conten.appendChild(img);
+//		for(var i = 0; i < datos.length; i++)
+//                    {
+//                        
+//                    }
+//	}    
+</script>

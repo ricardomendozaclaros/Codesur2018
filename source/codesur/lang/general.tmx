@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmx version="2.0" xmlns="http://www.lisa.org/tmx20">
+  <header adminlang="en" creationtool="locale4j" creationtoolversion="1.1" o-tmf="unknown" segtype="block" srclang="*all*"/>
+  <body>
+      <tu tuid="ya somos">
+      <tuv xml:lang="es"><seg>Ya somos</seg></tuv>
+      <tuv xml:lang="en"><seg>We already are</seg></tuv>
+    </tu>
+      <tu tuid="cerrar">
+      <tuv xml:lang="es"><seg>Cerrar</seg></tuv>
+      <tuv xml:lang="en"><seg>Close</seg></tuv>
+    </tu>
+      <tu tuid="Se parte del equipo">
+      <tuv xml:lang="es"><seg> Se parte del equipo</seg></tuv>
+      <tuv xml:lang="en"><seg>It is part of the team</seg></tuv>
+    </tu>
+    <tu tuid="registro_correcto">
+      <tuv xml:lang="es"><seg>Registro Correcto</seg></tuv>
+      <tuv xml:lang="en"><seg>Correct Registration</seg>
+      </tuv>
+    </tu>
+    <tu tuid="bienvenido_voluntario">
+      <tuv xml:lang="es"><seg>Bienvenido al equipo de VOLUNTARIOS a partir de ahora te contactaremos al correo electrónico que registraste </seg></tuv>
+      <tuv xml:lang="en"><seg>Wellcome to the VOLUNTEERS team, from  now we will contact you to the email you registred.</seg>
+      </tuv>
+    </tu>
+     <tu tuid="pais">
+      <tuv xml:lang="es"><seg>Pais</seg></tuv>
+      <tuv xml:lang="en"><seg>Countries</seg></tuv>
+    </tu>
+    
+   
+      <tu tuid="FORMULARIO DE INSCRIPCIÓN">
+      <tuv xml:lang="es"><seg>FORMULARIO DE INSCRIPCIÓN</seg></tuv>
+      <tuv xml:lang="en"><seg>REGISTRATION FORM</seg></tuv>
+    </tu>
+    <tu tuid="BENEFICIOS DEL VOLUNTARIO">
+      <tuv xml:lang="es"><seg>BENEFICIOS DEL VOLUNTARIO</seg></tuv>
+      <tuv xml:lang="en"><seg>VOLUNTEER BENEFITS</seg></tuv>
+    </tu>
+    <tu tuid="AREAS OPERATIVAS">
+      <tuv xml:lang="es"><seg>ÁREAS OPERATIVAS</seg></tuv>
+      <tuv xml:lang="en"><seg>OPERATIONAL AREAS</seg></tuv>
+    </tu>
+      <tu tuid="VOLUNTARIOS">
+      <tuv xml:lang="es"><seg>VOLUNTARIOS</seg></tuv>
+      <tuv xml:lang="en"><seg>VOLUNTEERS</seg></tuv>
+    </tu>
+       <tu tuid="Paises">
+      <tuv xml:lang="es"><seg>Paises</seg></tuv>
+      <tuv xml:lang="en"><seg>Countries</seg></tuv>
+    </tu>
+       <tu tuid="Pruebas">
+      <tuv xml:lang="es"><seg>Pruebas</seg></tuv>
+      <tuv xml:lang="en"><seg>Tests</seg></tuv>
+    </tu>
+       <tu tuid="Modalidades deportivas">
+      <tuv xml:lang="es"><seg>Modalidades deportivas</seg></tuv>
+      <tuv xml:lang="en"><seg>Different sports</seg></tuv>
+    </tu>
+      <tu tuid="Los juegos en número">
+      <tuv xml:lang="es"><seg>Los juegos en número</seg></tuv>
+      <tuv xml:lang="en"><seg>Games number</seg></tuv>
+    </tu>
+      <tu tuid="Faltan">
+      <tuv xml:lang="es"><seg>Faltan</seg></tuv>
+      <tuv xml:lang="en"><seg>Missing</seg></tuv>
+    </tu>
+      
+      <tu tuid="nuestras mascotas">
+      <tuv xml:lang="es"><seg>Nuestras Mascotas</seg></tuv>
+      <tuv xml:lang="en"><seg>Our Pets</seg></tuv>
+    </tu>
+  <tu tuid="se envio correctamente">
+      <tuv xml:lang="es"><seg>Sus datos fueron enviados con exito.</seg></tuv>
+      <tuv xml:lang="en"><seg>Data were sent successfully.</seg></tuv>
+    </tu>
+      <tu tuid="Los voluntarios son aquellas personas">
+      <tuv xml:lang="es"><seg>Los voluntarios son aquellas personas que de forma espontánea, voluntaria y responsable, aportan sin obligación de retribución   en alguna actividad por el beneficio de la sociedad.</seg></tuv>
+      <tuv xml:lang="en"><seg>Volunteers are people who spontaneously,voluntary and responsible, without obligation to provide compensation in any activity for the benefit of society. </seg></tuv>
+    </tu>
+    
+    <tu tuid="En este gran evento tendrás">
+      <tuv xml:lang="es"><seg>En este gran evento tendrás la oportunidad de participar como voluntario en 9 diferentes áreas operativas, tú serás parte de la organización, el desarrollo, el desenlace y la clausura de los mejores Juegos Suramericanos de la historia y serán aquí en nuestro país, más de 5.000 atletas, 2.000 periodistas y miles de espectadores disfrutaran de esta gran fiesta deportiva.</seg></tuv>
+      <tuv xml:lang="en"><seg>In this great event will have the opportunity to participate as a volunteer in 9 different operating areas, you will be part of the organization, development, outcome and closure of the best South American Games in history and will be here in our country, more than 5,000 athletes, 2,000 journalists and thousands of spectators will enjoy this great sports festival.</seg></tuv>
+    </tu>
+    <tu tuid="Areas Operativas">
+      <tuv xml:lang="es"><seg>Areas Operativas</seg></tuv>
+      <tuv xml:lang="en"><seg>Operating areas</seg></tuv>
+    </tu>
+      <tu tuid="Voluntarios">
+      <tuv xml:lang="es"><seg>Voluntarios </seg></tuv>
+      <tuv xml:lang="en"><seg>volunteers</seg></tuv>
+    </tu>
+      <tu tuid="Transporte">
+      <tuv xml:lang="es"><seg>Transporte </seg></tuv>
+      <tuv xml:lang="en"><seg>Transport</seg></tuv>
+    </tu>
+      <tu tuid="Tecnologías De La Información">
+      <tuv xml:lang="es"><seg>Tecnologías De La Información </seg></tuv>
+      <tuv xml:lang="en"><seg>Information technology</seg></tuv>
+    </tu>
+      <tu tuid="Escenarios Deportivos">
+      <tuv xml:lang="es"><seg>Escenarios Deportivos</seg></tuv>
+      <tuv xml:lang="en"><seg> Deportive scenary</seg></tuv>
+    </tu>
+    <tu tuid="ESCENARIOS DEPORTIVOS">
+      <tuv xml:lang="es"><seg>ESCENARIOS DEPORTIVOS</seg></tuv>
+      <tuv xml:lang="en"><seg>DEPORTIVE SCENARY</seg></tuv>
+    </tu>
+      <tu tuid="Protocolo">
+      <tuv xml:lang="es"><seg> Protocolo</seg></tuv>
+      <tuv xml:lang="en"><seg> Protocol</seg></tuv>
+    </tu>
+      <tu tuid="Técnica Deportiva">
+      <tuv xml:lang="es"><seg> Técnica Deportiva</seg></tuv>
+      <tuv xml:lang="en"><seg> Sports Técnica</seg></tuv>
+    </tu>
+      <tu tuid="Hospedaje y Alimentación">
+      <tuv xml:lang="es"><seg>Hospedaje y Alimentación </seg></tuv>
+      <tuv xml:lang="en"><seg> Lodging and meals</seg></tuv>
+    </tu>
+      <tu tuid="Comites Olimpicos Nacionales">
+      <tuv xml:lang="es"><seg> Comites Olimpicos Nacionales</seg></tuv>
+      <tuv xml:lang="en"><seg> National Olympic Committees</seg></tuv>
+    </tu>
+      <tu tuid="Marketing y Comunicación">
+      <tuv xml:lang="es"><seg>Marketing y Comunicación </seg></tuv>
+      <tuv xml:lang="en"><seg> Marketing and communication</seg></tuv>
+    </tu>
+      <tu tuid="Médica">
+      <tuv xml:lang="es"><seg>Médica</seg></tuv>
+      <tuv xml:lang="en"><seg>Médica</seg></tuv>
+    </tu>
+      <tu tuid="Beneficios del voluntario">
+      <tuv xml:lang="es"><seg> Beneficios del voluntario</seg></tuv>
+      <tuv xml:lang="en"><seg> Volunteer Benefits</seg></tuv>
+    </tu>
+      <tu tuid="Capacitación exclusiva">
+      <tuv xml:lang="es"><seg> Capacitación exclusiva</seg></tuv>
+      <tuv xml:lang="en"><seg> Exclusive training</seg></tuv>
+    </tu>
+      <tu tuid="Amigos y contactos">
+      <tuv xml:lang="es"><seg>Amigos y contactos</seg></tuv>
+      <tuv xml:lang="en"><seg>Friends and contacts</seg></tuv>
+    </tu>
+      <tu tuid="Regalos unicos">
+      <tuv xml:lang="es"><seg> Regalos unicos</seg></tuv>
+      <tuv xml:lang="en"><seg> Unique gifts</seg></tuv>
+    </tu>
+      <tu tuid="Uniforme de voluntariado">
+      <tuv xml:lang="es"><seg> Uniforme de voluntariado</seg></tuv>
+      <tuv xml:lang="en"><seg>Volunteer uniform </seg></tuv>
+    </tu>
+      <tu tuid="Tarjeta de voluntariado">
+      <tuv xml:lang="es"><seg> Acreditación de voluntario</seg></tuv>
+      <tuv xml:lang="en"><seg> Voluntary accreditation</seg></tuv>
+    </tu>
+     <tu tuid="Alimentacion">
+      <tuv xml:lang="es"><seg> Refrigerio</seg></tuv>
+      <tuv xml:lang="en"><seg> Refreshment</seg></tuv>
+    </tu>
+     <tu tuid="Seguro contra accidentes">
+      <tuv xml:lang="es"><seg> Seguro contra accidentes</seg></tuv>
+      <tuv xml:lang="en"><seg> Accident insurance</seg></tuv>
+    </tu>
+     <tu tuid="Certificado de capacitación">
+      <tuv xml:lang="es"><seg>Certificado de capacitación </seg></tuv>
+      <tuv xml:lang="en"><seg> Training Certificate</seg></tuv>
+    </tu>
+     <tu tuid="Contactanos para mayor información">
+      <tuv xml:lang="es"><seg>Contactanos para mayor información </seg></tuv>
+      <tuv xml:lang="en"><seg> Contact us for more information</seg></tuv>
+    </tu>
+     <tu tuid="Ley del Voluntariado">
+      <tuv xml:lang="es"><seg>Ley del Voluntariado </seg></tuv>
+      <tuv xml:lang="en"><seg> Volunteering Act</seg></tuv>
+    </tu>
+     <tu tuid="El primer paso para">
+      <tuv xml:lang="es"><seg>  El primer paso para pertenecer a nuestro equipo de  voluntarios es enviarnos tus datos personales para que podamos ponernos en contacto.</seg></tuv>
+      <tuv xml:lang="en"><seg> The first step in joining our team volunteers is send us your personal data so that we can contact .</seg></tuv>
+    </tu>
+     <tu tuid=" ">
+      <tuv xml:lang="es"><seg> </seg></tuv>
+      <tuv xml:lang="en"><seg> </seg></tuv>
+    </tu>
+     <tu tuid=" ">
+      <tuv xml:lang="es"><seg> </seg></tuv>
+      <tuv xml:lang="en"><seg> </seg></tuv>
+    </tu>
+     <tu tuid=" ">
+      <tuv xml:lang="es"><seg> </seg></tuv>
+      <tuv xml:lang="en"><seg> </seg></tuv>
+    </tu>
+     <tu tuid=" ">
+      <tuv xml:lang="es"><seg> </seg></tuv>
+      <tuv xml:lang="en"><seg> </seg></tuv>
+    </tu>
+
+      
+      
+      
+      <tu tuid="formulario_de_inscripcion">
+      <tuv xml:lang="es"><seg>Formulario de Inscripción</seg></tuv>
+      <tuv xml:lang="en"><seg>Registration form</seg></tuv>
+    </tu>
+      
+  <tu tuid="contrataciones">
+      <tuv xml:lang="es"><seg>Contrataciones</seg></tuv>
+      <tuv xml:lang="en"><seg>Recruitments</seg></tuv>
+    </tu>
+    <tu tuid="CONTRATACIONES">
+      <tuv xml:lang="es"><seg>CONTRATACIONES</seg></tuv>
+      <tuv xml:lang="en"><seg>RECRUITMENTS</seg></tuv>
+    </tu>
+  <tu tuid="enlaces de interes">
+      <tuv xml:lang="es"><seg>Enlaces De Interes</seg></tuv>
+      <tuv xml:lang="en"><seg>Links of interest</seg></tuv>
+    </tu>
+   <tu tuid="Documento">
+      <tuv xml:lang="es"><seg>Documentos </seg></tuv>
+      <tuv xml:lang="en"><seg>Document</seg></tuv>
+    </tu>
+       <tu tuid="preguntas frecuentes">
+      <tuv xml:lang="es"><seg>Preguntas Frecuentes </seg></tuv>
+      <tuv xml:lang="en"><seg>Frequent Questions</seg></tuv>
+    </tu>
+      <tu tuid="Que es Voluntariado">
+      <tuv xml:lang="es"><seg>Que es Voluntariado?</seg></tuv>
+      <tuv xml:lang="en"><seg>That is Volunteering</seg></tuv>
+    </tu>
+      <tu tuid="cargando">
+      <tuv xml:lang="es"><seg>Cargando....</seg></tuv>
+      <tuv xml:lang="en"><seg>Loading....</seg></tuv>
+    </tu>
+    <tu tuid="descripcion">
+      <tuv xml:lang="es"><seg>Descripción</seg></tuv>
+      <tuv xml:lang="en"><seg>Descripction</seg></tuv>
+    </tu>
+        
+   <tu tuid="galeria">
+      <tuv xml:lang="es"><seg>GALERIA</seg></tuv>
+      <tuv xml:lang="en"><seg>GALLERY</seg></tuv>
+    </tu>
+      <tu tuid="IMAGENES">
+      <tuv xml:lang="es"><seg>IMAGENES</seg></tuv>
+      <tuv xml:lang="en"><seg>IMAGES</seg></tuv>
+    </tu>
+      <tu tuid="videos">
+      <tuv xml:lang="es"><seg>VIDEOS</seg></tuv>
+      <tuv xml:lang="en"><seg>VIDEOS</seg></tuv>
+    </tu>
+    <tu tuid="Videos">
+      <tuv xml:lang="es"><seg>Videos</seg></tuv>
+      <tuv xml:lang="en"><seg>Videos</seg></tuv>
+    </tu>
+    <tu tuid="mascotas">
+      <tuv xml:lang="es"><seg>Mascotas</seg></tuv>
+      <tuv xml:lang="en"><seg>Pets</seg></tuv>
+    </tu>
+ <tu tuid="buscar imagene por secciones">
+      <tuv xml:lang="es"><seg>Buscar imagenes por secciones </seg></tuv>
+      <tuv xml:lang="en"><seg>Search by topic sections</seg></tuv>
+    </tu>
+    <tu tuid="mascotas">
+      <tuv xml:lang="es"><seg>Mascotas</seg></tuv>
+      <tuv xml:lang="en"><seg>Pets</seg></tuv>
+    </tu>
+    <tu tuid="Seleccione una opcion">
+      <tuv xml:lang="es"><seg>Seleccione una opción</seg></tuv>
+      <tuv xml:lang="en"><seg>Select an option</seg></tuv>
+    </tu>
+    
+    <tu tuid="buscar">
+      <tuv xml:lang="es"><seg>Buscar</seg></tuv>
+      <tuv xml:lang="en"><seg>Search</seg></tuv>
+    </tu>
+       <tu tuid="No se tiene informacion">
+      <tuv xml:lang="es"><seg>No se tiene información</seg></tuv>
+      <tuv xml:lang="en"><seg>There is no information</seg></tuv>
+    </tu>
+     <tu tuid="pagina">
+      <tuv xml:lang="es"><seg>pagina</seg></tuv>
+      <tuv xml:lang="en"><seg>page</seg></tuv>
+    </tu>
+    <tu tuid="Publicado">
+      <tuv xml:lang="es"><seg>Publicado</seg></tuv>
+      <tuv xml:lang="en"><seg>Published</seg></tuv>
+    </tu>
+    
+    <tu tuid="Para los juegos Suramericanos">
+      <tuv xml:lang="es"><seg>Para los juegos Suramericanos</seg></tuv>
+      <tuv xml:lang="en"><seg>For the South American Games</seg></tuv>
+    </tu>
+    <tu tuid="Del 9 al 20 de Mayo 2018">
+      <tuv xml:lang="es"><seg>Del 9 al 20 de Mayo 2018</seg></tuv>
+      <tuv xml:lang="en"><seg>From 9 to May 20, 2018</seg></tuv>
+    </tu>
+    <tu tuid="noticias destacas">
+      <tuv xml:lang="es"><seg>Noticias destacadas</seg></tuv>
+      <tuv xml:lang="en"><seg>Outstanding news</seg></tuv>
+    </tu>
+      <tu tuid="ORGANIZACION">
+      <tuv xml:lang="es"><seg>ORGANIZACIÓN</seg></tuv>
+      <tuv xml:lang="en"><seg>ORGANIZATION</seg></tuv>
+    </tu>
+     <tu tuid="Fuente_Bibliografica">
+      <tuv xml:lang="es"><seg> Fuente Bibliográfica</seg></tuv>
+      <tuv xml:lang="en"><seg>Bibliographic source</seg></tuv>
+    </tu>
+   
+     <tu tuid="LOS JUEGOS">
+      <tuv xml:lang="es"><seg>LOS JUEGOS</seg></tuv>
+      <tuv xml:lang="en"><seg>THE GAMES</seg></tuv>
+    </tu>
+     <tu tuid="PAISES">
+      <tuv xml:lang="es"><seg>PAISES</seg></tuv>
+      <tuv xml:lang="en"><seg>COUNTRIES</seg></tuv>
+    </tu>
+    <tu tuid="Pises">
+      <tuv xml:lang="es"><seg>Pises</seg></tuv>
+      <tuv xml:lang="en"><seg>Countries</seg></tuv>
+    </tu>
+     <tu tuid="DEPORTES">
+      <tuv xml:lang="es"><seg>DEPORTES</seg></tuv>
+      <tuv xml:lang="en"><seg>SPORTS</seg></tuv>
+    </tu>
+    <tu tuid="Deportes">
+      <tuv xml:lang="es"><seg>Deportes</seg></tuv>
+      <tuv xml:lang="en"><seg>Sports</seg></tuv>
+    </tu>
+    <tu tuid="CALENDARIO">
+      <tuv xml:lang="es"><seg>CALENDARIO</seg></tuv>
+      <tuv xml:lang="en"><seg>CALENDAR</seg></tuv>
+    </tu>
+      
+     <tu tuid="VOLUNTARIADOS">
+      <tuv xml:lang="es"><seg>VOLUNTARIADO</seg></tuv>
+      <tuv xml:lang="en"><seg>VOLUNTEER</seg></tuv>
+    </tu>
+     <tu tuid="Voluntariados">
+      <tuv xml:lang="es"><seg>Voluntariado</seg></tuv>
+      <tuv xml:lang="en"><seg>Volunteer</seg></tuv>
+    </tu>
+                                        <tu tuid="sus datos fueron enviados con exito">
+                                          <tuv xml:lang="es"><seg>  Sus datos fueron enviados con exito.</seg></tuv>
+                                          <tuv xml:lang="en"><seg> Your data was sent successfully.</seg></tuv>
+                                        </tu>
+  <tu tuid="paises los cuales">
+      <tuv xml:lang="es"><seg>Países los cuales participarán en los juegos suramericanos Cochabamba2018</seg></tuv>
+      <tuv xml:lang="en"><seg> Countries which participated in the 2018 South american games Cochabamaba</seg></tuv>
+    </tu>
+      <tu tuid="las diferentes">
+      <tuv xml:lang="es"><seg>Las distintas disciplinas que competirán en los XI Juegos Suramericanos Cochabamba2018.</seg></tuv>
+      <tuv xml:lang="en"><seg> The different disciplines competing in the South American Games Cochabamba2018 XI .</seg></tuv>
+    </tu>
+    
+  <tu tuid="RECINTOS">
+      <tuv xml:lang="es"><seg>RECINTOS</seg></tuv>
+      <tuv xml:lang="en"><seg>ENCLOSURES</seg></tuv>
+    </tu>
+     <tu tuid="RECINTO">
+      <tuv xml:lang="es"><seg>RECINTO</seg></tuv>
+      <tuv xml:lang="en"><seg>ENCLOSURE</seg></tuv>
+    </tu>
+     <tu tuid="Recintos">
+      <tuv xml:lang="es"><seg>Recintos</seg></tuv>
+      <tuv xml:lang="en"><seg>Enclosures</seg></tuv>
+    </tu>
+     <tu tuid="escenario deportivos y los lugares">
+      <tuv xml:lang="es"><seg>    Escenarios deportivos y los lugares donde se llevaran a cabo los juegos suramericanos</seg></tuv>
+      <tuv xml:lang="en"><seg>Sports venues and places where it will hold the South american games.</seg></tuv>
+    </tu>
+
+     <tu tuid="HISTORIA">
+      <tuv xml:lang="es"><seg>HISTORIA</seg></tuv>
+      <tuv xml:lang="en"><seg>HISTORY</seg></tuv>
+    </tu>
+     <tu tuid="Historia">
+      <tuv xml:lang="es"><seg>Historia</seg></tuv>
+      <tuv xml:lang="en"><seg>History</seg></tuv>
+    </tu>
+    <tu tuid="CONTACTANOS">
+      <tuv xml:lang="es"><seg>CONTACTANOS</seg></tuv>
+      <tuv xml:lang="en"><seg>CONTACT</seg></tuv>
+    </tu>
+    <tu tuid="Videos">
+      <tuv xml:lang="es"><seg>Videos</seg></tuv>
+      <tuv xml:lang="en"><seg>Videos</seg></tuv>
+    </tu>
+    <tu tuid="Galeria de videos">
+      <tuv xml:lang="es"><seg>Galeria de videos</seg></tuv>
+      <tuv xml:lang="en"><seg>Video Gallery</seg></tuv>
+    </tu>
+      <tu tuid="Galeria de imagenes">
+      <tuv xml:lang="es"><seg>Galeria de imagenes</seg></tuv>
+      <tuv xml:lang="en"><seg>Image Gallery</seg></tuv>
+    </tu>
+    <tu tuid="imagenes">
+      <tuv xml:lang="es"><seg>Imagenes</seg></tuv>
+      <tuv xml:lang="en"><seg>Image</seg></tuv>
+    </tu>
+      <tu tuid="ver mas">
+      <tuv xml:lang="es"><seg>ver mas</seg></tuv>
+      <tuv xml:lang="en"><seg>see more</seg></tuv>
+    </tu>
+    <tu tuid="telefono">
+      <tuv xml:lang="es"><seg>Teléfono</seg></tuv>
+      <tuv xml:lang="en"><seg>Phone</seg></tuv>
+    </tu>
+    <tu tuid="celular">
+      <tuv xml:lang="es"><seg>Celular</seg></tuv>
+      <tuv xml:lang="en"><seg>Cell phone</seg></tuv>
+    </tu>
+    <tu tuid="direccion">
+      <tuv xml:lang="es"><seg>Direccion </seg></tuv>
+      <tuv xml:lang="en"><seg>Address</seg></tuv>
+    </tu>
+    
+    <tu tuid="seleccione una opcion">
+      <tuv xml:lang="es"><seg>Seleccione una opcion</seg></tuv>
+      <tuv xml:lang="en"><seg>Select a option</seg></tuv>
+    </tu>
+    <tu tuid="protocolo">
+      <tuv xml:lang="es"><seg>Protocolo</seg></tuv>
+      <tuv xml:lang="en"><seg>Protocol</seg></tuv>
+    </tu>
+    <tu tuid="comunicacion">
+      <tuv xml:lang="es"><seg>Comunicación y Marketing</seg></tuv>
+      <tuv xml:lang="en"><seg>Communication and Marketing</seg></tuv>
+    </tu>
+    <tu tuid="salud">
+      <tuv xml:lang="es"><seg>Salud</seg></tuv>
+      <tuv xml:lang="en"><seg>Health</seg></tuv>
+    </tu>
+    <tu tuid="tecnica">
+      <tuv xml:lang="es"><seg>Técnica deportiva</seg></tuv>
+      <tuv xml:lang="en"><seg>Sports technique</seg></tuv>
+    </tu>
+    <tu tuid="transporte">
+      <tuv xml:lang="es"><seg>Transporte</seg></tuv>
+      <tuv xml:lang="en"><seg>Transport</seg></tuv>
+    </tu>
+    <tu tuid="hospedaje">
+      <tuv xml:lang="es"><seg>Hospedaje y alimentación</seg></tuv>
+      <tuv xml:lang="en"><seg>Lodging and meals</seg></tuv>
+    </tu>
+    <tu tuid="escenario">
+      <tuv xml:lang="es"><seg>Escenarios Deportivos</seg></tuv>
+      <tuv xml:lang="en"><seg>Deportive scenary</seg></tuv>
+    </tu>
+    <tu tuid="tecnologia">
+      <tuv xml:lang="es"><seg>Tecnologías de información</seg></tuv>
+      <tuv xml:lang="en"><seg>Information technologies</seg></tuv>
+    </tu>
+    <tu tuid="servicios">
+      <tuv xml:lang="es"><seg>Ser. a los Comités Olímpicos Nacionales</seg></tuv>
+      <tuv xml:lang="en"><seg>Services NOCs</seg></tuv>
+    </tu>
+    <tu tuid="villa">
+      <tuv xml:lang="es"><seg>Villa Suramericana</seg></tuv>
+      <tuv xml:lang="en"><seg>Villa Suramericana</seg></tuv>
+    </tu>
+    <tu tuid="sub villa">
+      <tuv xml:lang="es"><seg>Sub Villa Suramericana (Trópico)</seg></tuv>
+      <tuv xml:lang="en"><seg>Sub Villa Suramericana ( Tropic) </seg></tuv>
+    </tu>
+    <tu tuid="nombre">
+      <tuv xml:lang="es"><seg>Nombre</seg></tuv>
+      <tuv xml:lang="en"><seg>First name </seg></tuv>
+    </tu>
+    <tu tuid="apellidos">
+      <tuv xml:lang="es"><seg>Apellidos</seg></tuv>
+      <tuv xml:lang="en"><seg>Last name </seg></tuv>
+    </tu>
+    <tu tuid="areas operativas">
+      <tuv xml:lang="es"><seg>Areas operativas</seg></tuv>
+      <tuv xml:lang="en"><seg>Operational Areas </seg></tuv>
+    </tu>
+    <tu tuid="formacion profecional">
+      <tuv xml:lang="es"><seg>Formación profesional</seg></tuv>
+      <tuv xml:lang="en"><seg>Cadre training</seg></tuv>
+    </tu>
+    <tu tuid="estudiante">
+      <tuv xml:lang="es"><seg>Estudiante </seg></tuv>
+      <tuv xml:lang="en"><seg> Student</seg></tuv>
+    </tu>
+     <tu tuid="univercitario">
+      <tuv xml:lang="es"><seg>Universitario</seg></tuv>
+      <tuv xml:lang="en"><seg>University</seg></tuv>
+    </tu>
+     <tu tuid="profecional">
+      <tuv xml:lang="es"><seg>Profesional </seg></tuv>
+      <tuv xml:lang="en"><seg>Cadre</seg></tuv>
+    </tu>
+     <tu tuid="tecnico">
+      <tuv xml:lang="es"><seg> Tecnico profesional</seg></tuv>
+      <tuv xml:lang="en"><seg> Technical</seg></tuv>
+    </tu>
+    <tu tuid="otros">
+      <tuv xml:lang="es"><seg>Otros</seg></tuv>
+      <tuv xml:lang="en"><seg> Others</seg></tuv>
+    </tu>
+    <tu tuid="MARCO LEGAL">
+      <tuv xml:lang="es"><seg>MARCO LEGAL</seg></tuv>
+      <tuv xml:lang="en"><seg> MARCO LEGAL</seg></tuv>
+    </tu>
+    <tu tuid="formulario voluntario">
+      <tuv xml:lang="es"><seg>Formulario de registro para voluntarios </seg></tuv>
+      <tuv xml:lang="en"><seg> Registration Form volunteered to participate</seg></tuv>
+    </tu>
+    <tu tuid="si deceas">
+      <tuv xml:lang="es"><seg>Si deceas pertener y ser parte del voluntariado en los XI juegos suramericanos solicita tu incorporacion mediante el formulario.</seg></tuv>
+      <tuv xml:lang="en"><seg> If you deceas pertener and be a part of volunteering in the XI South American Games requests your incorporation using the form.</seg></tuv>
+    </tu>
+    <tu tuid="venida juan de la rosa">
+      <tuv xml:lang="es"><seg>Avenida Juan de la Rosa esq. Felix del Granado acera sud. </seg></tuv>
+      <tuv xml:lang="en"><seg>Avenida Juan de la Rosa esq. Felix del Granado sud.</seg></tuv>
+    </tu>
+    <tu tuid="telefono_1">
+      <tuv xml:lang="es"><seg>4142006 OFICINA CODESUR</seg></tuv>
+      <tuv xml:lang="en"><seg>4142006 OFFICE CODESUR</seg></tuv>
+    </tu>
+    <tu tuid="telefono_2">
+      <tuv xml:lang="es"><seg>4142007 OFICINA CODESUR </seg></tuv>
+      <tuv xml:lang="en"><seg>4142007 OFFICE CODESUR</seg></tuv>
+    </tu>
+    <tu tuid="telefono_3">
+      <tuv xml:lang="es"><seg> 4142045 OFICINA CODESUR</seg></tuv>
+      <tuv xml:lang="en"><seg>4142045 OFFICE CODESUR</seg></tuv>
+    </tu>
+    <tu tuid="telefono_4">
+      <tuv xml:lang="es"><seg>4140137 FAX CODESUR </seg></tuv>
+      <tuv xml:lang="en"><seg>4140137 FAX CODESUR</seg></tuv>
+    </tu>
+    <tu tuid="redes_sociales">
+      <tuv xml:lang="es"><seg>Redes Sociales</seg></tuv>
+      <tuv xml:lang="en"><seg>Social networks</seg></tuv>
+    </tu>
+    <tu tuid="ORGANIZACION">
+      <tuv xml:lang="es"><seg>ORGANIZACION</seg></tuv>
+      <tuv xml:lang="en"><seg>ORGANIZATION</seg></tuv>
+    </tu>
+    <tu tuid="Organizacion">
+      <tuv xml:lang="es"><seg>Organizacion</seg></tuv>
+      <tuv xml:lang="en"><seg>Organization</seg></tuv>
+    </tu>
+    <tu tuid="consejo nacional">
+      <tuv xml:lang="es"><seg>CONSEJO NACIONAL DE COORDINACION DE LOS XI JUEGOS SURAMERICANOS</seg></tuv>
+      <tuv xml:lang="en"><seg>NATIONAL COUNCIL OF COORDINATION OF XI SOUTH AMERICAN GAMES</seg></tuv>
+    </tu>
+    
+    <tu tuid="COMITE ORGANIZADOR">
+      <tuv xml:lang="es"><seg>COMITE ORGANIZADOR</seg></tuv>
+      <tuv xml:lang="en"><seg>ORGANIZING COMMITTEE</seg></tuv>
+    </tu>
+    
+     <tu tuid="CALENDARIO">
+      <tuv xml:lang="es"><seg>CALENDARIO</seg></tuv>
+      <tuv xml:lang="en"><seg>CALENDAR</seg></tuv>
+    </tu>
+    <tu tuid="Calendario">
+      <tuv xml:lang="es"><seg>Calendario</seg></tuv>
+      <tuv xml:lang="en"><seg>Calendar</seg></tuv>
+    </tu>
+    <tu tuid="Calendario o tentativa">
+      <tuv xml:lang="es"><seg> Calendario para los juegos suramericanos Cochabamba  2018</seg></tuv>
+      <tuv xml:lang="en"><seg>Calendar for the 2018 South American Games Cochabamba</seg></tuv>
+    </tu>
+   <tu tuid="Convocatorias">
+      <tuv xml:lang="es"><seg>Convocatorias</seg></tuv>
+      <tuv xml:lang="en"><seg>Calls</seg></tuv>
+    </tu>
+    <tu tuid="CONVOCATORIAS">
+      <tuv xml:lang="es"><seg>CONVOCATORIAS</seg></tuv>
+      <tuv xml:lang="en"><seg>CALLS</seg></tuv>
+    </tu>
+      <!--////////////////////////////////////////////-->
+      
+    <tu tuid="INICIO">
+      <tuv xml:lang="es"><seg>INICIO</seg></tuv>
+      <tuv xml:lang="en"><seg>HOME</seg></tuv>
+    </tu>
+    
+    <tu tuid="GRUPO">
+      <tuv xml:lang="es"><seg>GRUPO</seg></tuv>
+      <tuv xml:lang="en"><seg>GROUP</seg></tuv>
+    </tu>
+    
+    <tu tuid="Grupo Companex">
+      <tuv xml:lang="es"><seg>Grupo Companex</seg></tuv>
+      <tuv xml:lang="en"><seg>Group Companex</seg></tuv>
+    </tu>
+    
+   <tu tuid="NOTICIAS COMPANEX">
+      <tuv xml:lang="es"><seg>NOTICIAS COMPANEX</seg></tuv>
+      <tuv xml:lang="en"><seg>NEWS COMPANEX</seg></tuv>
+    </tu>
+    
+    <tu tuid="PROVEEDORES">
+      <tuv xml:lang="es"><seg>PROVEEDORES</seg></tuv>
+      <tuv xml:lang="en"><seg>SUPLIERS</seg></tuv>
+    </tu>
+    
+    <tu tuid="CERTIFICACIONES">
+      <tuv xml:lang="es"><seg>CERTIFICACIONES</seg></tuv>
+      <tuv xml:lang="en"><seg>CERTIFICATIONS</seg></tuv>
+    </tu>
+    
+    <tu tuid="Mapa del Sitio">
+      <tuv xml:lang="es"><seg>Mapa del Sitio</seg></tuv>
+      <tuv xml:lang="en"><seg>Site Map</seg></tuv>
+    </tu>
+    
+    <tu tuid="CONTACTOS">
+      <tuv xml:lang="es"><seg>CONTACTOS</seg></tuv>
+      <tuv xml:lang="en"><seg>CONTACT</seg></tuv>
+    </tu>
+    
+    <tu tuid="quienes_somos">
+      <tuv xml:lang="es"><seg>quienes_somos</seg></tuv>
+      <tuv xml:lang="en"><seg>about_us</seg></tuv>
+    </tu>
+    
+    <tu tuid="PARA CONTACTARNOS">
+      <tuv xml:lang="es"><seg>PARA CONTACTARNOS</seg></tuv>
+      <tuv xml:lang="en"><seg>CONTACT US</seg></tuv>
+    </tu>
+    
+    <tu tuid="Requerido">
+      <tuv xml:lang="es"><seg>Requerido</seg></tuv>
+      <tuv xml:lang="en"><seg>Required</seg></tuv>
+    </tu>
+    
+    <tu tuid="Limpiar">
+      <tuv xml:lang="es"><seg>Limpiar</seg></tuv>
+      <tuv xml:lang="en"><seg>Clean</seg></tuv>
+    </tu>
+    
+    <tu tuid="Enviar">
+      <tuv xml:lang="es"><seg>Enviar</seg></tuv>
+      <tuv xml:lang="en"><seg>Send</seg></tuv>
+    </tu>
+     <tu tuid="enviar">
+      <tuv xml:lang="es"><seg>Enviar</seg></tuv>
+      <tuv xml:lang="en"><seg>Send</seg></tuv>
+    </tu>
+    
+    <tu tuid="borrar">
+      <tuv xml:lang="es"><seg>Borrar</seg></tuv>
+      <tuv xml:lang="en"><seg>Delete</seg></tuv>
+    </tu>
+    <tu tuid="mensaje">
+      <tuv xml:lang="es"><seg>Mensaje</seg></tuv>
+      <tuv xml:lang="en"><seg>Message</seg></tuv>
+    </tu>
+  
+    
+    <tu tuid="Ingresa tu mensaje">
+      <tuv xml:lang="es"><seg>Ingresa tu mensaje</seg></tuv>
+      <tuv xml:lang="en"><seg>Enter your message</seg></tuv>
+    </tu>
+    
+    <tu tuid="Todos los derechos reservados">
+      <tuv xml:lang="es"><seg>Todos los derechos reservados</seg></tuv>
+      <tuv xml:lang="en"><seg>All rights reserved</seg></tuv>
+    </tu>
+    
+   
+    
+    <tu tuid="Excelencia en distribución">
+      <tuv xml:lang="es"><seg>Excelencia en distribución</seg></tuv>
+      <tuv xml:lang="en"><seg>Exellence in distribution</seg></tuv>
+    </tu>
+    
+    <tu tuid="NOTICIAS">
+      <tuv xml:lang="es"><seg>NOTICIAS</seg></tuv>
+      <tuv xml:lang="en"><seg>NEWS</seg></tuv>
+    </tu>
+    
+    <tu tuid="Todos los derechos reservados">
+      <tuv xml:lang="es"><seg>Todos los derechos reservados</seg></tuv>
+      <tuv xml:lang="en"><seg>All rights reserved</seg></tuv>
+    </tu>
+    
+    <tu tuid="Sitio desarrollado por">
+      <tuv xml:lang="es"><seg>Sitio desarrollado por</seg></tuv>
+      <tuv xml:lang="en"><seg>Site developed by</seg></tuv>
+    </tu>
+    
+   
+    
+    <tu tuid="Página">
+      <tuv xml:lang="es"><seg>Página</seg></tuv>
+      <tuv xml:lang="en"><seg>Page</seg></tuv>
+    </tu>
+    <tu tuid="Listado de Noticias">
+      <tuv xml:lang="es"><seg>Listado de Noticias</seg></tuv>
+      <tuv xml:lang="en"><seg>News List</seg></tuv>
+    </tu>
+    
+    <tu tuid="Certificaciones">
+      <tuv xml:lang="es"><seg>Certificaciones</seg></tuv>
+      <tuv xml:lang="en"><seg>Certifications</seg></tuv>
+    </tu>
+    
+    <tu tuid="Contactos">
+      <tuv xml:lang="es"><seg>Contactos</seg></tuv>
+      <tuv xml:lang="en"><seg>Contacts</seg></tuv>
+    </tu>
+    <tu tuid="formulario contactos">
+      <tuv xml:lang="es"><seg>Formulario de contactos </seg></tuv>
+      <tuv xml:lang="en"><seg>Form Contacts</seg></tuv>
+    </tu>
+    <tu tuid="asunto">
+      <tuv xml:lang="es"><seg>Asunto</seg></tuv>
+      <tuv xml:lang="en"><seg>Matter</seg></tuv>
+    </tu>
+    <tu tuid="Atrás">
+      <tuv xml:lang="es"><seg>Atrás</seg></tuv>
+      <tuv xml:lang="en"><seg>Back</seg></tuv>
+    </tu>
+    
+  <tu tuid="oficina central">
+      <tuv xml:lang="es"><seg>Oficina Central</seg></tuv>
+      <tuv xml:lang="en"><seg>Central Office</seg></tuv>
+    </tu>  
+    
+    <tu tuid="para consultas acerca">
+      <tuv xml:lang="es"><seg>Para consultas acerca del proceso de gestión.</seg></tuv>
+      <tuv xml:lang="en"><seg>For inquiries about management process.</seg></tuv> 
+    </tu> 
+    
+    <tu tuid="para consultas eventos">
+      <tuv xml:lang="es"><seg>Para consultas acerca de los eventos.</seg></tuv>
+      <tuv xml:lang="en"><seg>For inquiries about events.</seg></tuv> 
+    </tu> 
+    
+    <tu tuid="Productos">
+      <tuv xml:lang="es"><seg>Productos</seg></tuv>
+      <tuv xml:lang="en"><seg>Products</seg></tuv>
+    </tu>
+    
+    <tu tuid="PRODUCTOS">
+      <tuv xml:lang="es"><seg>PRODUCTOS</seg></tuv>
+      <tuv xml:lang="en"><seg>PRODUCTS</seg></tuv>
+    </tu>
+    <tu tuid="PRESENTACIONES">
+      <tuv xml:lang="es"><seg>PRESENTACIONES</seg></tuv>
+      <tuv xml:lang="en"><seg>PRESENTATIONS</seg></tuv>
+    </tu>	
+	<tu tuid="CATALOGO DE PRODUCTOS">
+      <tuv xml:lang="es"><seg>CATALOGO DE PRODUCTOS</seg></tuv>
+      <tuv xml:lang="en"><seg>PRODUCT CATALOG</seg></tuv>
+    </tu>
+	<tu tuid="DESCRIPCIÓN">
+      <tuv xml:lang="es"><seg>DESCRIPCIÓN</seg></tuv>
+      <tuv xml:lang="en"><seg>DESCRIPTION</seg></tuv>
+    </tu>
+	<tu tuid="Items por caja">
+      <tuv xml:lang="es"><seg>Items por caja</seg></tuv>
+      <tuv xml:lang="en"><seg>Items per box</seg></tuv>
+    </tu>
+		<tu tuid="Peso por Item">
+      <tuv xml:lang="es"><seg>Peso por Item</seg></tuv>
+      <tuv xml:lang="en"><seg>Item Weight</seg></tuv>
+    </tu>
+	
+	
+    <tu tuid="Noticias">
+      <tuv xml:lang="es"><seg>Noticias</seg></tuv>
+      <tuv xml:lang="en"><seg>News</seg></tuv>
+    </tu>
+    <tu tuid="Ver más">
+      <tuv xml:lang="es"><seg>Ver más</seg></tuv>
+      <tuv xml:lang="en"><seg>See more</seg></tuv>
+    </tu>
+    <tu tuid="Leer más">
+      <tuv xml:lang="es"><seg>Leer más</seg></tuv>
+      <tuv xml:lang="en"><seg>Read more</seg></tuv>
+    </tu>
+    <tu tuid="Listado de Noticias">
+      <tuv xml:lang="es"><seg>Listado de Noticias</seg></tuv>
+      <tuv xml:lang="en"><seg>News List</seg></tuv>
+    </tu>
+    
+    <tu tuid="Noticia Completa">
+      <tuv xml:lang="es"><seg>Noticia Completa</seg></tuv>
+      <tuv xml:lang="en"><seg>Full Story</seg></tuv>
+    </tu>
+	
+	
+	<tu tuid="Quienes Somos">
+      <tuv xml:lang="es"><seg>Quienes Somos</seg></tuv>
+      <tuv xml:lang="en"><seg>About Us</seg></tuv>
+    </tu>
+	
+	
+    
+    <tu tuid="Socios Estrategicos">
+      <tuv xml:lang="es"><seg>Socios Estrategicos</seg></tuv>
+      <tuv xml:lang="en"><seg>Partners</seg></tuv>
+    </tu>
+	
+	<tu tuid="SOCIOS ESTRATEGICOS">
+      <tuv xml:lang="es"><seg>SOCIOS ESTRATEGICOS</seg></tuv>
+      <tuv xml:lang="en"><seg>PARTNERS</seg></tuv>
+    </tu>
+	
+    
+    <tu tuid="Distribución">
+      <tuv xml:lang="es"><seg>Distribución</seg></tuv>
+      <tuv xml:lang="en"><seg>Distribution</seg></tuv>
+    </tu>
+	
+	<tu tuid="RECETAS">
+      <tuv xml:lang="es"><seg>RECETAS</seg></tuv>
+      <tuv xml:lang="en"><seg>RECIPES</seg></tuv>
+    </tu>
+	
+	
+    
+    <tu tuid="porque_elegirnos">
+      <tuv xml:lang="es"><seg>porque_elegirnos</seg></tuv>
+      <tuv xml:lang="en"><seg>why_choose_us</seg></tuv>
+    </tu>
+	<tu tuid="infraestructura">
+      <tuv xml:lang="es"><seg>infraestructura</seg></tuv>
+      <tuv xml:lang="en"><seg>infrastructure</seg></tuv>
+    </tu>
+	<tu tuid="nuestro_capital_humano">
+      <tuv xml:lang="es"><seg>nuestro_capital_humano</seg></tuv>
+      <tuv xml:lang="en"><seg>our_human_capital</seg></tuv>
+    </tu>
+    
+    <tu tuid="Sus datos fueron enviados con exito.">
+      <tuv xml:lang="es"><seg>Sus datos fueron enviados con exito.</seg></tuv>
+      <tuv xml:lang="en"><seg>Their data were sent successfully.</seg></tuv>
+    </tu>
+    
+    <tu tuid="ETIQUETA">
+      <tuv xml:lang="es"><seg>ETIQUETA</seg></tuv>
+      <tuv xml:lang="en"><seg>LABEL</seg></tuv>
+    </tu>
+    
+    
+    <tu tuid="NUESTROS PROVEEDORES">
+      <tuv xml:lang="es"><seg>NUESTROS PROVEEDORES</seg></tuv>
+      <tuv xml:lang="en"><seg>OUR SUPPLIERS</seg></tuv>
+    </tu>
+    
+    <tu tuid="recetas_img">
+    	<tuv xml:lang="es"><seg>recetas_bo.jpg</seg></tuv>
+    	<tuv xml:lang="en"><seg>recetas_en.jpg</seg></tuv>
+    </tu>
+    
+    <tu tuid="elegirnos_img">
+    	<tuv xml:lang="es"><seg>elegirnos_bo.jpg</seg></tuv>
+    	<tuv xml:lang="en"><seg>elegirnos_en.jpg</seg></tuv>
+    </tu>
+    
+    <tu tuid="infra_img">
+    	<tuv xml:lang="es"><seg>infra_bo.jpg</seg></tuv>
+    	<tuv xml:lang="en"><seg>infra_en.jpg</seg></tuv>
+    </tu>
+    
+    <tu tuid="capital_img">
+    	<tuv xml:lang="es"><seg>capitalh_bo.jpg</seg></tuv>
+    	<tuv xml:lang="en"><seg>capitalh_en.jpg</seg></tuv>
+    </tu>    
+  </body>
+</tmx>

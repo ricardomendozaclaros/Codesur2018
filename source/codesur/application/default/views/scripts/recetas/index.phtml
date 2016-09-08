@@ -1,0 +1,55 @@
+<!-- CENTRO-->
+<div id="contenido_bo">
+ <div id="general_centro_bo">
+	<div id="general_menu_izq_bo"><?php echo $this->partial('layoutbo/menu_izq_bo.phtml',array('idioma'=>$this->idioma,'controlador'=>$this->controlador))?></div>
+	<div id="general_contenido_bo">
+		<div id="general_contenido_1_bo"></div>
+		<div id="general_contenido_2_bo">
+			<h1 class="general_titulo_1_bo"><?php echo $this->translate('RECETAS');?></h1>
+			<div id="rec_contenedor_bo">
+				<?php 
+				$i=0;
+				foreach ($this->tabla as $fila){
+					if($i%2==0)$dir_img='left';else $dir_img='right';
+					if($i>0)$rec_sombra='rec_sombra_cuadro';	
+					$enlace=$this->url(array('idioma'=>$this->idioma,'alias'=>$fila['rec_alias_'.$this->idioma]),'receta_completa_'.$this->idioma);
+								
+				?>
+				
+				<div id="rec_cuadro" class="<?php echo $rec_sombra;?>">				
+						<?php if($fila['rec_img']){?>					
+						<div class="rec_img_cuadro"><img align="<?php echo $dir_img;?>" class="rec_img" src="/upload/recetas/thumb/s<?php echo $fila['rec_img'];?>" alt="<?php echo $fila['rec_img'];?>"/></div>
+						<?php }?>
+						<div class="rec_txt">						
+							<h2 class="rec_titulo_h1"><?php echo $fila['rec_titulo_'.$this->idioma];?></h2>
+							<div class="rec_texto_1"><?php echo $fila['rec_entradilla_'.$this->idioma];?></div>
+							<div class="rec_contenido"><?php echo substr(strip_tags($fila['rec_cuerpo_'.$this->idioma]),0,180).'...';?></div>
+							<div class="bajar"></div>													 
+						</div>			
+						<div class="dir_vermas_<?php echo $dir_img;?>"><a class="rec_vermas" href="<?php echo $enlace;?>"><?php echo ($this->idioma=="es")? "Ver más":"See moore";?></a></div>
+						<div class="bajar"></div>
+				</div>			
+				
+				<?php $i++;		
+				
+				}?>		
+				
+			
+			</div>
+			<!--  paginacion -->
+				 <div class="bajar"></div>
+				<div class="paginador_g3_bo">
+				<?php
+				echo $this->paginationControl($this->tabla,
+													'Sliding',
+													'paginar_g3.phtml');
+				?>
+				</div>
+			
+		</div>
+		<div id="general_contenido_3_bo"></div>		
+	</div>
+ </div>	  
+ 
+<div class="bajar"></div>
+</div><!-- fin centro-->

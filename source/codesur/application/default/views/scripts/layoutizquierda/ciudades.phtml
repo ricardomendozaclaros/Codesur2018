@@ -1,0 +1,33 @@
+<div class="selector_ciudades">
+<div class="titulo_g1_cont" style="margin: 0">
+ 		<div class="titulo_g1_iz"></div>
+ 		<div class="titulo_g1">
+ 		<h1 style="margin: 0;color: #373737;font-size: 14px;text-align: center;width: 180px">Ciudades</h1>
+ 		</div>
+ 		<div class="titulo_g1_de"></div>
+ 	</div>
+ <div id="selector_ciudades">
+ 			<?php 
+ 			$max_ciudades_visibles=9;
+ 			$db=Zend_Registry::get('db');
+ 			$ciudades=$db->fetchAll("SELECT c.*,p.pai_alias FROM anuncio_ciudad c JOIN anuncio_pais p ON c.pai_id=p.pai_id WHERE p.pai_alias=? ORDER BY c.ciu_orden DESC",$this->pais);
+ 			$i=0;
+ 			foreach ($ciudades as $ciudad) 
+ 			{
+ 				$class1=$class2='';
+ 				$i++;
+ 				$enlace_ciudad=$this->url(array('pais'=>$ciudad['pai_alias'],'ciudad'=>$ciudad['ciu_alias']),'pais_ciudad');
+ 				if($i>$max_ciudades_visibles) 					
+ 					$class1='ciudad_oculta';
+
+ 				if($this->ciudad&&$ciudad['ciu_alias']==$this->ciudad)
+ 					$class2=' negrilla';
+ 				
+ 				echo "<a href='$enlace_ciudad' class='$class1$class2'>".$ciudad['ciu_nombre']."</a>";
+ 			}
+ 			
+ 			?>
+ 			<div class="categoria_ver_mas"><a href="#" id="ver_mas_ciudades">Ver Mas»</a></div>
+</div>
+<div id="selector_ciudades_pie"></div>
+</div>

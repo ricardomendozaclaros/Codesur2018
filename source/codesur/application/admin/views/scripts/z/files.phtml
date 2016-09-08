@@ -1,0 +1,224 @@
+<div class="menu_admin borde_cir">
+<span class="titulo_admin" style="color: #0B55C4;font:normal 1.2em Arial,Verdana;">
+<img src="/img/admin/nuevo.png" style="vertical-align: middle;"/> &nbsp;
+<?php echo $this->pre_title." ".$this->title?>
+</span>
+<?php if(!$this->no_listar){?>
+<div>
+	<a href="<?php echo $this->url."/listar";if($this->idp)echo '/idp/'.$this->idp;if($this->idc)echo '/idc/'.$this->idc;?>" id="listar_g"><img src="/img/admin/listar.png"/>
+	<br/>
+	<span>Listar</span>
+	</a>
+</div>
+<?php }?>
+<?php if(!$this->no_cancelar){?>
+<div>
+	<a href="/admin"><img src="/img/admin/cancelar.png"/>
+	<br/>
+	<span>Cancelar</span>
+	</a>
+</div>
+<?php }?>
+<?php if(!$this->no_guardar){?>
+<div>
+	<a href="#" id="guardar_g"><img src="/img/admin/guardar.png"/>
+	<br/>
+	<span>Guardar</span>
+	</a>
+</div>
+<?php }?>
+</div>
+<div class="bajar"></div>
+<br/>
+<?php if($this->mensaje){?>
+<h3 class="mensaje_action"><?php echo $this->mensaje;?></h3>
+<?php }?>
+
+<?php 
+//$this->headScript()->appendFile('/js/jquery/tools/jquery.tools.min.js');
+$this->headScript()->appendFile('/js/jquery/jquery.tools.min.js');
+$this->headScript()->appendScript("
+$(function() { 
+    // setup ul.tabs to work as tabs for each div directly under div.panes 
+    $('ul.tabs').tabs('div.panes > div');    
+});");
+$this->headLink()->appendStylesheet('/css/tabs.css');
+?>
+
+<div class="form_add_edit borde_cir">
+<fieldset>
+<legend><?php echo $this->pre_title." ".$this->title;?></legend>
+
+<ul class="tabs">
+<?php
+
+$this->idiomas=array('es','en');
+$this->idiomas_des=array('Español','Ingles');
+
+$this->idioma_actual=$this->idiomas[0];
+$this->nro_char_lang=(int)strlen($this->idioma_actual);
+
+
+for($i=0;$i<=count($this->idiomas)-1;$i++) {?> 
+    <li><a href="#"><?php echo $this->idiomas_des[$i];?></a></li>     
+<?php }?>    
+</ul>
+
+<form action="<?php echo $this->Form->getAction();?>" method="post" enctype="multipart/form-data" id="form_admin">
+<div class="panes">
+<?php
+foreach ($this->idiomas as $idioma) {?>
+	<div class="pane">
+	<table class="form_admin">
+		<?php		
+		foreach ($this->Form->getElements() as $e)
+		{
+			$idioma_elemento_=substr($e->getName(),-($this->nro_char_lang+1),$this->nro_char_lang+1);
+			$elemento_tiene_idioma=false;
+			if($idioma_elemento_[0]==="_")
+			{	
+				$idioma_elemento=$idioma_elemento_[1].$idioma_elemento_[2];
+				$elemento_tiene_idioma=array_search($idioma_elemento,$this->idiomas);
+			}
+			
+			if($idioma_elemento==$idioma||$elemento_tiene_idioma===false)
+			{
+			if($e->helper!='formHidden'&&$e->helper!='formSubmit'){?>
+			<tr>
+			<td  class="l_e_form">
+				<?php 
+					echo $e->getLabel();
+					if($e->isRequired())
+						echo " <span class='requerido'>*</span>";
+				?>
+			</td>
+			<td>
+				<?php 
+				if(($elemento_tiene_idioma===false&&$this->idioma_actual==$idioma)||($elemento_tiene_idioma!==false&&$idioma_elemento==$idioma))
+				{  echo $e;
+				if($e->helper=="formFile"&&$this->edit_img)
+				{				
+					if(isset($this->imagenes[$e->getName()]))
+						echo "<div id='div_".$e->getName()."'><span>Imagen actual (se borrara automaticamente si carga otra imagen)</span><br/><img src='/".$this->rutas[$e->getName()].$this->imagenes[$e->getName()]."'/><br/><a href='javascript:;' onclick='borrar_imagen(".'"'.$this->Form->getElement($this->id)->getValue().'"'.",".'"'.$e->getName().'"'.");' >Borrar Imagen</a></div>";						
+				}
+				?>
+				<?php 
+					if($e->getAttrib('class')=='tinymce'){?>
+					<a href="javascript:;" onmousedown="toggleEditor('<?php echo $e->getId();?>');">[Mostrar/Ocultar Editor]</a>&nbsp;
+				 <?php }
+				}
+				else 
+				{
+					echo "Se define en el idioma por defecto: ".$this->idioma_actual;
+				}				
+				?>
+			</td>
+			</tr>
+  <?php }else{ echo "<tr><td colspan='2'>".$e."</td></tr>";}}
+		}?>
+  	</table>
+  	</div>
+	
+<?php }?>
+
+</div>
+</form>
+ </fieldset>
+  <script type="text/javascript">
+
+
+	 function borrar_imagen(id,nombre)
+	 {
+		 $.ajax({
+				type: 'POST',
+				url: '<?php echo $this->url?>/borrarimg',
+				data: 'id='+id+'&nombre='+nombre,								
+				success: function(data){
+					$("#div_"+nombre).css('display','none');
+					alert(data);
+					
+				}
+			});	
+	 }
+
+ </script>
+ 
+<?php
+$color_requerido="#f0f0f0";
+echo "<script type='text/javascript'>";
+
+echo "$().ready(function() {";
+	foreach ($this->Form->getElements() as $e)
+		{			
+				if(count($e->getMessages()))
+				{
+					$idioma_elemento=substr($e->getName(),-($this->nro_char_lang),$this->nro_char_lang);
+					$posicion_idioma_elemento=array_search($idioma_elemento,$this->idiomas);
+					$posicio_idioma_actual=array_search($this->idioma_actual,$this->idiomas);
+					
+					if($posicion_idioma_elemento==false)
+						$tab_nro=$posicio_idioma_actual;
+					else
+						$tab_nro=$posicion_idioma_elemento;
+
+					echo "var api = $('ul.tabs').tabs();";
+					echo "api.click($tab_nro);";
+					break;
+				}
+		}
+
+echo "});";
+
+
+echo "$('#form_admin').submit(function(){";
+
+echo "var api = $('ul.tabs').tabs();";
+
+foreach ($this->Form->getElements() as $e)
+		{			
+				if($e->isRequired())
+				{
+					$idioma_elemento=substr($e->getName(),-($this->nro_char_lang),$this->nro_char_lang);
+					$posicion_idioma_elemento=array_search($idioma_elemento,$this->idiomas);
+					$posicio_idioma_actual=array_search($this->idioma_actual,$this->idiomas);
+					
+					if($posicion_idioma_elemento==false)
+						$tab_nro=$posicio_idioma_actual;
+					else
+						$tab_nro=$posicion_idioma_elemento;
+					
+					
+					if($e->helper=='formRadio')
+						echo "
+							if(!$('[name=".'"'.$e->getId().'"'."]:checked').val())
+							{
+								api.click($tab_nro);
+								$('[name=".'"'.$e->getId().'"'."]:checked').focus();
+								alert('Debe Especificar: ".$e->getLabel()."');								
+								return false;
+							}";
+					else
+						echo "
+							if(!$('#".$e->getId()."').val())
+							{
+								api.click($tab_nro);	
+								$('#".$e->getId()."').focus();
+								alert('Debe Especificar: ".$e->getLabel()."');								
+								return false;
+							}";
+					
+									
+					
+				}	
+		
+}
+echo "return true;});
+		</script>";
+?>
+<div id="img_subidas">
+</div>
+<?php /**/?>
+<div class="imagenes"></div>
+ <div class="bajar"></div>
+</div>
+<div id="fileQueue"></div>

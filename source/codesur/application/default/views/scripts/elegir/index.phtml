@@ -1,0 +1,42 @@
+<!-- CENTRO-->
+<div id="contenido_bo">
+ <div id="general_centro_bo">
+	<div id="general_menu_izq_bo"><?php echo $this->partial('layoutbo/menu_izq_bo.phtml',array('idioma'=>$this->idioma,'controlador'=>$this->controlador))?></div>
+	<div id="general_contenido_bo">
+		<div id="general_contenido_1_bo"></div>
+		<div id="general_contenido_2_bo">
+			<div class="ele_fondo_1" >			
+			<h1 class="ele_titulo_bo ele_barra_1" id="<?php echo $this->translate("porque_elegirnos");?>"><?php echo $this->tabla[0]["est_nombre_".$this->idioma];?></h1>
+			<div class="ele_parrafo">				
+				<?php echo $this->tabla[0]["est_contenido_".$this->idioma];?>			
+			</div>
+			</div>
+			
+			
+			<div>
+			
+			<h1 class="ele_titulo_bo ele_barra_2" id="<?php echo $this->translate("infraestructura");?>"><?php echo $this->tabla[1]["est_nombre_".$this->idioma];?></h1>
+			<div class="ele_parrafo">
+				<img class="ele_img_izq" src="/upload/estatico/<?php echo $this->tabla[1]["est_img"];?>"  align="left" alt=""/>
+				<?php echo $this->tabla[1]["est_contenido_".$this->idioma];?>			
+			</div>
+			</div>
+			<div class="bajar"></div>
+			
+			<div>
+			<a name="tag3"></a>
+			<h1 class="ele_titulo_bo ele_barra_2" id="<?php echo $this->translate("nuestro_capital_humano");?>"><?php echo $this->tabla[2]["est_nombre_".$this->idioma];?></h1>
+			<div class="ele_parrafo">
+				<img class="ele_img_der" src="/upload/estatico/<?php echo $this->tabla[2]["est_img"];?>" align="right" alt=""/>
+				<?php echo $this->tabla[2]["est_contenido_".$this->idioma];?>			
+			</div>
+			</div>
+			
+			
+		</div>
+		<div id="general_contenido_3_bo"></div>		
+	</div>
+ </div>	  
+ 
+<div class="bajar"></div>
+</div><!-- fin centro-->

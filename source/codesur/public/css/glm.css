@@ -1,0 +1,151 @@
+.affix {
+    top: 0;
+    width: 100%;
+}
+
+.affix + .container-fluid {
+    padding-top: 100px;
+}
+		
+
+
+.navbar-inverse .navbar-nav > li > a{
+                        color: #fff!important;
+                    }
+.navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover{
+    /*color:#000!important;*/
+    background-color:transparent}
+.dropdown-menu > li.kopie > a {
+    padding-left:5px;
+}
+
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+   top:0;left:100%;
+   margin-top:-6px;margin-left:-1px;
+   -webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;
+ }
+
+.dropdown-submenu > a:after {
+  border-color: transparent transparent transparent #333;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  content: " ";
+  display: block;
+  float: right;
+  height: 0;
+  margin-right: -10px;
+  margin-top: 5px;
+  width: 0;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color:#555;
+ }
+
+.dropdown-menu > li > a:hover, .dropdown-menu > .active > a:hover {
+  text-decoration: underline;
+}
+
+
+/*******************************************************/
+@media screen and (max-width: 2366px) and (min-width: 911px) {
+    .social_link1 {    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: inline;
+    float: right;
+    height: 47px;
+    margin-right: 13px; 
+   }
+    .social_header1{ 
+           padding: 50px 0;          }
+    .bandera_espanol_bo_img {    background: url("../img/bandera_espanol_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;    }
+    .bandera_ingles_bo_img {    background: url("../img/bandera_ingles_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;    }
+    .banderas{            text-align: right;  }
+    .mapa_header{   height: 220px;    padding: 41px 0 0;    text-align: center; }
+    .social_header2{  padding-left: 17px;    padding-right: 0px;  padding-bottom: 0; padding-top: 80px;}
+}
+/**********************************************************************/
+@media screen and (max-width: 911px) and (min-width: 0px) {
+  .mapa_header{    height: 0px;   padding: 0px ;    text-align: center; } 
+  .social_header2{  padding-left: 17px; text-align: center;   padding-right: 0px;  padding-bottom: 0; padding-top: 80px;}
+}
+.sub_menu a{
+  color: #fff;  
+}
+.escenario{
+   background: rgba(0, 0, 0, 0) url("/images/punto_map.png") no-repeat scroll 0 0;
+  
+}
+.titulo_gmap{
+     border-bottom: 1px solid;    font-weight: bold;
+    text-align: center;
+}
+/******************************************************************/
+.boton_mapa{
+border-radius: 11px 11px 11px 11px;
+-moz-border-radius: 11px 11px 11px 11px;
+-webkit-border-radius: 11px 11px 11px 11px;
+    border-radius: 8px;
+    height: 43px;
+    width: 44px;
+}
+.boton_img_map{
+ border-radius:  10px;
+ -moz-border-radius:  10px;
+ -webkit-border-radius:  10px;
+
+    border-bottom: 3px solid #bebebe;
+  
+    border-right: 2px solid #bebebe;
+}
+.boton_img2{
+     /*border: 1px solid #e17f00;*/
+    background:  url("/images/pic_badminton.png") no-repeat scroll center center;
+}
+.boton_img3{background:  url("/images/pic_balonmano.png") no-repeat scroll center center;}
+.boton_img4{background:  url("/images/pic_baloncesto.png") no-repeat scroll center center;}
+.boton_img5{background:  url("/images/pic_bownling.png") no-repeat scroll center center;}
+.boton_img6{background:  url("/images/pic_box.png") no-repeat scroll center center;}
+
+.boton_img7{background:  url("/images/pic_nado_sinc.png") no-repeat scroll center center;}
+.boton_img8{background:  url("/images/pic_bmx.png") no-repeat scroll center center;}
+.boton_img9{background:  url("/images/pic_mtb.png") no-repeat scroll center center;}
+.boton_img10{background:  url("/images/pic_ciclismo.png") no-repeat scroll center center;}
+.boton_img11{background:  url("/images/pic_adestramiento.png") no-repeat scroll center center;}
+.boton_img12{background:  url("/images/pic_esgrima.png") no-repeat scroll center center;}
+.boton_img13{background:  url("/images/pic_futbol.png") no-repeat scroll center center;}
+.boton_img14{background:  url("/images/pic_futsal.png") no-repeat scroll center center;}
+.boton_img15{background:  url("/images/pic_ritmica.png") no-repeat scroll center center;}
+.boton_img16{background:  url("/images/pic_golf.png") no-repeat scroll center center;}
+.boton_img17{background:  url("/images/pic_pesas.png") no-repeat scroll center center;}
+.boton_img18{background:  url("/images/pic_judo.png") no-repeat scroll center center;}
+.boton_img19{background:  url("/images/pic_karate.png") no-repeat scroll center center;}
+.boton_img20{background:  url("/images/pic_pesas.png") no-repeat scroll center center;}
+.boton_img21{background:  url("/images/pic_lucha.png") no-repeat scroll center center;}
+.boton_img22{background:  url("/images/pic_canotaje.png") no-repeat scroll center center;}
+.boton_img23{background:  url("/images/pic_patinaje_carrera.png") no-repeat scroll center center;}
+.boton_img24{background:  url("/images/pic_patinaje_artistico.png") no-repeat scroll center center;}
+.boton_img25{background:  url("/images/pic_fronton.png") no-repeat scroll center center;}
+.boton_img26{background:  url("/images/pic_raquetbol.png") no-repeat scroll center center;}
+.boton_img27{background:  url("/images/pic_rugbi.png") no-repeat scroll center center;}
+.boton_img28{background:  url("/images/pic_scuash.png") no-repeat scroll center center;}
+.boton_img29{background:  url("/images/pic_taekwondo.png") no-repeat scroll center center;}
+.boton_img30{background:  url("/images/pic_arco.png") no-repeat scroll center center;}
+.boton_img31{background:  url("/images/pic_triatlon.png") no-repeat scroll center center;}
+.boton_img32{background:  url("/images/pic_tenis_mesa.png") no-repeat scroll center center;}
+.boton_img33{background:  url("/images/pic_adestramiento.png") no-repeat scroll center center;}
+.boton_img34{background:  url("/images/pic_tenis.png") no-repeat scroll center center;}
+.boton_img35{background:  url("/images/pic_voleibol.png") no-repeat scroll center center;}
+.boton_img36{background:  url("/images/pic_playa.png") no-repeat scroll center center;}
+.table_esc_left img{
+    margin: 4px auto;
+}
+.table_esc_button img{
+    /* margin: auto  10px;*/
+}
+.fondo_bm{
+    background: rgba(0, 0, 0, 0) url("/images/fondo_map_act.gif") no-repeat scroll 2px 8px
+}

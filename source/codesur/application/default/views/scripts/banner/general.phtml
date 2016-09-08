@@ -1,0 +1,41 @@
+<?php 
+$db=Zend_Registry::get('db');
+
+$banners=$db->fetchAll("SELECT * FROM  banner WHERE pos_id=?",$this->pos_id);
+	
+	
+$n=	count($banners);
+if($banners)
+{
+	
+if($this->tipo==1)
+	echo "<div class='scroll_banner contenedorbanner$this->pos_id'><div class='items'>";
+elseif($this->tipo==2)
+	echo "<div class='contenedorbanner$this->pos_id'>";
+
+foreach ($banners as $banner) 
+{	
+	echo "<div>";
+	if($banner['ban_url'])
+		echo "<a target='_blank' href='".$banner['ban_url']."'>";
+		
+	echo "<img alt='".$banner['ban_nombre']."' src='/upload/banner/".$banner['ban_img_'.$this->idioma]."'/>";
+		
+	if($banner['ban_url'])
+		echo "</a>";
+		
+	echo "</div>";
+	
+}
+if($this->tipo==1)
+{	
+	echo "</div></div>";
+	
+}
+elseif($this->tipo==2)
+	echo "</div>";
+?>
+
+
+
+<?php }?>

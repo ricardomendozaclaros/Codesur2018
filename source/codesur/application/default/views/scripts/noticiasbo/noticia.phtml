@@ -1,0 +1,34 @@
+<!-- CENTRO-->
+<div id="contenido_bo">
+ <div id="qsomos_contenido_arriba_bo">
+	<div id="general_menu_izq_bo"><?php echo $this->partial('layoutbo/menu_izq_bo.phtml',array('idioma'=>$this->idioma,'controlador'=>$this->controlador,"categoria"=>$this->categoria,"sub_categoria"=>$this->sub_categoria))?></div>
+	<div id="general_contenido_bo">
+		<div id="general_contenido_1_bo"></div>
+		<div id="general_contenido_2_bo">
+		<h2 class="general_titulo_1_bo"><?php echo $this->translate("NOTICIAS");?></h2>
+			<div class="noticia_lista_cont">
+			<div class="productos_nav"><?php echo $this->translate("Listado de Noticias");?> - <span class="producto_nav_actual"> <?php echo $this->translate("Noticia Completa");?></span></div>         		
+  
+        	        <div class="texto_prin">
+				        <?php if($this->noticia['not_img']){?>
+				        	<div class="not_img"><img class="imagen_prin" src="/upload/noticia/<?php echo $this->noticia['not_img'];?>" align="left" alt="<?php echo $this->noticia['not_img'];?>"/></div>
+				        <?php }?>
+				        <div class="not_fecha"><?php
+				        	$date=new Zend_Date(strtotime($this->noticia['not_fecha_creacion']));							
+							$fecha_ultima_actualizacion=$date->toString("dd MMMM yyyy"); 
+				        	echo $fecha_ultima_actualizacion;?></div>
+				        <h1 class="not_tit_seg"><?php echo $this->noticia['not_titulo_'.$this->idioma];?></h1>
+				        <div class="texto_entradilla"><?php echo $this->noticia['not_entradilla_'.$this->idioma];?></div>            
+			        	<div class="texto_cuerpo"><?php echo $this->noticia['not_cuerpo_'.$this->idioma];?></div>            
+			        </div>
+</div>
+<div style="text-align:  right;margin: 10px;">		    
+<a class="not_bo_ant" href="<?php echo $this->url(array('idioma'=>$this->idioma),'noticiasbo_'.$this->idioma)?>"><?php echo $this->translate("Atrás")?></a>
+</div>
+</div>
+		<div id="general_contenido_3_bo"></div>	
+	</div>
+ </div>	  
+ 
+<div class="bajar"></div>
+</div><!-- fin centro-->	    

@@ -1,0 +1,53 @@
+<!-- CENTRO-->
+<div id="contenido_bo">
+ <div id="qsomos_contenido_arriba_bo">
+	<div id="general_menu_izq_bo"><?php echo $this->partial('layoutbo/menu_izq_bo.phtml',array('idioma'=>$this->idioma,'controlador'=>$this->controlador,"categoria"=>$this->categoria,"sub_categoria"=>$this->sub_categoria))?></div>
+	<div id="general_contenido_bo">
+		<div id="general_contenido_1_bo"></div>
+		<div id="general_contenido_2_bo">
+		<h1 class="general_titulo_1_bo"><?php echo $this->translate("NOTICIAS");?></h1>
+			<div class="noticia_lista_cont">       	
+        	<?php
+		        foreach ($this->secundaria as $fila) {
+		        $enlace=$this->url(array('idioma'=>$this->idioma,'alias_noticia'=>$fila['not_alias_'.$this->idioma]),'noticiabo_completa_'.$this->idioma);
+		        ?>           
+		               <div class="not_listada">
+		                    <?php if($fila['not_img']){?>
+		                            <img class="not_imagen" src="/upload/noticia/thumb/s<?php echo $fila['not_img'];?>" alt="<?php echo $fila['not_img'];?>" align="left"/>
+		                    <?php }?>
+		                    <div class="not_fecha"><?php 
+			                    $date=new Zend_Date(strtotime($fila['not_fecha_creacion']));							
+								$fecha_ultima_actualizacion=$date->toString("dd MMMM yyyy");
+			                    echo $fecha_ultima_actualizacion?></div>
+		                    <h2 class="not_tit_lista"><a href="<?php echo $enlace;?>"><?php echo $fila['not_titulo_'.$this->idioma]?></a></h2>		                    
+		               		<div class="not_entradilla_lista"><?php echo $fila['not_entradilla_'.$this->idioma]?></div>
+		               		<div class="not_leermas"> 
+		                		<a href="<?php echo $enlace;?>"><?php echo $this->translate("Ver más");?></a>
+		                		<div class="bajar"></div>		                		 
+		                	</div>
+		                	
+		                	<div class="not_linea"></div>
+		                	 <div class="bajar"></div> 
+		                </div>		                
+		               
+		            <?php		            		            
+		        }   
+		    ?>
+		    </div>
+		    
+<div class="paginador_g3_bo">
+        			
+					<?php
+					echo $this->paginationControl($this->secundaria,
+														'Sliding',
+														'paginar_g3.phtml');
+					?>
+					
+</div>
+</div>
+		<div id="general_contenido_3_bo"></div>	
+	</div>
+ </div>	  
+ 
+<div class="bajar"></div>
+</div><!-- fin centro-->	    

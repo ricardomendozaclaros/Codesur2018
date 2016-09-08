@@ -1,0 +1,57 @@
+/*Style for onmouse over effect*/
+
+ul#menu, ul#menu ul
+{ list-style-type:none; margin: 0; padding: 0; width: 100%; }
+ul#menu a { display: block; text-decoration: none; cursor:pointer;}
+ul#menu li { margin-top: 1px; }
+ul#menu li a { background: #d78d22; color: #fff; padding: 5px;  height: 25px; vertical-align: middle; text-align:left!important;}
+ul#menu li a:hover { background: #d78d22; cursor:pointer;}
+ul#menu li ul li a { background: #e4b33d; color: #fff;padding: 5px;
+ /*padding-left: 60px;*/
+  text-align:left;
+ cursor:pointer;}
+ul#menu li ul li a:hover { background: #f6d039; border-left: 5px #000 solid;
+ /*padding-left: 60px;*/
+ text-align:left;
+ cursor:pointer;} 
+input[type="checkbox"], input[type="radio"] {
+    line-height: normal;
+    margin: 0px 5px 0px 0px;
+}
+#menu ul 
+{
+    padding: 1px;
+    display: none;
+	text-align:center;
+}
+
+.resp_code {
+    background: none repeat scroll 0 0 #f8f8f8;
+    /*border: 1px solid #ddd;*/
+    border-radius: 0.25em;
+    color: #333;
+    font: 1em/1.3em Tahoma,Geneva,sans-serif;
+   /* margin: 5px 10px 10px;*/
+    overflow: auto;
+   /* padding: 10px 20px;*/
+   
+}
+    *, *:before, *:after {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+/*body {
+    background: #fff none repeat scroll 0 0;
+    color: #666;
+    font: 0.81em/150% Tahoma,Geneva,sans-serif;
+    word-wrap: break-word;
+}*/
+    
+    
+    
+    
+    
+    
+  

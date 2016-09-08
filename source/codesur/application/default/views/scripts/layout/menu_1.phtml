@@ -1,0 +1,99 @@
+     <?php 
+$db=Zend_Registry::get('db');
+$historia=$db->fetchAll("SELECT * FROM historia");
+$convocatoria=$db->fetchAll("SELECT * FROM convocatorias");
+$pdf=$db->fetchAll("SELECT * FROM pdf_documentos where pdf_estado=1");
+$pdf_contra=$db->fetchAll("SELECT * FROM pdf_contrataciones where con_estado=1");
+                    ?>  
+<div class=" container " style="padding: 0px;">
+        
+        
+        
+        
+        <div class='col-md-12' style="padding: 0px;" id="nav_men_he">
+        <nav class="navbar navbar-inverse col-md-12 col-xs-12 affix nav_menu_p" data-offset-top="190" data-spy="affix" style="z-index:3000; padding:0px; margin: 0px;">
+            <div class="containerm" style="   border-radius: 4px;">
+                                       <div class="navbar-header">
+                                               <a class="navbar-link" href="#" style="margin-right:20px;">
+
+                                               </a>
+                                               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                                       <span class="sr-only">Toggle navigation</span>
+                                                       <span class="icon-bar"></span>
+                                                       <span class="icon-bar"></span>
+                                                       <span class="icon-bar"></span>
+                                               </button>
+                                       </div>
+                       <!-- Collect the nav links, forms, and other content for toggling -->
+                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                       <ul class="nav navbar-nav">
+                  <li>   <a href="<?php echo $this->url(array('idioma'=>$this->idioma),'inicio')?>"> COCHA 2018</a>                  </li>
+                  <li class="dropdown">
+                        <a  class="dropdown-toggle" data-toggle="dropdown" href="">
+                              <?php echo $this->translate("MARCO LEGAL")?> <b class="caret"></b>
+                        </a>
+                      <?php if($pdf){ ?>
+                           <ul class="dropdown-menu sub_menu">
+                   
+                      <?php  foreach ($pdf as $h){     ?>
+                            <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma,"pdf_alias"=>$h["pdf_alias_".$this->idioma]),'documentos_'.$this->idioma)?>"><?php echo $h["pdf_titulo_".$this->idioma]?></a></li>
+                            <?php   }?>
+                          
+                            </ul>
+                        <?php }?>
+                   </li>
+                   <li class="dropdown">
+                        <a  class="dropdown-toggle" data-toggle="dropdown">
+                          <?php echo $this->translate("LOS JUEGOS")?><b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu sub_menu">
+                          <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma),'organizacion_'.$this->idioma)?>"><?php echo $this->translate("ORGANIZACION")?></a></li>
+                          <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma),'paises_'.$this->idioma)?>"><?php echo $this->translate("PAISES")?></a></li>
+                          <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma),'deportes_'.$this->idioma)?>"><?php echo $this->translate("DEPORTES")?></a></li>
+                          <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma ),'calendario_'.$this->idioma)?>"><?php echo $this->translate("CALENDARIO")?></a></li>
+                          <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma ,"pagina"=>"pagina01"),'recintos_'.$this->idioma)?>"><?php echo $this->translate("RECINTOS")?></a></li>
+                        </ul>
+                   </li>
+                    
+                    <li>   <a href="<?php echo $this->url(array('idioma'=>$this->idioma),'voluntariado_'.$this->idioma)?>"><?php echo $this->translate("VOLUNTARIADOS")?></a>                  </li>
+                    <li class="dropdown">
+                        <a  class="dropdown-toggle" data-toggle="dropdown">
+                          <?php echo $this->translate("HISTORIA")?><b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu sub_menu">
+                            <?php if($historia){
+                        foreach ($historia as $h){     ?>
+                            <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma,"alias_historia"=>$h["his_alias_".$this->idioma]),'historia_'.$this->idioma)?>"><?php echo $h["his_titulo_".$this->idioma]?></a></li>
+                            <?php   }?>
+                            <?php }?>
+                       </ul>
+                   </li>
+                    <li class="dropdown">
+                        <a  class="dropdown-toggle" data-toggle="dropdown">
+                          <?php echo $this->translate("galeria")?><b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu sub_menu">
+                          <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma,"pagina"=>"pagina01"),'imagenes_'.$this->idioma)?>"><?php echo $this->translate("IMAGENES")?></a></li>
+                          <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma ,"pagina"=>"pagina01"),'galeria_videos_'.$this->idioma)?>"><?php echo $this->translate("videos")?></a></li>
+                       </ul>
+                   </li>
+                     <li class="dropdown">
+                        <a  class="dropdown-toggle" data-toggle="dropdown">
+                               <?php echo $this->translate("CONTRATACIONES")?><b class="caret"></b>
+                        </a>
+                      <?php if($pdf_contra){ ?>
+                           <ul class="dropdown-menu sub_menu">
+                   
+                      <?php  foreach ($pdf_contra as $hh){     ?>
+                            <li><a href="<?php echo $this->url(array('idioma'=>$this->idioma,"contrataciones_alias"=>$hh["con_alias_".$this->idioma]),'contrataciones_'.$this->idioma)?>"><?php echo $hh["con_titulo_".$this->idioma]?></a></li>
+                            <?php   }?>
+                            </ul>
+                        <?php }?>
+                   </li>
+                   <li>    <a href="<?php echo $this->url(array('idioma'=>$this->idioma),'contacto_'.$this->idioma)?>"><?php echo $this->translate("CONTACTANOS")?></a>                 </li> 
+                 </ul>
+               </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+	</nav>
+      </div> 
+    </div>

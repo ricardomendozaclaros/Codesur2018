@@ -1,0 +1,28 @@
+<?php if($this->subcategorias){?>
+<div class="selector_ciudades">
+<div class="titulo_g1_cont" style="margin: 0">
+ 		<div class="titulo_g1_iz"></div>
+ 		<div class="titulo_g1">
+ 		<h1 style="margin: 0;color: #373737;font-size: 14px;text-align: center;width: 180px"><?php echo $this->cat['cat_nombre'];?></h1>
+ 		</div>
+ 		<div class="titulo_g1_de"></div>
+</div>
+ <div class="selector_cat_subcat">
+<?php foreach ($this->subcategorias as $sub) 
+{
+	if($this->ciudad)
+		$enlace_subcategoria=$this->url(array('pais'=>$this->pais,'ciudad'=>$this->ciudad,'categoria'=>$this->cat['cat_alias'],'subcategoria'=>$sub['sub_alias']),'anuncio_subcategoria');
+	else
+		$enlace_subcategoria=$this->url(array('pais'=>$this->pais,'categoria'=>$this->cat['cat_alias'],'subcategoria'=>$sub['sub_alias']),'anuncio_subcategoria');
+	$estilo='';
+	if($sub['sub_alias']==$this->sub['sub_alias'])
+		$estilo='class="negrilla"';	
+			
+	echo "<a href='".$enlace_subcategoria."' $estilo>".$sub['sub_nombre']." (".$sub['nro_anuncios'].")</a>";
+}
+?>
+</div>
+<div id="selector_ciudades_pie"></div>
+</div>
+<br/>
+<?php }?>

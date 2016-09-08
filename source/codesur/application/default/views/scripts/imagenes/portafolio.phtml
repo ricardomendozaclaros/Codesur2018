@@ -1,0 +1,51 @@
+<?php 
+$tabla_vid=$this->secciones;
+
+?>
+<style>
+    .titulo_sec:hover{ cursor:  pointer;  color: #337ab7; }
+</style>
+<link rel="stylesheet" href="/css/lightbox/lightbox.min.css">
+      <div style="margin-top: 10px;">
+          <?php foreach ($tabla_vid as $v){?>
+          <div class="panel panel-primary col-md-3" onclick="buscar(<?php echo $v["sec_id"]?>)" style="  cursor:pointer;  padding: 9px 5px;    text-align: center;   border: 1px solid #fff;">
+              <div class="panel-heading" style="padding: 9px 5px 9px 5px">
+              <h3 class="panel-title"> <?php echo  $v["sec_nombre_".$this->idioma]?></h3>
+            </div>
+            <div class="panel-body" style="height: 196px;text-align: center;">
+                
+               <!--<a class="example-image-link" href="/upload/galeria_fotos/<?php //echo $v["fot_img"]?>"  data-title="<?php //echo $v["fot_titulo_".$this->idioma]?>.">-->
+                   <img class="example-image img-thumbnail" src="/upload/galeria_fotos/thumb/s<?php echo $v["fot_img"]?>" alt="" style="  width: 250px;  height: 150px;border-radius:14px;"/>
+               <!--</a>--> 
+              <p style="text-align: center;font-size: 12px; color: #9d9d9d;"><?php echo $v["fot_titulo_".$this->idioma]?></p>
+            </div>
+          </div> 
+      <?php }?>
+ </div>
+
+<script type="text/javascript">
+    var no_c = jQuery.noConflict();
+    
+ function buscar(sec_id){
+    
+  no_c.ajax({
+        async: true,
+        url: "/imagenes/llamada",
+        type: "POST",
+        data: {
+            'sec_id':sec_id,
+        },
+        beforeSend:function(){
+           // no_c('#load_seccion').html('<img src="/img/cargando.gif" title="Buscando" style="   height: 30px;    width: 31px;"/>');
+                  },
+        dataType: "json",
+        success: function(res){
+            if(res.ok){
+             //  location.href="<?php echo $this->url(array('idioma'=>$this->idioma ,"pagina"=>"pagina01"),'imagenes_'.$this->idioma)?>";
+                    window.open("<?php echo $this->url(array('idioma'=>$this->idioma ,"pagina"=>"pagina01"),'imagenes_'.$this->idioma)?>");
+            }
+        }
+    });
+ }
+</script>
+ <script src="/js/lightbox/lightbox-plus-jquery.min.js"></script>

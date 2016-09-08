@@ -1,0 +1,49 @@
+<!-- CENTRO-->
+<div id="contenido_bo">
+ <div id="general_centro_bo">
+	<div id="general_menu_izq_bo"><?php echo $this->partial('layoutbo/menu_izq_bo.phtml',array('idioma'=>$this->idioma,'controlador'=>$this->controlador))?></div>
+	<div id="general_contenido_bo">
+		<div id="general_contenido_1_bo"></div>
+		<div id="general_contenido_2_bo">
+			<h1 class="general_titulo_1_bo"><?php echo $this->tabla[0]['est_nombre_'.$this->idioma];?></h1>
+		
+		
+			<div id="dis_cuerpo_tab">
+			<div id="dis_tabs">
+			<div id="dis_tabs_list">
+		
+			<!--  Primera pagina Distribucion  -->
+			<?php echo $this->tabla[0]['est_contenido_'.$this->idioma];?>
+			<!--  fin Primera pagina Distribucion  -->
+			
+			
+			<!--  Segunda pagina Distribucion  -->
+	
+			<?php echo $this->tabla[1]['est_contenido_'.$this->idioma];?>
+			<!--  fin Segunda pagina Distribucion  -->
+			
+			
+			<p>
+			<br/><br/><br/>		
+			<a style="height:27px;background:url('/img/back<?php echo ($this->idioma=="en")? "_en":"";?>.png') no-repeat scroll 50% 50% transparent;width: 190px; margin-left: 50px;overflow:hidden;" class="a_pag3_txt pagina_comentario_prev_g3"  href="#" <?php if($this->idcon==1){echo "class='dic_link_active'";}?>><br/></a>
+						
+			<a style="height:27px;width:100px;background:url('/img/next<?php echo ($this->idioma=="en")? "_en":"";?>.png') no-repeat scroll 50% 50% transparent;display: block;float: left;" class="a_pag3_txt pagina_comentario_next_g3" href="#" <?php if($this->idcon==1){echo "class='dic_link_active'";}?>><br/></a>	
+			
+			</p>
+			</div>
+			</div>
+			</div>
+			
+			<script type="text/javascript">
+							$(function() {
+								$("#dis_tabs").tabs("div#dis_tabs_list > div");
+							});
+						</script>	
+			
+		</div>
+		<div id="general_contenido_3_bo"></div>		
+	</div>
+ </div>	  
+ 
+<div class="bajar"></div>
+</div><!-- fin centro-->

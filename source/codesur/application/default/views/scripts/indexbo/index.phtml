@@ -1,0 +1,54 @@
+<!-- CENTRO-->
+<div id="contenido_bo">
+ <div id="qsomos_contenido_arriba_bo">
+	<div id="general_menu_izq_bo"><?php echo $this->partial('layoutbo/menu_izq_bo.phtml',array('idioma'=>$this->idioma,'controlador'=>$this->controlador))?></div>
+	<div id="general_contenido_bo">
+		<div id="general_contenido_1_bo"></div>
+		<div id="general_contenido_2_bo">
+			<h1 class="general_titulo_1_bo"><?php echo $this->tabla[0]["est_nombre_".$this->idioma];?></h1>
+			<div class="qsomos_parrafo_bo">
+				<img class="qsomos_img_bo" src="<?php echo "/upload/estatico/".$this->tabla[0]["est_img"];?>" align="left" alt=""/>
+				<div class="qsomos_texto_bo"><?php echo $this->tabla[0]["est_contenido_".$this->idioma];?></div>   
+			</div> 		
+			<h1 class="general_titulo_1_bo"><?php echo $this->tabla[1]["est_nombre_".$this->idioma];?></h1>
+			<div class="qsomos_parrafo_bo"><?php echo $this->tabla[1]["est_contenido_".$this->idioma];?></div>
+			<div class="qsomos_contenedor_imgs">
+				<div class="qsomos_imagenes_bo">
+					<img class="qsomos_img_tip2_bo" src="<?php echo ($this->idioma=="en")? "/img/mision_en.jpg":"/upload/estatico/".$this->tabla[2]["est_img"];?>"  alt="<?php echo $this->tabla[2]["est_img"];?>" title="<?php echo $this->tabla[2]["est_img"];?>" />
+					<?php echo $this->tabla[2]["est_contenido_".$this->idioma];?>
+				</div>
+				<div class="qsomos_imagenes_bo">	 
+					<img class="qsomos_img_tip2_bo" src="<?php echo ($this->idioma=="en")? "/img/vision_en.jpg":"/upload/estatico/".$this->tabla[3]["est_img"];?>"  alt="<?php echo $this->tabla[3]["est_img"];?>" title="<?php echo $this->tabla[3]["est_img"];?>"/>
+					<?php echo $this->tabla[3]["est_contenido_".$this->idioma];?>
+				</div>
+				<div class="qsomos_imagenes_bo">	
+					<img class="qsomos_img_tip2_bo" src="<?php echo ($this->idioma=="en")? "/img/valores_en.jpg":"/upload/estatico/".$this->tabla[4]["est_img"];?>"  alt="<?php echo $this->tabla[4]["est_img"];?>" title="<?php echo $this->tabla[4]["est_img"];?>"/>
+					<?php echo $this->tabla[4]["est_contenido_".$this->idioma];?>
+				</div>
+				<div class="bajar"></div>
+			</div>	
+		</div>
+		<div id="general_contenido_3_bo"></div>		
+	</div>
+ </div>	  
+ <div id="qsomos_contenido_abajo_bo"> 
+ 	<h2 class="prov_titulo"><?php echo $this->translate("NUESTROS PROVEEDORES"); ?></h2>
+ 	 <div id="prov_rot_box">
+ 	 	<div id="prov_rot_izq"><a class="next prov_ant_bo prov_browse_bo"></a></div>
+ 	 	<div id="prov_rot_cen">		 
+		  <div id="prov_mascara_scroll_bo">
+		  <div class='prov_scroll_bo'>
+			<div class='prov_items_bo'>
+			<?php foreach ($this->tabla2 as $fila){?>
+					<div class="prov_item_bo">
+						<img src="/upload/proveedores/<?php echo $fila['pro_img'];?>" title="<?php echo $fila['pro_nombre_'.$this->idioma];?>" alt="<?php echo $fila['est_nombre_'.$this->idioma];?>" style="float: left;"/>									
+					</div>
+			<?php }?>			
+			</div>
+		  </div>
+		  </div>
+		  </div><!-- <a class="prov_next_bo _browse_bo prov_right_bo"></a> -->
+		  <div id="prov_rot_der"><a class="prev prov_sig_bo prov_browse_bo"></a></div>		
+	</div> </div>
+<div class="bajar"></div>
+</div><!-- fin centro-->

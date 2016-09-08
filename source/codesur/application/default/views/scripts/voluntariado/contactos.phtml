@@ -1,0 +1,235 @@
+  <style type="text/css">
+div#wn {    height: 1071px;    overflow: hidden;    position: relative;    width: 100%;    float: left;    }
+</style>
+<script src="/noticia/dw_con_scroller.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+if ( DYN_WEB.Scroll_Div.isSupported() ) {
+	DYN_WEB.Event.domReady( function() {
+		var wndo = new DYN_WEB.Scroll_Div('wn', 'lyr');
+		wndo.makeSmoothAuto( {axis:'v', bRepeat:true, repeatId:'rpt', speed:30, bPauseResume:true} );
+	});
+}
+
+</script>
+<div class="container" style="background: #c9e4f9 none repeat scroll 0 0; padding:0px;">
+    <div class=" col-md-12 img_formulario" style="padding: 0px; overflow: hidden;">
+     <p>
+       <?php echo  $this->translate("Voluntarios");?>   
+    </p>
+</div> 
+    <div class="logo_voluntariado" style="height: 700px; ">
+      <!--<p style="background: green none repeat scroll 0 0;    border: 1px solid #16a727;    color: #fff;    float: left;    margin: 0;    padding: 0 0 0 27px;    text-align: left;    width: 100%;">--> 
+       <?php  
+       
+       if( $this->ok){        ?>
+	<link rel="stylesheet" href="/popout_vol/demo.css">
+	<div style=" " class="overlay-container">
+            <div class="window-container zoomout" style=" background: #5ab9dd none repeat scroll 0 0;
+    border: 1px solid #f3d634;
+    color: #fff;
+    height: 155px;
+    text-align: center;
+    z-index: 10000;">
+<h3 style="  font-family: Pontano Sans;    margin: 10px;    border-bottom: 1px solid;    padding-bottom: 6px;"><?php echo $this->nombre;?> </h3> 
+                    
+                        <?php echo $this->translate("registro_correcto")?>
+			<?php echo $this->translate("bienvenido_voluntario")?>
+			<br>
+                        
+			<span class="cerrar"><?php echo $this->translate("cerrar");?></span>
+		</div>
+	</div>
+
+	<!--<script>!window.jQuery && document.write(unescape('%3Cscript src="jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>-->
+	<script src="/popout_vol/jquery-1.js"></script>
+	<script type="text/javascript" src="/popout_vol/demo.js"></script>
+
+       <?php } ?>     
+      
+      </p>
+    <p style=" float: left;    font-size: 21px;    padding:0px 30px 0;">
+       <?php echo $this->translate('El primer paso para')?> 
+    </p>
+    
+
+  <link rel="stylesheet" href="/css/bootstrap-multiselect.css" type="text/css"/>  
+<script type="text/javascript" src="/js/bootstrap-multiselect.js"></script>
+<?php 
+$form=$this->form->getElements();?>  
+<div class=" col-md-6" style=" margin-right: 0px;    padding: 0;">
+     <div id="callout-helper-context-color-specificity col-md-12" class="bs-callout bs-callout-info">
+            <h3><?php echo $this->translate('formulario voluntario')?> </h3>
+     </div>
+                <form action="" method="post"  class="form-horizontal" role="form" >
+                   <table style="width: 100%;">
+                        <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('nombre')?>: </label></td>
+                            <td><?php echo $this->form->getElement('vol_nombre');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_nombre']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label  class="col-lg-12 control-label"><?php echo $this->translate('apellidos')?>: </label></td>
+                            <td><?php echo $this->form->getElement('vol_paterno');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_paterno']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        
+<!--                        <tr>
+                            <td><label class="col-lg-12 control-label"><?php //echo $this->translate('areas operativas')?>: </label></td>
+                            <td> -->
+                        <?php 
+                        $db=Zend_Registry::get('db');
+//                        $voluntariado='SELECT vol_id,vol_titulo_es FROM vountariado_tipo where vol_estado=1';	
+//                        $voluntariado=$db->fetchAll($voluntariado);?>
+<!--                         <select name="vol_area_perativa" class =' form-control select_tipo' id="inputSeleccionado" required="required">
+                         <option value=""><?php //echo $this->translate('seleccione una opcion')?></option>-->
+                        <?php //foreach($voluntariado as $v){							?>
+                               <!--<option value="<?php //echo $v["vol_id"];?>"><?php //echo $v["vol_titulo_".$this->idioma];?></option>-->
+                        <?php //}                        ?>
+<!--                             </td>
+                        </tr>-->
+                         <?php 
+                      
+                        $voluntariado='SELECT vol_id,vol_titulo_es FROM vountariado_tipo where vol_estado=1';	
+                        $voluntariado=$db->fetchAll($voluntariado);?>
+             
+                        <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('areas operativas')?>: </label></td>
+                            <td>
+                            <select  name="vol_area_perativa[]" id="example-getting-started" multiple="multiple" required="required" class =' form-control select_tipo' >
+                                  <!--<option value=""><?php //echo $this->translate('seleccione una opcion')?></option>-->
+                                <?php foreach($voluntariado as $v){							?>
+                                <option value="<?php echo $v["vol_id"];?>"><?php echo $v["vol_titulo_".$this->idioma];?></option>
+                                <?php }    ?>
+                                </select>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('formacion profecional')?>: </label></td>
+                            <td>
+                                <select name="vol_formacion_profecional" class =' form-control' id="inputSeleccionado" required="required">
+                                    <option value=""><?php echo $this->translate('seleccione una opcion')?></option>
+                                    <option value="1"><?php echo $this->translate('estudiante')?></option>
+                                    <option value="2"><?php echo $this->translate('univercitario')?></option>
+                                    <option value="3"><?php echo $this->translate('profecional')?></option>
+                                    <option value="4"><?php echo $this->translate('tecnico')?></option>
+                                    <option value="5"><?php echo $this->translate('otros')?></option>
+                               </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('pais')?>: </label></td>
+                            <td> 
+                        <?php 
+                       
+                        $paises='SELECT * FROM voluntario_paises where pai_estado=0';	
+                        $paises=$db->fetchAll($paises);?>
+                         <select name="pai_id" class =' form-control select_tipo' id="inputSeleccionado" required="required">
+                         <option value=""><?php echo $this->translate('seleccione una opcion')?></option>
+                        <?php foreach($paises as $v){							?>
+                               <option value="<?php echo $v["pai_id"];?>"><?php echo $v["pai_nombre"];?></option>
+                        <?php }
+                        ?>
+                             </td>
+                        </tr>
+                         <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('telefono')?>: </label></td>
+                            <td><?php echo $this->form->getElement('vol_telefono');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_telefono']->getMessages());?></span>
+                            </td>
+                        </tr>
+                      <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('celular')?>: </label></td>
+                            <td><?php echo $this->form->getElement('vol_celular');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_celular']->getMessages());?></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label class="col-lg-12 control-label">E-mail: </label></td>
+                            <td><?php echo $this->form->getElement('vol_email');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_email']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr><td><label class="col-lg-12 control-label"><?php echo $this->translate('mensaje')?>: </label></td>
+                            <td ><?php echo $this->form->getElement('vol_mensaje');?>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_mensaje']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center; padding: 20px 0 0;">
+                                <input type="submit" class="btn btn-primary" style=" background: #0094d8 none repeat scroll 0 0;    font-size: 18px;    font-weight: bold;"name="reset" value="<?php echo $this->translate('enviar')?>"/>
+                                <input type="reset" class="btn btn-primary"  style=" background: #0094d8 none repeat scroll 0 0;    font-size: 18px;    font-weight: bold;"name="reset" value="<?php echo $this->translate('limpiar')?>"/></td>
+                        </tr>
+                    </table>
+                               <!--</div>-->
+                </form>
+</div>
+    <div  class=" col-md-6" >
+         
+ <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info" >
+            <h3 ><?php echo $this->translate("Se parte del equipo")?>
+	        
+	    </h3>
+        </div>
+<div class="col-md-12" style="padding: 0px;background: #fff none repeat scroll 0 0;    opacity: 0.85;    padding: 0;">
+   
+<?php 
+
+$db=Zend_Registry::get('db');
+//	$this->principal=$db->fetchAll("
+//        SELECT  DISTINCT  
+//  vountariado_tipo.vol_titulo_es,
+//  vountariado_tipo.vol_titulo_en,
+//  voluntariado.vol_nombre,
+//  voluntariado.vol_paterno
+//  
+//FROM
+//  vountariado_tipo
+//  INNER JOIN voluntariado ON (vountariado_tipo.vol_id = voluntariado.vol_area_perativa) ");
+
+   $miarray = array();
+        $lis ="select v.*,(v.vol_id) as id, vp.pai_nombre from voluntariado v join  voluntario_paises vp where vp.pai_id=v.pai_id";
+        $lis=$db->fetchAll($lis);
+        foreach ($lis as $l){
+            $product_ids=$l["vol_preferencias"];
+            $id=$l["id"];
+            $select = $db->select ()
+                        ->from (array('v'=>"vountariado_tipo"))
+                        ->where('v.vol_id IN (?)', $product_ids);
+           
+        $select=$db->fetchRow($select);    
+        $select["id"]=$id;
+        $select["Nombre"]=$l["vol_nombre"]." ".$l["vol_paterno"];
+        $select["Telefono"]=$l["vol_telefono"];
+        $select["Celular"]=$l["vol_celular"];
+        $select["Pais"]=$l["pai_nombre"];
+        $select["Email"]=$l["vol_email"];
+         $select["Emensaje"]=$l["vol_mensaje"];
+        array_push($miarray,$select);
+        }
+      $principal=$miarray;
+
+        echo $this->partial('/layout/voluntarioaceptados.phtml',array('idioma'=>$this->idioma,"principal"=>$principal )); ?> 
+  </div>
+
+    </div>
+ 
+</div>
+    </div>
+
+
+<script type="text/javascript">
+        var n_d = jQuery.noConflict();
+        n_d(document).ready(function() {
+            n_d('#example-getting-started').multiselect();
+        });
+                n_d('#example-getting-started').multiselect({
+            disableIfEmpty: true,
+            disabledText: 'Seleccione una opción'
+        });
+    </script>
+ 

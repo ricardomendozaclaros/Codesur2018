@@ -1,0 +1,12 @@
+<div class=" col-md-12" style="text-align: justify;">
+    <h2><?php echo $this->mascota["mas_nombre_".$this->idioma];?></h2>
+    <?php  
+//    $date=new Zend_Date($this->noticia["not_fecha_creacion"]);
+//    $fecha= $date->toString("EEEE,  dd  'de' MMMM 'del' YYYY");?>
+    <!--<h4><small><?php //echo $this->mascota["mas_nombre_".$this->idioma]?></small></h4>-->
+   
+    <div class="col-md-8 " style="text-align: center;margin-bottom: 17px;">
+        <img src="/upload/mascotas/<?php echo $this->mascota["mas_img"]?>" title="<?php echo $this->mascota["mas_nombre_".$this->idioma]?>" class=" img-rounded" />
+    </div>
+    <p class="text-muted" style="text-align: justify;"><?php echo $this->mascota["mas_detalle_".$this->idioma];?></p>
+</div>

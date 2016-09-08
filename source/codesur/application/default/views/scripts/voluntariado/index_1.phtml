@@ -1,0 +1,208 @@
+<script src="/js/jquery/tools/jquery.tools.min.js"></script>
+<link rel="stylesheet" type="text/css"      href="/css/overlay/overlay-apple.css"/>
+<link rel="stylesheet" type="text/css"      href="/css/overlay/standalone.css"/>
+<style>
+#custom {
+    background-image:url(/images/box-512.png);
+    width:512px;
+    height:531px;
+    padding:0px;
+}
+#custom div.close {
+    right:-15px;
+    top:-10px;
+}
+#petrol {
+    background-image:url(/images/white.png);
+    color:#fff;
+}
+#apple {
+    background-image:url(/images/apple.png);
+    color:#fff;
+    padding:50px 70px;
+}
+.over_link{
+  color: #000; 
+}
+.over_link:hover{
+  text-decoration: none;  
+}
+</style>
+<div class=" row principal" style="background: #c9e4f9 none repeat scroll 0 0; padding-bottom: 10px;">
+<?php $form=$this->form->getElements();?>  
+    <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info" style="    background: #fff none repeat scroll 0 0;">
+    <h3><?php echo $this->translate('VOLUNTARIADOS')?></h3>
+    <!--<p><?php //echo $this->translate("paises los cuales")?></p>-->
+  </div> 
+
+
+<div class=" col-md-6" style=" margin-right: 0px;    padding: 0;">
+    <p ><?php echo $this->translate("Contactos");?> :voluntariado@cochabamba2018.bo</p> 
+    <h3 class="well well-lg" style="margin: 0 0 13px 46px;  text-align: center;   padding: 13px;" > 
+        <?php echo $this->translate('formulario voluntario')?>        
+    </h3>
+                <form action="" method="post"  class="form-horizontal" role="form" >
+  
+                   <table style="width: 100%;">
+                        <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('nombre')?>: </label></td>
+                            <td><?php echo $this->form->getElement('vol_nombre');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_nombre']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label  class="col-lg-12 control-label"><?php echo $this->translate('apellidos')?>: </label></td>
+                            <td><?php echo $this->form->getElement('vol_paterno');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_paterno']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('areas operativas')?>: </label></td>
+                            <td> 
+                        <?php 
+                        $db=Zend_Registry::get('db');
+                        $voluntariado='SELECT vol_id,vol_titulo_es FROM vountariado_tipo 	where vol_estado=1';	
+                        $voluntariado=$db->fetchAll($voluntariado);?>
+                         <select name="vol_area_perativa" class =' form-control select_tipo' id="inputSeleccionado">
+                         <option value=""><?php echo $this->translate('seleccione una opcion')?></option>
+                        <?php foreach($voluntariado as $v){							?>
+                               <option value="<?php echo $v["vol_id"];?>"><?php echo $v["vol_titulo_".$this->idioma];?></option>
+                        <?php }
+                        ?>
+                             </td>
+                        </tr>
+                         <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('formacion profecional')?>: </label></td>
+                            <td>
+                                <select name="vol_formacion_profecional" class =' form-control' id="inputSeleccionado">
+                                    <option value=""><?php echo $this->translate('seleccione una opcion')?></option>
+                                    <option value="1"><?php echo $this->translate('estudiante')?></option>
+                                    <option value="2"><?php echo $this->translate('univercitario')?></option>
+                                    <option value="3"><?php echo $this->translate('profecional')?></option>
+                                    <option value="4"><?php echo $this->translate('tecnico')?></option>
+                                    <option value="5"><?php echo $this->translate('otros')?></option>
+                               </select>
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('telefono')?>: </label></td>
+                            <td><?php echo $this->form->getElement('vol_telefono');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_telefono']->getMessages());?></span>
+                            </td>
+                        </tr>
+                      <tr>
+                            <td><label class="col-lg-12 control-label"><?php echo $this->translate('celular')?>: </label></td>
+                            <td><?php echo $this->form->getElement('vol_celular');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_celular']->getMessages());?></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label class="col-lg-12 control-label">E-mail: </label></td>
+                            <td><?php echo $this->form->getElement('vol_email');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_email']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr><td><label class="col-lg-12 control-label"><?php echo $this->translate('mensaje')?>: </label></td>
+                            <td ><?php echo $this->form->getElement('vol_mensaje');?>
+                                <span class="texto_error1"><?php echo implode('-',$form['vol_mensaje']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center;">
+                                <input type="submit" class="btn btn-primary" name="reset" value="<?php echo $this->translate('enviar comentario')?>"/>
+                                <input type="reset" class="btn btn-primary" name="reset" value="<?php echo $this->translate('limpiar')?>"/></td>
+                        </tr>
+                    </table>
+                               <!--</div>-->
+                </form>
+    <div class=" col-md-12">
+   
+<div style="margin-top: 10px;">
+    <h4 class="well well-lg">   <?php echo $this->translate("preguntas frecuentes");?></h4>
+ 
+    <div class="bajar"></div>
+  <?php foreach ($this->preguntas as $v){?>
+    <a class="over_link" href="#" rel=".petrol<?php echo$v["pre_id"];?>" style="color: #dc9600;" > <?php echo$v["pre_titulo_".$this->idioma];?></a>
+    <!--<button rel=".petrol<?php //echo$v["pre_id"];?>" type="button"><?php //echo$v["pre_titulo_".$this->idioma];?></button>-->
+    <div class="bajar"></div>
+    <div class="apple_overlay petrol<?php echo$v["pre_id"];?>" id="petrol" >
+           <h2 style="margin:0px; text-align: center; color: #000"><?php echo$v["pre_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px;"> <?php echo$v["pre_descripcion_".$this->idioma];?> </div>
+           
+    </div>
+    <?php }?>
+</div>
+    </div>
+    
+       
+</div>
+<div class=" col-md-6 example-image-link " style="   ">
+    <div class=" col-md-6" style="text-align: center;">
+      <?php if($this->idioma=="en"){                  ?>
+                <!--<img src="/img/unete_en.png" alt="" class="example-image img-thumbnail" />-->
+                  <?php }else{               ?>
+                 <!--<img src="/img/unete_es.png" alt=""  class="example-image img-thumbnail"/>-->
+                  <?php }?>     
+    </div>
+    <div class="bajar"></div>
+	<div class=" col-md-12 example-image-link " style="    text-align: center;">
+	 <img src="/images/NUNA-VOLUNTARIA.png" alt="" class="example-image img-thumbnail"  style="width:189px;height:209px;"/>
+         <img src="/images/JUKI-VOLUNTARIO.png" alt="" class="example-image img-thumbnail" style="width:189px;height:209px;"/>
+	</div>
+ <div class="bajar"></div>
+ <p style=" border-bottom: 1px solid;    color: #dc9600;    font-size: 20px;    font-weight: bold;    margin: 7px 0;"><?php echo $this->translate("descripcion")?></p>
+ <div id="dato" style=" 
+      background:#fff  url('/images/fondo_voluntariado.jpg')no-repeat;
+    /*background: #fff none repeat scroll 0 0;*/
+    border: 1px solid #dc9600;
+    border-radius: 10px;
+    height: 280px;
+    padding: 10px;
+    width: 100%;">
+     
+    <?php echo $this->que_es;?>
+
+ </div>
+        
+</div>
+   
+   
+</div>
+<script type="text/javascript">
+    var tipo = jQuery.noConflict();
+tipo(document).ready(function(){
+    tipo(".select_tipo").change(function()
+        {
+                var dato=tipo(this).val();				
+        tipo.ajax({
+                async:true,
+                url:"/voluntariado/detalle",
+                data: {'dato':dato},
+                beforeSend:function()
+                {
+                        tipo("#dato").html('<img src="/img/ajax/load2.gif" alt="" title="" />');
+                },
+                dataType:"json",
+                success:function(res)
+                {
+                        if(res.ok){
+                                tipo("#dato").html(res.html);
+                            }
+                }
+                });
+        });
+});
+    
+</script>
+<script>
+    var voluntario = jQuery.noConflict();
+  voluntario(document).ready(function(){
+  voluntario("a[rel]").overlay({mask: '#696969', effect: 'apple'});  
+});
+
+</script>
+
+ 

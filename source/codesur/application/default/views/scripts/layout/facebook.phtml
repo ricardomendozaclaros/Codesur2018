@@ -1,0 +1,45 @@
+<?php 
+$db=Zend_Registry::get('db');
+$q="select * from video WHERE vid_estado=1";
+$tabla_vid=$db->fetchAll($q);
+$i=1;
+$q="select * from video WHERE vid_estado=1 and vid_tipo=1 order by vid_id desc limit 0,2";
+$vid=$db->fetchAll($q);
+$lin="select * from link WHERE lin_estado=1 ";
+$lin=$db->fetchAll($lin);
+?>
+
+<div class="bajar"></div>
+<div style="margin-left: 12px;">
+    
+    
+    
+ <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info" style="background: none; background-color:#97ac35 ">
+	    <h3><?php echo $this->translate("Videos");?></h3>
+ </div>
+
+<?php  foreach($vid as $v){
+          $vi= str_replace("watch?v=", "embed/", $v['vid_youtube']);
+           if($vi)
+           {            ?>
+      <div class="col-md-12" style="    border-radius: 15px;    margin-left: 5px;    padding: 10px;    text-align: center;"> 
+          <iframe id="ytplayer" type="text/html"   width="350" height="200"    src="<?php echo $vi?>"     frameborder="0"/></iframe>
+      </div>
+        <div class="bajar"></div>   
+               <?php           }    }           ?>
+<!-- <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info" style="background: none; background-color:#97ac35 ">
+	    <h3><?php //echo $this->translate("Facebook");?></h3>
+ </div>        -->
+<!--<div class="fb-page" data-href="https://www.facebook.com/cochabamba2018" data-tabs="timeline" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/cochabamba2018"><a href="https://www.facebook.com/cochabamba2018">Cochabamba 2018</a></blockquote></div></div>-->
+<div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+	    <h3><?php echo $this->translate("enlaces de interes");?></h3>
+	</div>
+<?php   foreach ( $lin as $l){    ?>
+<ul class="ul_link" style=" padding: 0 10px 0 0;    text-align: right;">
+    <li >
+        <a href="http://<?php echo $l["lin_link"]?>"  target="_blank"><?php echo $l["lin_titulo_".$this->idioma]?></a>
+        <div  class="link_interes" ></div>
+    </li>
+</ul>
+<?php }?>
+</div>

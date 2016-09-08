@@ -1,0 +1,344 @@
+<script src="/js/jquery/tools/jquery.tools.min.js"></script>
+<link rel="stylesheet" type="text/css"      href="/css/overlay/overlay-apple.css"/>
+<link rel="stylesheet" type="text/css"      href="/css/overlay/standalone.css"/>
+<style>
+#custom {
+    background-image:url(/images/box-512.png);
+    width:512px;
+    height:531px;
+    padding:0px;
+}
+#custom div.close {
+    right:-15px;
+    top:-10px;
+}
+#petrol {
+    background-image:url(/images/white.png);
+    color:#fff;
+}
+#apple {
+    background-image:url(/images/apple.png);
+    color:#fff;
+    padding:50px 70px;
+}
+.over_link{
+  color: #000; 
+}
+.over_link:hover{
+  text-decoration: none;  
+}
+</style>
+<?php 
+ $db = Zend_Registry::get ( 'db' );
+        $q="SELECT * FROM `voluntariado_pdf` WHERE pdf_tipo =0 AND pdf_estado =1";
+        $pdf=$db->fetchRow($q);
+        $vol="SELECT * FROM `voluntariado` ";
+        $vol=$db->fetchAll($vol);
+        $num=  count($vol);
+        ?>
+<div class=" col-md-12 img_voluntario" style="padding: 0px;">
+    <div style='float: left;border: 1px solid;margin-top: 10px;'>
+           <p style="   font-size: 26px;width: 100%;    margin-bottom: 0; margin-top: 235px;"><?php echo $this->translate("ya somos")?></p>
+        <p style="font-size: 89px;
+height: 99px;
+margin-bottom: 0px;
+margin-top: -21px;
+text-shadow: 5px 5px rgb(149, 149, 149);
+width: 100%;
+font-weight: 700;"><?php echo " ".$num." " ?></p>
+        <p style=" font-size: 52px;width: 100%;margin-top: -7px;">   <?php    echo    $this->translate("Voluntarios");?>    </p> 
+    </div>
+   
+   
+</div> 
+<div class=" col-md-12 div_pestania" >
+    <div class=" col-md-12 " style="padding: 40px 0px;" >
+        <div class=" col-md-7 " >
+            <p class="text_vol1">
+               <?php echo  $this->translate("Los voluntarios son aquellas personas");?> 
+            </p>
+        </div>
+        <div class=" col-md-5 link_form" >
+               <a href="<?php echo $this->url(array('idioma'=>$this->idioma,"enviado"=>"formulario"),'contacto_voluntariado_'.$this->idioma)?>"  >
+                <div class="btn_form"><?php echo $this->translate("formulario_de_inscripcion");?> </div>
+            </a>    
+        </div>
+   </div>
+    <div class="bajar"></div>
+    <a name="areas_operativas"></a>
+    <div class=" col-md-12 " >
+        <p class="text_vol2">
+            <?php echo  $this->translate("En este gran evento tendrás");?>
+       </p>
+        
+    </div> 
+    <div class="bajar"></div>
+    
+    <div id="callout-helper-context-color-specificity col-md-12" class="bs-callout bs-callout-info">
+    
+                <h3>
+                    <?php echo $this->translate("Areas Operativas")?>
+                </h3>
+        
+     </div>
+</div>
+
+  <div class="bajar"></div>
+  <div class="col-md-12 vol_operativas" style="float: left;height: auto;width: 100%;">
+<div class=" col-md-3" >
+    <div class=" col-md-12 vol_cen" style="text-align: right;">
+        <a class="over_link" href="#" rel=".petrol_<?php echo $this->vol[4]["vol_id"];?>"  style="float: right;text-align: center;width: 120px;  ">
+            
+              <img src="/img/vol_transporte.png" title="<?php echo $this->translate("Transporte")?>" class="vol_de1 " />
+              <p>  <?php echo $this->translate("Transporte")?></p>
+        </a>
+        <div class="apple_overlay  over_vol petrol_<?php echo $this->vol[4]["vol_id"];?>" id="petrol" >
+            <h2 style="margin:0px; text-align: center; " class="titulo_dep" ><?php echo $this->vol[4]["vol_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify; font-size: 12px;"> <?php echo $this->vol[4]["vol_descripcion_".$this->idioma];?> </div>
+        </div>
+    </div>
+    
+    <div class=" col-md-12 vol_cen" style="text-align: right;">
+        <a class="over_link" href="#" rel=".petrol_<?php echo $this->vol[7]["vol_id"];?>"  style="float: right; width: 120px;text-align: center;">
+            <img src="/img/vol_tic.png" title="<?php echo $this->translate("Tecnologías De La Información")?>"  class="vol_de2 "/>
+            <p >  <?php echo $this->translate("Tecnologías De La Información")?></p>
+        </a>
+        <div class="apple_overlay over_vol petrol_<?php echo $this->vol[7]["vol_id"];?>" id="petrol" >
+           <h2 style="margin:0px;  text-align: center;" class="titulo_dep"><?php echo $this->vol[7]["vol_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->vol[7]["vol_descripcion_".$this->idioma];?> </div>
+        </div>
+    </div>
+    
+</div>
+<div class=" col-md-6 vol_cen">
+    <div class=" col-md-12 vol_cen">
+        <div class="col-md-6 vol_cen">
+            <a class="over_link" href="#" rel=".petrol_<?php echo $this->vol[6]["vol_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/vol_escenarios.png" title="<?php echo $this->translate("Escenarios Deportivos")?>" class="vol_de6"/>
+            <p><?php echo $this->translate("Escenarios Deportivos")?></p> 
+            </a>
+         <div class="apple_overlay  over_vol petrol_<?php echo $this->vol[6]["vol_id"];?>" id="petrol" >
+           <h2 style="margin:0px;  text-align: center;"class="titulo_dep"><?php echo $this->vol[6]["vol_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->vol[6]["vol_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+        
+        <div class="col-md-6 vol_cen">
+             <a class="over_link" href="#" rel=".petrol_<?php echo $this->vol[0]["vol_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/vol_protocolo.png" title="<?php echo $this->translate("Protocolo")?>" class="vol_de6"/>
+            <p><?php echo $this->translate("Protocolo")?></p>
+            </a>
+         <div class="apple_overlay  over_vol petrol_<?php echo $this->vol[0]["vol_id"];?>" id="petrol" >
+           <h2 style="margin:0px;  text-align: center;"class="titulo_dep"><?php echo $this->vol[0]["vol_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->vol[0]["vol_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+    </div>
+    <div class="col-md-12 vol_cen">
+        <a class="over_link" href="#" rel=".petrol_<?php echo $this->vol[3]["vol_id"];?>"  style="width: 120px;text-align: center;">
+        <img src="/img/vol_tecnica.png" title="<?php echo $this->translate("Técnica Deportiva")?>"  class="vol_de8" />
+        <p>  <?php echo $this->translate("Técnica Deportiva")?></p>
+        </a>
+         <div class="apple_overlay  over_vol petrol_<?php echo $this->vol[3]["vol_id"];?>" id="petrol" >
+           <h2 style="margin:0px; text-align: center;"class="titulo_dep"><?php echo $this->vol[3]["vol_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->vol[3]["vol_descripcion_".$this->idioma];?> </div>
+        </div>
+    </div> 
+    <div class=" col-md-12 vol_cen">
+        <div class="col-md-6 vol_cen">
+            <a class="over_link" href="#" rel=".petrol_<?php echo $this->vol[5]["vol_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/vol_hospedaje.png" title="<?php echo $this->translate("Hospedaje y Alimentación")?>" class="vol_de7"/>
+            <p>   <?php echo $this->translate("Hospedaje y Alimentación")?></p>
+             </a>
+         <div class="apple_overlay  over_vol petrol_<?php echo $this->vol[5]["vol_id"];?>" id="petrol" >
+           <h2 style="margin:0px;  text-align: center;"class="titulo_dep"><?php echo $this->vol[5]["vol_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->vol[5]["vol_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+          <a name="beneficios_del_voluntario"></a>
+        <div class="col-md-6 vol_cen">
+            <a class="over_link" href="#" rel=".petrol_<?php echo $this->vol[8]["vol_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/vol_con.png" title="<?php echo $this->translate("Comites Olimpicos Nacionales")?>" class="vol_de7"  />
+                <p><?php echo $this->translate("Comites Olimpicos Nacionales")?></p>
+                 </a>
+         <div class="apple_overlay  over_vol petrol_<?php echo $this->vol[8]["vol_id"];?>" id="petrol" >
+           <h2 style="margin:0px;  text-align: center;"class="titulo_dep"><?php echo $this->vol[8]["vol_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->vol[8]["vol_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+    </div>
+</div>
+<div class=" col-md-3" >
+     <div class=" col-md-12 vol_cen"  style="text-align: left;">
+       <a class="over_link" href="#" rel=".petrol_<?php echo $this->vol[1]["vol_id"];?>"  style="float: left;width: 120px;text-align: center;">
+        <img src="/img/vol_marketing.png" title="<?php echo $this->translate("Marketing y Comunicación")?>"  class="vol_de1"/>
+        <p>  <?php echo $this->translate("Marketing y Comunicación")?></p>
+       </a>
+         <div class="apple_overlay  over_vol petrol_<?php echo $this->vol[1]["vol_id"];?>" id="petrol" >
+           <h2 style="margin:0px;  text-align: center;"class="titulo_dep"><?php echo $this->vol[1]["vol_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->vol[1]["vol_descripcion_".$this->idioma];?> </div>
+        </div>
+</div>
+    <div class=" col-md-12 vol_cen"  style="text-align: left;">
+        <a class="over_link" href="#" rel=".petrol_<?php echo $this->vol[2]["vol_id"];?>"  style="float: left;width: 120px;text-align: center;">
+            <img src="/img/vol_medica.png" title="<?php echo $this->translate("Médica")?>" class="vol_de2 "/>
+            <p><?php echo $this->translate("Médica")?></p>
+         </a>
+         <div class="apple_overlay  over_vol petrol_<?php echo $this->vol[2]["vol_id"];?>" id="petrol" >
+           <h2 style="margin:0px; text-align: center;"class="titulo_dep"><?php echo $this->vol[2]["vol_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->vol[2]["vol_descripcion_".$this->idioma];?> </div>
+        </div>
+    </div>
+</div> 
+        
+        </div> 
+  <a name="beneficios_del_voluntario"></a>
+   <div class="bajar"></div>
+
+  <div id="callout-helper-context-color-specificity col-md-12" class="bs-callout bs-callout-info">
+            <h3><?php echo $this->translate("Beneficios del voluntario")?></h3>
+     </div>
+    <div class="bajar"></div>
+    <div class=" col-md-12 vel_beneficios">
+        <div class=" col-md-3">
+            <a class="over_link" href="#" rel=".petrol_b<?php echo $this->ben[0]["ben_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/ben_capacitacion.png" title="<?php echo $this->translate("Capacitación exclusiva")?>" class=""/>
+            <p><?php echo $this->translate("Capacitación exclusiva")?></p>
+             </a>
+         <div class="apple_overlay  over_vol petrol_b<?php echo $this->ben[0]["ben_id"];?>" id="petrol" >
+           <h2 style="margin:0px;  text-align: center;"class="titulo_dep"><?php echo $this->ben[0]["ben_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify; font-size: 12px;"> <?php echo $this->ben[0]["ben_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+        
+        
+         <div class=" col-md-3">
+             <a class="over_link" href="#" rel=".petrol_b<?php echo $this->ben[1]["ben_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/ben_amigos.png" title="<?php echo $this->translate("Amigos y contactos")?>" class=""/>
+            <p><?php echo $this->translate("Amigos y contactos")?></p>
+               </a>
+         <div class="apple_overlay  over_vol petrol_b<?php echo $this->ben[1]["ben_id"];?>" id="petrol" >
+           <h2 style="margin:0px;  text-align: center;"class="titulo_dep"><?php echo $this->ben[1]["ben_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->ben[1]["ben_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+        
+         <div class=" col-md-3">
+             <a class="over_link" href="#" rel=".petrol_b<?php echo $this->ben[2]["ben_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/ben_regalos.png" title="<?php echo $this->translate("Regalos unicos")?>" class=""/>
+            <p><?php echo $this->translate("Regalos unicos")?></p>
+                 </a>
+         <div class="apple_overlay  over_vol petrol_b<?php echo $this->ben[2]["ben_id"];?>" id="petrol" >
+           <h2 style="margin:0px;  text-align: center;"class="titulo_dep"><?php echo $this->ben[2]["ben_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->ben[2]["ben_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+        
+         <div class=" col-md-3">
+             <a class="over_link" href="#" rel=".petrol_b<?php echo $this->ben[3]["ben_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/ben_uniforme.png" title="<?php echo $this->translate("Uniforme de voluntariado")?>" class=""/>
+            <p><?php echo $this->translate("Uniforme de voluntariado")?></p>
+                   </a>
+         <div class="apple_overlay  over_vol petrol_b<?php echo $this->ben[3]["ben_id"];?>" id="petrol" >
+           <h2 style="margin:0px; text-align: center;" class="titulo_dep"><?php echo $this->ben[3]["ben_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->ben[3]["ben_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+    </div>
+    <div class=" col-md-12 vel_beneficios">
+        <div class=" col-md-3">
+            <a class="over_link" href="#" rel=".petrol_b<?php echo $this->ben[4]["ben_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/ben_tarjeta.png" title="<?php echo $this->translate("Tarjeta de voluntariado")?>" class=""/>
+            <p><?php echo $this->translate("Tarjeta de voluntariado")?></p>
+                     </a>
+         <div class="apple_overlay  over_vol petrol_b<?php echo $this->ben[4]["ben_id"];?>" id="petrol" >
+           <h2 style="margin:0px; text-align: center;"class="titulo_dep"><?php echo $this->ben[4]["ben_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->ben[4]["ben_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+        
+         <div class=" col-md-3">
+              <a class="over_link" href="#" rel=".petrol_b<?php echo $this->ben[5]["ben_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/ben_alimentacion.png" title="<?php echo $this->translate("Alimentacion")?>" class=""/>
+            <p><?php echo $this->translate("Alimentacion")?></p>
+                       </a>
+         <div class="apple_overlay  over_vol petrol_b<?php echo $this->ben[5]["ben_id"];?>" id="petrol" >
+           <h2 style="margin:0px; text-align: center;"class="titulo_dep"><?php echo $this->ben[5]["ben_titulo_".$this->idioma];?></h2>
+           <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->ben[5]["ben_descripcion_".$this->idioma];?> </div>
+        </div>
+        </div> 
+        
+         <div class=" col-md-3">
+             <a class="over_link" href="#" rel=".petrol_b<?php echo $this->ben[6]["ben_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/ben_seguro.png" title="<?php echo $this->translate("Seguro contra accidentes")?>" class=""/>
+            <p><?php echo $this->translate("Seguro contra accidentes")?></p>
+                        </a>
+            <div class="apple_overlay  over_vol petrol_b<?php echo $this->ben[6]["ben_id"];?>" id="petrol" >
+              <h2 style="margin:0px; text-align: center;"class="titulo_dep"><?php echo $this->ben[6]["ben_titulo_".$this->idioma];?></h2>
+              <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->ben[6]["ben_descripcion_".$this->idioma];?> </div>
+           </div>
+        </div> 
+         <div class=" col-md-3">
+             <a class="over_link" href="#" rel=".petrol_b<?php echo $this->ben[7]["ben_id"];?>"  style="width: 120px;text-align: center;">
+            <img src="/img/ben_cetificado.png" title="<?php echo $this->translate("Certificado de capacitación")?>" class=""/>
+            <p><?php echo $this->translate("Certificado de capacitación")?></p>
+                      </a>
+            <div class="apple_overlay  over_vol petrol_b<?php echo $this->ben[7]["ben_id"];?>" id="petrol" >
+              <h2 style="margin:0px;  text-align: center;"class="titulo_dep" ><?php echo $this->ben[7]["ben_titulo_".$this->idioma];?></h2>
+              <div style="color: #666;margin-top: 10px; text-align: justify;"> <?php echo $this->ben[7]["ben_descripcion_".$this->idioma];?> </div>
+           </div>
+        </div> 
+    </div>
+     <div class=" col-md-12">
+        <div class=" col-md-6">
+   
+        <div style="margin-top: 10px;">
+            <!--<h4 class="well well-lg">   <?php //echo $this->translate("preguntas frecuentes");?></h4>-->
+     <div id="callout-helper-context-color-specificity col-md-12" class="bs-callout bs-callout-info">
+            <h3><?php echo $this->translate("preguntas frecuentes");?></h3>
+     </div>
+            <div class="bajar"></div>
+          <?php foreach ($this->preguntas as $v){?>
+            <a class="over_link" href="#" rel=".petrol<?php echo$v["pre_id"];?>" style="" > <?php echo$v["pre_titulo_".$this->idioma];?></a>
+            <!--<button rel=".petrol<?php //echo$v["pre_id"];?>" type="button"><?php //echo$v["pre_titulo_".$this->idioma];?></button>-->
+            <div class="bajar"></div>
+            <div class="apple_overlay petrol<?php echo$v["pre_id"];?>" id="petrol" >
+                   <h2 style="margin:0px; text-align: center; " class="titulo_dep"><?php echo$v["pre_titulo_".$this->idioma];?></h2>
+                   <div style="color: #666;margin-top: 10px;"> <?php echo$v["pre_descripcion_".$this->idioma];?> </div>
+
+            </div>
+            <?php }?>
+        </div>
+    </div>
+<div class=" col-md-6">
+
+        <div style="margin-top: 10px;">
+             <div id="callout-helper-context-color-specificity col-md-12" class="bs-callout bs-callout-info">
+            <h3><?php echo $this->translate("Contactanos para mayor información");?></h3>
+             </div>
+            <!--<h4 class="well well-lg">   <?php //echo $this->translate("Contactanos para mayor información");?></h4>-->
+          
+            <div class="bajar"></div>
+            <p > <b>Mail :</b> voluntariado@cochabamba2018.bo</p> 
+        </div>
+</div>
+          </div>
+    <div class=" col-md-12" >
+        <div class=" col-md-4" > </div>
+       <div class="col-md-4" > 
+        <a  href="<?php echo $this->url(array('idioma'=>$this->idioma,"pdf_alias"=>$pdf["pdf_alias_".$this->idioma]),'documento_voluntariado_'.$this->idioma)?>">
+            <div class="btn_ley ">
+                <?php echo $this->translate("Ley del Voluntariado");?>   
+            </div>
+        </a>
+         </div>
+   <div class=" col-md-4" > </div>
+    </div>
+  
+<script>
+    var voluntario = jQuery.noConflict();
+  voluntario(document).ready(function(){
+  voluntario("a[rel]").overlay({mask: '#333', effect: 'apple'});  
+});
+
+</script>

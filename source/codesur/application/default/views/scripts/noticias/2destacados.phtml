@@ -1,0 +1,31 @@
+ <?php 
+
+ $db=Zend_Registry::get('db');
+ $this->ultimas=$db->fetchAll("
+				SELECT * 
+				FROM noticia 
+				WHERE not_estado=1 AND not_pos=2
+				ORDER BY not_fecha_creacion DESC 
+				LIMIT 10
+				");
+ 
+ ?>
+ 
+ <div id="gen_der_arriba">
+	        	<h3 class="not_tit_barra2" ><?php echo $this->translate('ULTIMAS NOTICIAS');?></h3>
+	        </div>
+	        <div id="not_der_abajo">
+	        	<?php
+		        foreach ($this->ultimas as $fila) {
+		        $enlace=$this->url(array('idioma'=>$this->idioma,'alias_noticia'=>$fila['not_alias_'.$this->idioma]),'noticia_completa_'.$this->idioma);
+		        ?>           
+		               <div class="not_listado_ultimas">
+		                    <div class="not_fecha"><?php echo $fila['not_fecha_creacion']?></div>		                    
+		                    <div class="not_tit_ul"><a href="<?php echo $enlace;?>"><?php echo $fila['not_titulo_'.$this->idioma]?></a></div>
+		                    <div class="not_linea_ultimas"></div>
+		                </div>		                
+		                <div class="bajar"></div> 
+		            <?php		            		            
+		        }   
+		    ?>
+	        </div>     

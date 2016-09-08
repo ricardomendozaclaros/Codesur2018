@@ -1,0 +1,126 @@
+<div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+    <h3><?php echo $this->translate("Galeria de videos")?>    </h3>
+</div>
+
+<?php 
+if($this->videos)    {
+        $videos=$this->videos;    ?>
+<div class="content_foros">
+<div class="fotos_detalle">
+
+    <div class="galeria_videos">
+    <?php      foreach($videos as $registro)   {
+    $vi= str_replace("watch?v=", "vi/", $registro['vid_youtube']);
+    $vii= str_replace("www", "img", $vi);
+    ?>
+    <div class="video_registro" id="galeria_video">
+        <div class="caja_videoR col-md-3" style="text-align: center;"> 
+        <a href="<?php echo $this->url(array('idioma'=>$this->idioma,"alias_video"=>$registro['vid_alias_'.$this->idioma]),'ver_videos_'.$this->idioma)?>">
+        <img src="<?php echo $vii?>/default.jpg" alt="<?php echo $registro['vid_titulo_'.$this->idioma]?>" class="example-image img-thumbnail" style=" width: 200px;">   
+        </a>
+
+        </div>
+    </div>                                       
+    <?php   }    ?>  	
+    <div class="bajar"></div>
+        <div id="not_paginacion">
+        <div class="paginador_g3">	<?php	echo $this->paginationControl($this->videos,'Sliding',	'paginar_g2.phtml');?>	</div>  
+        </div>
+    </div>
+</div>                     
+                </div>   
+        
+<?php }
+      else
+      { ?>
+            <?php echo $this->translate("No se tiene informacion")?></h3>                                 
+                                         
+ <?php     }  ?>
+
+
+<script>
+//    /*$(document).ready(function(){
+//    $("#galeria_video img").click(function(){
+//    var youtubeID=$(this).attr("id");   
+//    $("#caja_youtube").empty();
+//    $("#caja_youtube").append("<object width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://www.youtube.com/v/+youtubeID+&rel=1\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/"+youtubeID+"&rel=1\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"490\" height=\"406\"></embed></object>");
+//    });
+//    });*/
+//
+//   
+//    window.onload=function() {
+//        
+//            $('#galeria_foto a').lightBox();               
+//            //$('.img_hemeroteca a').lightBox();
+//            //$('.link_hemeroteca a').lightBox();
+//            //$('.caja_imagen_boletin a').lightBox();
+//        
+//            //-----------------------------------
+//            //BORDES REDONDEADOS
+//            //DD_roundies.addRule('.hemeroteca_nro', '5px 5px 0 0',true)
+//        
+//            //---------------------------------------------------------
+//            // TRANSPARENCIAS
+//            //DD_belatedPNG.fix ('.img_play')
+//       
+//            //-------------------------------
+//      
+//    };
+//    
+//    
+//    function buscarCategoria(elemento)
+//    {
+//       var index=elemento.selectedIndex;
+//       if(index > 0)
+//       {
+//         //document.getElementById("form_categoria").setAttribute('action','/').submit();
+//         var pagina="/videos//"+elemento.value;
+//         document.location.href=pagina;
+//       }
+//       else
+//       {
+//        alert("Debe seleccionar una categoria..!");
+//       }
+//       // document.getElementById()
+//    }
+//    
+//
+//    function evento(selectobj)
+//    {
+//        var valor=selectobj.value;
+//        //alert(valor);
+//    	var aux=$.ajax({url:"galerias/categoriafotos",
+//        type: 'post',
+//        data: 'id_categoria='+valor,
+//	    dataType: 'json',		
+//        beforeSend: cargando,
+//    	complete: completado,
+//    	error : errores })
+//    }
+//    
+//    function errores()
+//	{
+//		//$("#resultados").text('Problemas en el servidor.');
+//
+//	}
+//	
+//	function cargando()
+//	{
+//		//alert("se esta cargando");
+//	}
+//	
+//	function completado(datos)
+//	{
+//        
+//           var conten = document.getElementById("galeria_foto");
+//           conten.html=datos;
+//           var img=document.createElement("img");
+//                        img.setAttribute('alt', 'dsadas');
+//                        img.setAttribute('src', '');
+//                        conten.appendChild(img);
+//		for(var i = 0; i < datos.length; i++)
+//                    {
+//                        
+//                    }
+//	}    
+</script>

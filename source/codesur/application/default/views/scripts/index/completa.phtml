@@ -1,0 +1,324 @@
+<link rel="stylesheet" href="/completa/main.css">
+<link rel="stylesheet" href="/completa/css.css">
+
+<link rel="stylesheet" href="/completa/scrollable-horizontal.css">
+<link rel="stylesheet" href="/completa/scrollable-buttons.css">
+<link rel="stylesheet" href="/completa/standalone.css">
+<link rel="stylesheet" href="/completa/scrollable-navigator.css">
+<script src="/completa/jquery-v3.js"></script>
+<script src="/completa/imagelightbox.js"></script>
+<script src="/completa/jquery.js"></script>
+<div class=" col-md-12" style="text-align: justify;">
+    <h3 style="  margin: 0px; font-size: 16px;"><?php echo $this->noticia["not_antetitulo_".$this->idioma];?></h3>
+    <h2 style="margin: 4px 0px 4px 0px"><?php echo $this->noticia["not_titulo_".$this->idioma];?></h2>
+    <?php  
+    $date=new Zend_Date($this->noticia["not_fecha_creacion"]);
+    $fecha= $date->toString("EEEE,  dd  'de' MMMM 'del' YYYY");?>
+    <h4><small><?php echo $this->translate("Publicado")." ".$fecha?></small></h4>
+   
+    <div class="col-md-8  img-rounded" style="text-align: center;margin-bottom: 17px;overflow: hidden;margin-right: 18px;">
+        <img src="/upload/noticia/<?php echo $this->noticia["not_img"]?>" title="<?php echo $this->noticia["not_titulo_".$this->idioma]?>" class=" img-rounded" />
+    </div>
+    <p class="text-muted" style="text-align: justify;"><?php echo $this->noticia["not_cuerpo_".$this->idioma];?></p>
+</div>
+
+
+
+<style>
+.scrollable img {	width:100px;	margin:20px 5px 20px 21px;}
+
+.scrollable img.hover {	background-color:#123;}
+</style>
+<?php  $id_not=$this->noticia["not_id"];
+	$db = Zend_Registry::get ( 'db' );
+        $sql="select * from noticia_img where not_id=$id_not and img_estado=1";
+        $sql=$db->fetchAll($sql);
+?>
+<?php if($sql){?>
+<div class="bajar"></div>
+ <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+            <h3><?php echo $this->translate("Imagenes")?>   </h3>
+</div>
+<div class="bajar"></div>
+<div class="col-md-12">
+   <div class="navi">
+      <?php $jj=0; foreach ($sql as $i){
+          $activo="";
+          if($jj==0){
+              $activo="active";
+          }?>
+     <a class="<?php echo $activo?>"></a>
+     <?php }?>
+</div>
+<div class="bajar"></div>
+<div style="margin:0 auto; width: 100%; height:120px; float: left;  margin: 0 auto 20px;">
+<a class="prev browse left"></a>
+<div class="scrollable" id="chained">
+  <div style="left: -680px;" class="items">
+    
+        <?php foreach ($sql as $i){?>
+      <div class="caja_img">
+          <a href="/upload/noticia/<?php echo $i["img_img"];?>" data-imagelightbox="f" title="dasa">
+              <img src="/upload/noticia/thumb/s<?php echo $i["img_img"];?>" alt="<?php echo $i["img_titulo_".$this->idioma];?>">  
+        </a>
+        </div>
+        <?php }?>
+   
+</div>
+    </div>
+<a class="next browse right"></a>
+</div>
+<br clear="all"> 
+</div>
+<?php }?>
+<!-- javascript coding -->
+<script>
+    var no_c = jQuery.noConflict();
+no_c(document).ready(function() {
+// heeeeeeeeeeere we go.
+no_c("#chained").scrollable({circular: true, mousewheel: true}).navigator().autoscroll({
+	interval: 3000
+});
+});
+</script>
+<script>
+	no_c( function()
+	{
+		var
+			// ACTIVITY INDICATOR
+
+			activityIndicatorOn = function()
+			{
+				$( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' );
+			},
+			activityIndicatorOff = function()
+			{
+				$( '#imagelightbox-loading' ).remove();
+			},
+
+
+			// OVERLAY
+
+			overlayOn = function()
+			{
+				$( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' );
+			},
+			overlayOff = function()
+			{
+				$( '#imagelightbox-overlay' ).remove();
+			},
+
+
+			// CLOSE BUTTON
+
+			closeButtonOn = function( instance )
+			{
+				$( '<button type="button" id="imagelightbox-close" title="Close"></button>' ).appendTo( 'body' ).on( 'click touchend', function(){ $( this ).remove(); instance.quitImageLightbox(); return false; });
+			},
+			closeButtonOff = function()
+			{
+				$( '#imagelightbox-close' ).remove();
+			},
+
+
+			// CAPTION
+
+			captionOn = function()
+			{
+				var description = $( 'a[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"] img' ).attr( 'alt' );
+				if( description.length > 0 )
+					$( '<div id="imagelightbox-caption">' + description + '</div>' ).appendTo( 'body' );
+			},
+			captionOff = function()
+			{
+				$( '#imagelightbox-caption' ).remove();
+			},
+
+
+			// NAVIGATION
+
+			navigationOn = function( instance, selector )
+			{
+				var images = $( selector );
+				if( images.length )
+				{
+					var nav = $( '<div id="imagelightbox-nav"></div>' );
+					for( var i = 0; i < images.length; i++ )
+						nav.append( '<button type="button"></button>' );
+
+					nav.appendTo( 'body' );
+					nav.on( 'click touchend', function(){ return false; });
+
+					var navItems = nav.find( 'button' );
+					navItems.on( 'click touchend', function()
+					{
+						var $this = $( this );
+						if( images.eq( $this.index() ).attr( 'href' ) != $( '#imagelightbox' ).attr( 'src' ) )
+							instance.switchImageLightbox( $this.index() );
+
+						navItems.removeClass( 'active' );
+						navItems.eq( $this.index() ).addClass( 'active' );
+
+						return false;
+					})
+					.on( 'touchend', function(){ return false; });
+				}
+			},
+			navigationUpdate = function( selector )
+			{
+				var items = $( '#imagelightbox-nav button' );
+				items.removeClass( 'active' );
+				items.eq( $( selector ).filter( '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ).index( selector ) ).addClass( 'active' );
+			},
+			navigationOff = function()
+			{
+				$( '#imagelightbox-nav' ).remove();
+			},
+
+
+			// ARROWS
+
+			arrowsOn = function( instance, selector )
+			{
+				var $arrows = $( '<button type="button" class="imagelightbox-arrow imagelightbox-arrow-left"></button><button type="button" class="imagelightbox-arrow imagelightbox-arrow-right"></button>' );
+
+				$arrows.appendTo( 'body' );
+
+				$arrows.on( 'click touchend', function( e )
+				{
+					e.preventDefault();
+
+					var $this	= $( this ),
+						$target	= $( selector + '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ),
+						index	= $target.index( selector );
+
+					if( $this.hasClass( 'imagelightbox-arrow-left' ) )
+					{
+						index = index - 1;
+						if( !$( selector ).eq( index ).length )
+							index = $( selector ).length;
+					}
+					else
+					{
+						index = index + 1;
+						if( !$( selector ).eq( index ).length )
+							index = 0;
+					}
+
+					instance.switchImageLightbox( index );
+					return false;
+				});
+			},
+			arrowsOff = function()
+			{
+				$( '.imagelightbox-arrow' ).remove();
+			};
+
+
+		//	WITH ACTIVITY INDICATION
+
+		$( 'a[data-imagelightbox="a"]' ).imageLightbox(
+		{
+			onLoadStart:	function() { activityIndicatorOn(); },
+			onLoadEnd:		function() { activityIndicatorOff(); },
+			onEnd:	 		function() { activityIndicatorOff(); }
+		});
+
+
+		//	WITH OVERLAY & ACTIVITY INDICATION
+
+		$( 'a[data-imagelightbox="b"]' ).imageLightbox(
+		{
+			onStart: 	 function() { overlayOn(); },
+			onEnd:	 	 function() { overlayOff(); activityIndicatorOff(); },
+			onLoadStart: function() { activityIndicatorOn(); },
+			onLoadEnd:	 function() { activityIndicatorOff(); }
+		});
+
+
+		//	WITH "CLOSE" BUTTON & ACTIVITY INDICATION
+
+		var instanceC = $( 'a[data-imagelightbox="c"]' ).imageLightbox(
+			{
+				quitOnDocClick:	false,
+				onStart:		function() { closeButtonOn( instanceC ); },
+				onEnd:			function() { closeButtonOff(); activityIndicatorOff(); },
+				onLoadStart: 	function() { activityIndicatorOn(); },
+				onLoadEnd:	 	function() { activityIndicatorOff(); }
+			});
+
+
+		//	WITH CAPTION & ACTIVITY INDICATION
+
+		$( 'a[data-imagelightbox="d"]' ).imageLightbox(
+		{
+			onLoadStart: function() { captionOff(); activityIndicatorOn(); },
+			onLoadEnd:	 function() { captionOn(); activityIndicatorOff(); },
+			onEnd:		 function() { captionOff(); activityIndicatorOff(); }
+		});
+
+
+		//	WITH ARROWS & ACTIVITY INDICATION
+
+		var selectorG = 'a[data-imagelightbox="g"]';
+		var instanceG = $( selectorG ).imageLightbox(
+			{
+				onStart:		function(){ arrowsOn( instanceG, selectorG ); },
+				onEnd:			function(){ arrowsOff(); activityIndicatorOff(); },
+				onLoadStart: 	function(){ activityIndicatorOn(); },
+				onLoadEnd:	 	function(){ $( '.imagelightbox-arrow' ).css( 'display', 'block' ); activityIndicatorOff(); }
+			});
+
+
+		//	WITH NAVIGATION & ACTIVITY INDICATION
+
+		var selectorE = 'a[data-imagelightbox="e"]';
+		var instanceE = $( selectorE ).imageLightbox(
+			{
+				onStart:	 function() { navigationOn( instanceE, selectorE ); },
+				onEnd:		 function() { navigationOff(); activityIndicatorOff(); },
+				onLoadStart: function() { activityIndicatorOn(); },
+				onLoadEnd:	 function() { navigationUpdate( selectorE ); activityIndicatorOff(); }
+			});
+
+
+		//	ALL COMBINED
+
+		var selectorF = 'a[data-imagelightbox="f"]';
+		var instanceF = $( selectorF ).imageLightbox(
+			{
+				onStart:		function() { overlayOn(); closeButtonOn( instanceF ); arrowsOn( instanceF, selectorF ); },
+				onEnd:			function() { overlayOff(); captionOff(); closeButtonOff(); arrowsOff(); activityIndicatorOff(); },
+				onLoadStart: 	function() { captionOff(); activityIndicatorOn(); },
+				onLoadEnd:	 	function() { captionOn(); activityIndicatorOff(); $( '.imagelightbox-arrow' ).css( 'display', 'block' ); }
+			});
+
+
+		//	DYNAMICALLY ADDED ITEMS
+
+		var instanceH = $( 'a[data-imagelightbox="h"]' ).imageLightbox(
+			{
+				quitOnDocClick:	false,
+				onStart:		function() { closeButtonOn( instanceH ); },
+				onEnd:			function() { closeButtonOff(); activityIndicatorOff(); },
+				onLoadStart: 	function() { activityIndicatorOn(); },
+				onLoadEnd:	 	function() { activityIndicatorOff(); }
+			});
+
+		$( '.js--add-dynamic ' ).on( 'click', function( e )
+		{
+			e.preventDefault();
+			var items = $( '.js--dynamic-items' );
+			instanceH.addToImageLightbox( items.find( 'a' ) );
+			$( '.js--dynamic-place' ).append( items.find( 'li' ).detach() );
+			$( this ).remove();
+			items.remove();
+		});
+
+	});
+</script>
+
+
+
+
+

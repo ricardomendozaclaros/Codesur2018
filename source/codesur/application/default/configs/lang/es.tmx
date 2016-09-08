@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmx version="2.0" xmlns="http://www.lisa.org/tmx20">
+  <header adminlang="en" creationtool="locale4j" creationtoolversion="1.1" o-tmf="unknown" segtype="block" srclang="*all*"/>
+  <body>
+    <tu tuid="Value is required and can't be empty">
+      <tuv xml:lang="es">
+        <seg>Este campo es requerido</seg>
+      </tuv>
+    </tu>
+    <tu tuid="'' does not match against pattern '/^[a-zA-Z]+$/'">
+      <tuv xml:lang="es">
+        <seg>Solo Letras</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Home">
+      <tuv xml:lang="es">
+        <seg>Inicio</seg>
+      </tuv>
+    </tu>
+    <tu tuid="My Websites">
+      <tuv xml:lang="es">
+        <seg>Mis Sitios Web</seg>
+      </tuv>
+    </tu>
+    <tu tuid="My Account">
+      <tuv xml:lang="es">
+        <seg>Mi Cuenta</seg>
+      </tuv>
+    </tu>
+    <tu tuid="New Listing">
+      <tuv xml:lang="es">
+        <seg>Nuevos sitios</seg>
+      </tuv>
+    </tu>
+    <tu tuid="UserName">
+      <tuv xml:lang="es">
+        <seg>Nombre de Usuario</seg>
+      </tuv>
+    </tu>
+    <tu tuid="PassWord">
+      <tuv xml:lang="es">
+        <seg>Contrasenya</seg>
+      </tuv>
+    </tu>
+    <tu tuid="LogIN">
+      <tuv xml:lang="es">
+        <seg>Ingresar</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SignUP">
+      <tuv xml:lang="es">
+        <seg>Registrarse</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Website">
+      <tuv xml:lang="es">
+        <seg>Sitio web</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Category">
+      <tuv xml:lang="es">
+        <seg>Categoria</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Title">
+      <tuv xml:lang="es">
+        <seg>Titulo</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Search Websites">
+      <tuv xml:lang="es">
+        <seg>Buscar Sitios web</seg>
+      </tuv>
+    </tu>
+    <tu tuid="By Category">
+      <tuv xml:lang="es">
+        <seg>Por Categoria</seg>
+      </tuv>
+    </tu>
+    <tu tuid="By Location">
+      <tuv xml:lang="es">
+        <seg>Por Lugar</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Games">
+      <tuv xml:lang="es">
+        <seg>Videojuegos</seg>
+      </tuv>
+    </tu>
+    <tu tuid="News">
+      <tuv xml:lang="es">
+        <seg>Noticias</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Computers">
+      <tuv xml:lang="es">
+        <seg>Computadoras</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Misc">
+      <tuv xml:lang="es">
+        <seg>Otros</seg>
+      </tuv>
+    </tu>
+    <tu tuid="All">
+      <tuv xml:lang="es">
+        <seg>Todos</seg>
+      </tuv>
+    </tu>
+    <tu tuid="The file">
+      <tuv xml:lang="es">
+        <seg>El archivo</seg>
+      </tuv>
+    </tu>
+    <tu tuid="was not uploaded">
+      <tuv xml:lang="es">
+        <seg>no fue subido</seg>
+      </tuv>
+    </tu>
+    <tu tuid="The file 'foto' was not uploaded">
+      <tuv xml:lang="es">
+        <seg>El archivo no fue subido</seg>
+      </tuv>
+    </tu>
+
+  </body>
+</tmx>

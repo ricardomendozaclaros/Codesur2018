@@ -1,0 +1,22 @@
+	<link rel="stylesheet" type="text/css" href="/mapas/easyui.css">
+	<link rel="stylesheet" type="text/css" href="/mapas/icon.css">
+	<script type="text/javascript" src="/mapas/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="/mapas/jquery.easyui.min.js"></script>
+<div style="border: 1px solid;    float: left;    padding: 10px;    width: 164px;">
+        <ul id="tt" class="easyui-tree"url="/mapas/tree_data.json"checkbox="true">
+	</ul>  
+</div>
+        <div style="border: 1px solid;    float: left;    padding: 10px;">
+            
+        </div>
+        
+        <script type="text/javascript">
+            var nn = jQuery.noConflict();
+//nn(document).ready(function(){
+//document.getElementsByClassName(".tree-checkbox").click();
+    $(".tree-checkbox").click(function(){
+        alert("dsae");
+    });
+//});
+
+        </script>

@@ -1,0 +1,32 @@
+<div id="contenido_gen">   
+<h1 class="gen_titulo1"><span class="flecha_roja"></span><?php echo $this->translate('Certificaciones');?></h1>
+<div class="noticia_fondo">
+        					<?php 
+        					$c=1;
+        					foreach ($this->certificaciones as $fila){
+        					?>	
+        						<div class="certif_contenedor">        						
+									<?php if($fila['cer_img']){?>					
+									<div class="certif_img"><img class="cer_img" src="/upload/certificaciones/<?php echo $fila['cer_img'];?>" alt="<?php echo $fila['cer_img'];?>"/></div>
+									<?php }?>
+									<h2 class="certif_titulo"><?php echo $fila['cer_titulo_'.$this->idioma];?></h2>
+									<div class="certif_txt">						
+										<?php echo $fila['cer_descripcion_'.$this->idioma];?>						 
+									</div>								
+								</div>
+        					<?php 
+        						$c++;
+        					}        					
+        					?>
+<div class="bajar"></div>
+<div id="not_paginacion">
+        			<div class="paginador_g3">
+					<?php
+					echo $this->paginationControl($this->certificaciones,
+														'Sliding',
+														'paginar_g2.phtml');
+					?>
+					</div>  
+</div>
+</div>        	
+</div>

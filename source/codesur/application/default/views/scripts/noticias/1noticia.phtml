@@ -1,0 +1,24 @@
+<div id="contenido_gen">   
+<h2 class="gen_titulo1"><span class="flecha_roja"></span><?php echo $this->translate('NOTICIAS');?></h2>
+<div class="noticia_fondo">
+<div class="not_contenedor">        		
+  
+        	        <div class="texto_prin">
+				        <?php if($this->noticia['not_img']){?>
+				        	<div class="not_img"><img class="imagen_prin" src="/upload/noticia/<?php echo $this->noticia['not_img'];?>" align="left" alt="<?php echo $this->noticia['not_img'];?>"/></div>
+				        <?php }?>
+				        <div class="not_fecha"><?php
+				        	$date=new Zend_Date(strtotime($this->noticia['not_fecha_creacion']));							
+							$fecha_ultima_actualizacion=$date->toString("dd MMMM yyyy"); 
+				        	echo $fecha_ultima_actualizacion;?></div>
+				        <h1 class="not_tit_seg"><?php echo $this->noticia['not_titulo_'.$this->idioma];?></h1>
+				        <div class="texto_entradilla"><?php echo $this->noticia['not_entradilla_'.$this->idioma];?></div>            
+			        	<div class="texto_cuerpo"><?php echo $this->noticia['not_cuerpo_'.$this->idioma];?></div>            
+			        </div>
+</div> 	
+<div class="bajar"></div>
+<a href="<?php echo $this->url(array('idioma'=>$this->idioma),'noticias_'.$this->idioma)?>" style="display: block;text-align: right;color: #fa051c;text-decoration: none;padding-right: 80px;"><< <?php echo $this->translate("Atrás")?></a>
+</div>
+
+
+</div>

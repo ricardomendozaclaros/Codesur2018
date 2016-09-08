@@ -1,0 +1,77 @@
+@media screen and (max-width: 1366px) and (min-width: 910px) {
+    .social_link1 {
+    background-position: 0 0;    background-repeat: no-repeat;
+    display: inline;            float: right;
+    height: 47px;                margin-right: 20px;    width: 47px;  
+    }
+    .social_header1{        padding: 50px 0;          }
+    .bandera_espanol_bo_img {
+    background: url("../img/bandera_espanol_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+    }
+    .bandera_ingles_bo_img {
+    background: url("../img/bandera_ingles_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+    }
+    .banderas{            text-align: right;  }
+}
+
+@media (max-width: 911px) {
+   .social_link1 {
+    background-position: 0 0;    background-repeat: no-repeat;
+    display: inline;            float: right;
+    height: 49px;               margin-right: 80px;            width: 47px; 
+}
+ .social_header1{        padding: 0px 0;          }
+  .bandera_espanol_bo_img {
+        background: url("../img/bandera_espanol_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+  }
+  .bandera_ingles_bo_img {
+        background: url("../img/bandera_ingles_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+  }
+  .banderas{            text-align: center;  }
+}
+@media (max-width: 683px) {
+   .social_link1 {
+    background-position: 0 0;    background-repeat: no-repeat;
+    display: inline;            float: right;
+    height: 49px;               margin-right: 44px;            width: 47px; 
+}
+  .bandera_espanol_bo_img {
+        background: url("../img/bandera_espanol_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+  }
+  .bandera_ingles_bo_img {
+        background: url("../img/bandera_ingles_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+  }
+  .banderas{            text-align: center;  }
+}
+@media (max-width: 569px) {
+   .social_link1 {
+    background-position: 0 0;    background-repeat: no-repeat;
+    display: inline;            float: right;
+    height: 49px;               margin-right: 44px;            width: 47px; 
+}
+  .bandera_espanol_bo_img {
+        background: url("../img/bandera_espanol_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+  }
+  .bandera_ingles_bo_img {
+        background: url("../img/bandera_ingles_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+  }
+  .banderas{            text-align: center;  }
+}
+@media (max-width: 569px) {
+   .social_link1 {
+    background-position: 0 0;    background-repeat: no-repeat;
+    display: inline;            float: right;
+    height: 49px;               margin-right: 24px;            width: 47px; 
+}
+  .bandera_espanol_bo_img {
+        background: url("../img/bandera_espanol_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+  }
+  .bandera_ingles_bo_img {
+        background: url("../img/bandera_ingles_bo.png")  no-repeat right center;        margin: 1px 0 0 0;height: 18px;padding-right:21px;
+  }
+  .banderas{            text-align: center;  }
+}
+/*******************************************************/
+.sub_menu a{
+  color: #fff;  
+}

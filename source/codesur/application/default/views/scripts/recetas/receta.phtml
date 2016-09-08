@@ -1,0 +1,38 @@
+<!-- CENTRO-->
+<div id="contenido_bo">
+ <div id="general_centro_bo">
+	<div id="general_menu_izq_bo"><?php echo $this->partial('layoutbo/menu_izq_bo.phtml',array('idioma'=>$this->idioma,'controlador'=>$this->controlador))?></div>
+	<div id="general_contenido_bo">
+		<div id="general_contenido_1_bo"></div>
+		<div id="general_contenido_2_bo">
+			<h1 class="general_titulo_1_bo"><?php echo $this->translate('RECETAS');?></h1>
+			<div id="rec_contenedor_bo">
+			     <div id="rec_cuadro">
+						<?php if($this->receta['rec_img']){?>					
+						<div class="rec_img_cuadro"><img align="left" class="rec_img" src="/upload/recetas/<?php echo $this->receta['rec_img'];?>" alt="<?php echo $this->receta['rec_img'];?>"/></div>
+						<?php }?>
+						<div class="rec_txt">						
+							<h2 class="rec_titulo_h1"><?php echo $this->receta['rec_titulo_'.$this->idioma];?></h2>
+							<div class="rec_texto_1"><?php echo $this->receta['rec_entradilla_'.$this->idioma];?></div>
+							<div class="rec_contenido"><?php echo $this->receta['rec_cuerpo_'.$this->idioma];?></div>
+							<div class="bajar"></div>													 
+						</div>			
+						
+						<div class="bajar"></div>
+				</div>	
+			     			     
+			     
+			     <div class="bajar"></div>
+<a href="<?php echo $this->url(array('idioma'=>$this->idioma),'recetas_'.$this->idioma)?>" style="display: block;text-align: right;color: #fa051c;text-decoration: none;padding-right: 80px;"><< <?php echo $this->translate("Atrás")?></a>
+			
+			
+			</div>	
+		</div>
+		<div id="general_contenido_3_bo"></div>		
+	</div>
+ </div>	  
+ 
+<div class="bajar"></div>
+</div><!-- fin centro-->
+
+

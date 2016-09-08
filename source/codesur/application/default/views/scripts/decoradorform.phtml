@@ -1,0 +1,28 @@
+<?php  
+        $attribs = $this->element->getAttribs(); 
+        $label = $this->element->getLabel();  
+?>  
+<div class="elemento_formulario">
+  <?php //echo $this->formLabel($this->element->getName(), $label, $attribs);        
+        if(($label!='')&&$attribs['helper']!='formSubmit'){?>	
+        	<div class='label_elemento_formulario'>
+        		<span class="label"><?php echo $this->formLabel($this->element->getName(),$this->translate($label))?></span>
+        		<?php  if ($this->element->isRequired()) {?>  
+          		<span>(<span class="requerido">*</span>)</span>
+        										<?php } ?>
+        	</div>
+        	
+        											<?php }?>
+<div class="bajar"></div>
+    <div class="contenido_elemento">
+    	<?php echo $this->content; ?>
+    </div>    
+    <?php if ($this->element->getMessages()) { ?>    
+    <div class="bajar"></div>
+    <div class="errores">   
+            <?php  echo implode('<br />', array_map($this->translate,$this->element->getMessages()));?>
+     </div>             
+    <?php }?>
+ <div class="bajar"></div>
+</div>
+<div class="bajar"></div>

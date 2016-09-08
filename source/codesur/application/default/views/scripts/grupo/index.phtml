@@ -1,0 +1,17 @@
+<div id="contenido_gen">   
+    
+    <?php echo $this->partial("grupo/izquierda.phtml",array("idioma"=>$this->idioma,"alias_grupo"=>$this->alias_grupo))?>
+    
+    <div class="gen_centro">
+    	<div class="quienes_fondo1">
+	    	<h2 class="gen_titulo1"><span class="flecha_roja"></span><?php echo $this->tabla[0]["est_nombre_".$this->idioma];?></h2>
+	    	<div class="quienes_contenido">
+	    		<?php echo $this->tabla[0]["est_contenido_".$this->idioma];?>
+	    	</div>
+    	</div>    	
+    	<div class="bajar"></div>
+    </div>            
+    
+
+
+</div>

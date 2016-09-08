@@ -1,0 +1,10 @@
+ <?php 
+ if($this->mobil){
+ echo $this->partial('/mapas/mobil.phtml',array("principal"=>$this->principal,'idioma'=>$this->idioma ));     
+ }else{
+     echo $this->partial('/mapas/escenario.phtml',array("principal"=>$this->principal,'idioma'=>$this->idioma ));     
+ 
+ }
+      
+ 
+ ?> 

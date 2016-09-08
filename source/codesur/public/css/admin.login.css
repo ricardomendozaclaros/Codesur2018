@@ -1,0 +1,54 @@
+body {		
+	font-family: Arial, Helvetica, sans-serif;
+	background:#e0e1e1 none repeat scroll 0 0;
+}
+
+.contenerdorall{
+	border: 1px solid #000;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 10px auto 0;
+    width: 335px;
+}
+.zend_form dt
+{
+	float: left;
+	width: 85px;
+	height: 22px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.zend_form dd
+{
+	float: right;
+	width: 222px;
+	height: 22px;
+	overflow: hidden;
+	margin:0;
+	margin-bottom: 10px;
+}
+
+.zend_form dd input
+{
+	width: 222px;
+	height: 22px;
+	line-height: 22px;
+}
+
+#login
+{
+	background: #91a8d4;
+	color: #fff;
+	padding: 3px 5px;
+}
+
+.errors{color: red;font-size: .8em;}
+.errores2{
+   background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+    margin-top: 3px;
+    text-align: center;
+}

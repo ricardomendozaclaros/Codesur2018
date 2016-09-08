@@ -1,0 +1,372 @@
+<?php if($this->menu_categorias){?>
+
+<div class="info">
+<?php 
+	$db=Zend_Registry::get('db');
+	$fila_categoria=$db->fetchRow("select * from $this->tabla_categoria where ".$this->prefijo_categoria."id=?",$this->idc);
+
+?>
+<table>
+<tr style="background: #fafafa;">
+	<?php if($fila_categoria){?>
+	<td><strong>Categoría:</strong> <?php echo $fila_categoria[$this->prefijo_categoria.'nombre'];?></td>
+	
+	<?php }else {?>
+	<td><strong>Categoría:</strong> Todas</td>
+	<?php }?>
+</tr>
+</table>
+</div>
+
+
+<div class="menu_secciones">
+<h5 style="margin: 5px 0"><?php echo $this->menu_categorias_mensaje;?></h5>	
+	<?php	
+	if($this->menu_categorias_simple)
+		$secciones=$this->menuCategoria($this->tabla_categoria,$this->prefijo_categoria);		
+	else 
+		$secciones=$this->menuSecciones($this->tabla_categoria,$this->prefijo_categoria,0,0,$this->nivel_categoria);
+	
+	echo "<ul>";
+	echo "<li><a href='$this->url/listar/'>TODAS</a></li>";
+	foreach ($secciones as $seccion) 
+	{
+		echo "<li><a href='$this->url/listar/idc/".$seccion[$this->prefijo_categoria.'id']."'>".$seccion[$this->prefijo_categoria.'nombre']." &nbsp;</a></li>";
+	}
+	echo "<div class='bajar'></div></ul>";
+	
+	?>
+	<div class="bajar"></div>
+</div>
+<?php }?>
+
+<div class="menu_admin borde_cir">
+<span class="titulo_admin" style="color: #0B55C4;font:normal 1.2em Arial,Verdana;">
+<img src="/img/admin/nuevo.png" style="vertical-align: middle;"/> &nbsp;
+<?php echo "Listando ".$this->title?>
+</span>
+
+<?php if(!$this->no_listar){?>
+<div>
+	<a href="<?php echo $this->url."/listar";if($this->idp)echo '/idp/'.$this->idp;?>" id="listar_g"><img src="/img/admin/listar.png"/>
+	<br/>
+	<span>Listar</span>
+	</a>
+</div>
+<?php }?>
+
+<?php if(!$this->no_cancelar){?>
+<div>
+	<a href="/admin"><img src="/img/admin/cancelar.png"/>
+	<br/>
+	<span>Cancelar</span>
+	</a>
+</div>
+<?php }?>
+
+<?php if(!$this->no_nuevo){?>
+<div>
+	<a href="<?php echo $this->url."/index";if($this->idp)echo '/idp/'.$this->idp;if($this->idc)echo '/idc/'.$this->idc;?>" id="nuevo_g"><img src="/img/admin/nuevo.png"/>
+	<br/>
+	<span>Nuevo</span>
+	</a>
+</div>
+<?php }?>
+
+<?php if($this->volver){/*para dependientes*/ ?>
+<div>
+	<a href="<?php echo $this->volver;?>" id="nuevo_g"><img src="/img/admin/volver.png"/>
+	<br/>
+	<span>Atras</span>
+	</a>
+</div>
+<?php }?>
+
+</div>
+<div class="bajar"></div>
+<br/>
+<?php if($this->mensaje){?>
+<h3 class="mensaje_action"><?php echo $this->mensaje;?></h3>
+<?php }?>
+<div style="float: right;">
+	<a href="javascript:;" id='marcar_todos'>Marcar Todos</a> |
+	<a href="javascript:;" id='desmarcar_todos'>Desmarcar Todos</a>
+<script type="text/javascript">
+$().ready(function() {
+
+$("#marcar_todos").click(function(){
+	
+        $("input[name^='marcados']").each(function(){
+        	$(this).attr("checked","checked");
+	            });
+});
+
+$("#desmarcar_todos").click(function(){
+	
+    $("input[name^='marcados']").each(function(){
+    	$(this).attr("checked","");
+            });
+});
+
+
+
+});
+</script>
+</div>
+<form action="<?php echo $this->url."/procesarlista";?>" method="post">
+<?php
+if (count($this->data)) {	
+foreach ($this->data as $first){$firstrow=$first;break;}
+	
+echo<<<_
+<div id="listado">
+<table class="listar">
+	<caption><h3 class='titulo_listar'>Listando $this->title</h3></caption>
+	<thead>
+	<tr>
+_;
+
+/*cambiar de posición*/
+//echo "<th colspan=2>Cambiar Pos.</th>";
+
+	foreach ($firstrow as $key=>$value)	 
+	{
+	$hidden=array_search($key,$this->hidden);	
+	if($hidden===false)
+		echo "<th>$key</th>";		
+	else
+		echo "<th style='display:none;'>$key</th>";
+
+		
+	}
+
+$hidden=array_search('editar',$this->hidden);	
+if($hidden===false)
+echo "<th>Editar</th>";
+
+$hidden=array_search('borrar',$this->hidden);	
+if($hidden===false)
+echo "<th>Borrar</th>";
+
+$hidden=array_search('marcar',$this->hidden);	
+if($hidden===false)
+echo "<th>Marcar</th>";
+
+
+if($this->orden)
+{
+	//echo "<th colspan=3><input type='submit' value='Reordenar' name='accion' id='reordenar'/>";	
+	echo "<th><input type='submit' value='Reordenar' name='accion' id='reordenar'/>";
+}
+
+if($this->estado)
+{
+	echo "<th>Cambiar estado</th>";	
+}
+
+
+echo "
+</tr>
+</thead>
+<tbody>";
+
+$posicion='';
+foreach($this->data as $row) {
+	
+if($this->clasificar&&$row[$this->clasificar]!=$posicion)
+{
+	echo "<tr><td colspan='".(count($row)+4)."' class='seccion_tabla'>".$row[$this->clasificar]."</td></tr>";
+	$posicion=$row[$this->clasificar];	
+}
+	
+	
+	
+echo "<tr>";
+
+/*cambiar seccion*/
+	//echo "<td width='2' align='center'><a href='$this->url/posicion/id/".$row['id']."/tipo/subir";echo "'><img src='/img/admin/subir.jpg'/></a></td>";
+	//echo "<td width='2' align='center'><a href='$this->url/posicion/id/".$row['id']."/tipo/bajar";echo "'><img src='/img/admin/bajar.jpg'/></a></td>";
+
+foreach ($row as $key=>$value) 
+{
+	$hidden=array_search($key,$this->hidden);//buscamos si esta en el array de campos escondidos para mostrarlo o no	
+	if($hidden===false)
+	{
+		$img_found=false;
+		if($this->imagenes)//si hay un array de imagenes buscamos si este campo se motrara como imagen y no como cadena
+		{	$img_found=array_search($key,$this->imagenes);
+			//var_dump($this->imagenes);
+			//var_dump($key);
+			//echo $img_found;
+		}	
+		if($img_found===false)
+		{
+			if($this->link[$key])//vemos si este campo sera un enlace a otrol listado relacionado con esta fila
+			{
+				echo "<td>
+						<a href='".$this->link[$key]['url']."idp/".$row['id']."' title='".$this->link[$key]['alt']."'>
+							$value&nbsp;
+						</a>
+					</td>";
+			}
+			else 
+				echo "<td>$value&nbsp;</td>";
+		}
+		else
+		{ 
+			if ($this->imagenes[$img_found])//se muestra como imagen
+				echo "<td><img src='/".$this->upload[$img_found].$value."'/></td>";
+			else 
+				echo "<td>x</td>";
+		}
+		
+		
+	}
+	else	
+		echo "<td style='display:none;'>$value&nbsp;</td>";			
+
+}
+$row=(object)$row;
+$hidden=array_search('editar',$this->hidden);
+	
+if($hidden===false)
+{
+	if($this->idp)	
+		echo "<td width='10' align='center'><a href='$this->url/editar/id/$row->id/idp/$this->idp'><img src='/img/admin/modificar.jpg' alt='Editar'/></a></td>";
+	else
+		echo "<td width='10' align='center'><a href='$this->url/editar/id/$row->id'><img src='/img/admin/modificar.jpg' alt='Editar'/></a></td>";
+} 
+
+$hidden=array_search('borrar',$this->hidden);
+if($hidden===false)
+{	
+	if($this->idp)
+		echo "<td width='10' align='center'><a class='eliminar' href='$this->url/borrar/id/$row->id/idp/$this->idp'><img src='/img/admin/eliminar.jpg' alt='Borrar'/></a></td>";
+	else
+		echo "<td width='10' align='center'><a class='eliminar' href='$this->url/borrar/id/$row->id'><img src='/img/admin/eliminar.jpg' alt='Borrar'/></a></td>";
+}
+$hidden=array_search('marcar',$this->hidden);
+if($hidden===false)	
+echo "<td width='10' align='center'><input type='checkbox' name='marcados[]' value='$row->id'/></td>";
+
+
+if($this->orden)
+{
+	echo "<td width='10' align='center'><input type='input' name='$row->id' value='$row->orden' size='4' style='text-align:center;'/></td>";
+	//echo "<td width='2' align='center'><a href='$this->url/orden/id/$row->id/tipo/subir'><img src='/img/admin/subir.jpg'/></a></td>";
+	//echo "<td width='2' align='center'><a href='$this->url/orden/id/$row->id/tipo/bajar'><img src='/img/admin/bajar.jpg'/></a></td>";
+}
+
+if($this->estado)
+{
+	if($row->estado<=0)
+	{	if($this->idp)
+			echo "<td width='10' align='center'><a href='$this->url/activar/id/$row->id/idp/$this->idp'>Activar</a></td>";
+		else
+			echo "<td width='10' align='center'><a href='$this->url/activar/id/$row->id'>Activar</a></td>";	
+	}	
+	if($row->estado==1)
+	{
+		if($this->idp)
+			echo "<td width='10' align='center'><a href='$this->url/desactivar/id/$row->id/idp/$this->idp'>Desactivar</a></td>";
+		else 
+			echo "<td width='10' align='center'><a href='$this->url/desactivar/id/$row->id'>Desactivar</a></td>";
+	}
+			
+}
+
+echo "</tr>";
+
+	
+		
+	}
+	echo<<<_
+</tbody>
+</table>
+<br/>
+_;
+
+	echo $this->paginationControl($this->data,
+									'Sliding',
+									'pagination.phtml');
+
+echo "</div>";
+}else
+	echo '<h3 class="titulo_listar">SIN DATOS</h3>';
+
+?>
+<table style="width: 220px;float: right;font-size: .8em;">
+<?php if($this->buscar){?>
+<tr><td colspan="3">Se permite el uso de comodines tales como busqueda exacta: ej: "criterio"</td></tr>
+<tr>
+<td><label for="txt_bus">Buscar</label></td>
+<td><input type="text" name="txt_bus" id="txt_bus"/></td>
+<td><input type="submit" value="Buscar" name="accion"/></td>
+</tr>
+<?php }?>
+<tr><td colspan="3"></td></tr>
+<tr>
+<td colspan="3" align="right">Para todos los elementos marcados</td>
+</tr>
+<tr>
+<td align="right" style="width: 65px;text-align: right;" <?php if(!$this->estado)echo 'colspan="3"'?>><input type="submit" value="Borrar" name="accion" id="borrar_marcados"/></td>
+<?php if($this->estado){?>
+<td align="right" style="width: 65px;"><input type="submit" value="Activar" name="accion" id="activar_marcados"/></td>
+<td align="right" style="width: 65px;"><input type="submit" value="Desactivar" name="accion" id="desactivar_marcados"/></td>
+<?php }?>
+</tr>
+
+</table>
+<?php if($this->idp){echo "<input type='hidden' name='idp' value='$this->idp'/>";}?>
+</form>
+<script type="text/javascript">
+$().ready(function() {
+$("#borrar_marcados").click(function(){
+	if(confirm("Realmente desea 'BORRAR PERMANENTEMENTE' los registros seleccionados.?"))
+		return true;
+	else
+		return false;
+});
+
+
+$(".eliminar").click(function(){
+	if(confirm("Realmente desea 'BORRAR PERMANENTEMENTE' este registro?"))
+		return true;
+	else
+		return false;
+});
+
+
+
+<?php if($this->estado){?>
+$("#activar_marcados").click(function(){
+	if(confirm("Realmente desea 'ACTIVAR' los elementos marcados?"))
+		return true;
+	else
+		return false;
+});
+
+$("#desactivar_marcados").click(function(){
+	if(confirm("Realmente desea 'DESACTIVAR' los elementos marcados?"))
+		return true;
+	else
+		return false;
+});
+
+<?php }?>
+
+
+<?php 
+		if($this->orden)
+		{?>
+		$("#reordenar").click(function(){
+			if(confirm("Realmente desea 'CAMBIAR EL ORDEN DE LOS ELEMENTOS' ?"))
+				return true;
+			else
+				return false;
+		});							
+<?php 	}
+?>
+
+});
+</script>

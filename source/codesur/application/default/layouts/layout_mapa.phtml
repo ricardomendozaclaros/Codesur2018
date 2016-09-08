@@ -1,0 +1,73 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+            
+		<?php
+		
+		echo $this->headTitle();
+		echo $this->headMeta();
+		echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/default_bo.css')
+                        ->prependStylesheet('/css/bootstrap/bootstrap.min.css') 
+                        ->prependStylesheet('/css/hover.css')
+                        ->prependStylesheet('/css/glm.css')
+                        ->prependStylesheet('/css/bootstrap/asstes/ie10-viewport-bug-workaround.css')
+                        ;
+		echo $this->headStyle();
+		echo $this->headScript()
+                ->appendFile('/js/bootstrap/jquery-1.12.1.js')
+                ->appendFile('/js/bootstrap/bootstrap.min.js')
+                ->appendFile('/js/bootstrap/assets/ie-emulation-modes-warning.js')	
+//                ->appendFile('/js/jquery.final-countdown.js')
+//                ->appendFile('/js/kinetic.js')
+                ->appendFile('/js/default_mapa.js')
+;
+		?>
+            
+<link rel='stylesheet' id='style-css'  href='/scripts/diapo.css' type='text/css' media='all'/>
+             <!--<script src="https://maps.google.com/maps/api/js?v=3.5&sensor=false"></script>-->
+
+<script async defer src="//maps.googleapis.com/maps/api/js?v=3.5&sensor=false&key=AIzaSyDf85arixvdIXdkloD2sGru-oxs1L9azZI" type="text/javascript"></script>
+<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+<script type='text/javascript' src='/scripts/jquery.hoverIntent.minified.js'></script>
+<script type='text/javascript' src='/scripts/diapo.js'></script>
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon"/>
+
+</head>
+    <body class="homepage" style="padding: 0px;">
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="div_cabecera1 ">   
+  <?php echo $this->partial('/layout/menu_1.phtml',array('idioma'=>$this->idioma ));?>
+</div>
+    <!-- ====================================================================================================== -->
+  
+    <div class="container-fluid" style="background: rgba(0, 0, 0, 0) url('/images/fondo.png') no-repeat scroll 109px 0;padding: 0px 0px 0px 4px">
+     <div style="  height: 1000px;    margin-left: auto;    margin-right: auto;    width:1325px;">
+        <?php echo $this->layout()->content;?>
+
+     </div>       
+    </div>
+<div class="bajar"></div>
+
+<script src="/js/bootstrap/assets/ie10-viewport-bug-workaround.js"></script>
+
+<script language="JavaScript">
+var escroll = jQuery.noConflict();
+escroll(window).scroll(function(){
+if (window.pageYOffset >= 190) {
+escroll("#nav_men_he").attr('class', 'col-md-12');
+}else{
+escroll("#nav_men_he").attr('class', 'col-md-12');  
+}
+});
+</script> 
+</body>
+
+</html>

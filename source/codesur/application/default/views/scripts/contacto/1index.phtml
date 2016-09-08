@@ -1,0 +1,95 @@
+<div id="principal">
+<div id="content_bot">
+    <div class="content_izq" >
+     <?php            
+           // $especial=$this->especial;           
+           // echo $this->partial('/index/menu.phtml',array('especial'=>$especial,'lang'=>$this->lang ));           
+       ?> 
+    </div>
+    <div class="content_mid" style="    margin-left: 3px;    margin-top: 0;">
+        <div class="mid_corporativo_registro" style="margin-top:0;background: url(/img/contactos.jpg) no-repeat left bottom #F5F5F5;">
+            <h2 style=" background: none repeat scroll 0 0 #0085FE;    color: #FFFFFF;    font-size: 12pt;    font-weight: bold;    padding: 5px; margin: 0px;">CONTÁCTENOS</h2>
+            <div id="corp_izq">
+                <p style="margin: 13px;">Si tiene alguna consulta, comentario o sugerencia, contáctese con nosotros llenando el siguiente formulario:</p>
+            </div>
+            <div id="corp_der">
+                <?php $form=$this->form->getElements();?>
+                <form action="" method="post" >
+                    <table>
+                        <tr>
+                            <td><label>Nombre: </label></td>
+                            <td><?php echo $this->form->getElement('con_nombre');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['con_nombre']->getMessages());?></span>
+                            </td>
+                        </tr>
+<!--                        <tr>
+                            <td><label>Dirección: </label></td>
+                            <td><?php //echo $this->form->getElement('con_direccion');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php //echo implode('-',$form['con_direccion']->getMessages());?></span>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><label>Pais: </label></td>
+                            <td><?php //echo $this->form->getElement('con_pais');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php //echo implode('-',$form['con_pais']->getMessages());?></span>
+                            </td>
+                        </tr>-->
+<!--                        <tr>
+                            <td><label>Ciudad: </label></td>
+                            <td><?php //echo $this->form->getElement('con_ciudad');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php //echo implode('-',$form['con_ciudad']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Teléfono: </label></td>
+                            <td><?php //echo $this->form->getElement('con_telefono');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php //echo implode('-',$form['con_telefono']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Empresa: </label></td>
+                            <td><?php //echo $this->form->getElement('con_empresa');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php //echo implode('-',$form['con_empresa']->getMessages());?></span>
+                            </td>
+                        </tr>-->
+                        <tr>
+                            <td><label>E-mail: </label></td>
+                            <td><?php echo $this->form->getElement('con_email');?><div class="bajar"></div>
+                                <span class="texto_error1"><?php echo implode('-',$form['con_email']->getMessages());?></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><label>Comentario: </label></td>
+                        </tr>
+                        <tr><td></td>
+                            <td colspan="2"><?php echo $this->form->getElement('con_mensaje');?>
+                                <span class="texto_error1"><?php echo implode('-',$form['con_mensaje']->getMessages());?></span>
+                            </td>
+                        </tr>
+<!--                        <tr><td></td>
+                            <td colspan="2" id="img_captcha"><img src="/captcha/cap" alt="Captcha"/></td>
+                        </tr>
+                        <tr><td></td>
+                            <td colspan="2"><label>Para prevenir el spam, por favor, introduce el texto que vea en la caja superior:</label></td>
+                        </tr>
+                        <tr><td></td>
+                            <td colspan="2"><?php //echo $this->form->getElement('captcha');?>
+                                <br/><span class="texto_error1" style="float:left;"><?php //echo implode('-',$form['captcha']->getMessages());?></span>
+                            </td>
+                        </tr>-->
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" name="reset" value="Enviar comentario"/>
+                                <input type="reset" name="reset" value="limpiar"/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+</div>
+</div>
+ <div class="content_der">
+   <?php //echo $this->partial('/index/cont_der.phtml',array('especial'=>$especial,'ofertas'=>$this->ofertas,'lang'=>$this->lang));    ?>
+    </div>

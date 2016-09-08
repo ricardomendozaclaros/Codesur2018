@@ -1,0 +1,22 @@
+<div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+    <h3><?php echo $this->translate("RECINTO")?> <?php echo $this->noticia["rec_titulo_".$this->idioma];?></h3>
+    <p><span><?php echo $this->translate("direccion")?> :</span><?php echo $this->noticia["rec_direccion_".$this->idioma];?></p>
+  </div>
+<div class=" col-md-12">
+    
+    <div class="col-md-8 " style="text-align: center;margin-bottom: 17px;">
+        <img src="/upload/recintos/<?php echo $this->noticia["rec_img"]?>" title="<?php echo $this->noticia["rec_titulo_".$this->idioma]?>" class=" img-rounded" />
+    </div>
+    <p class="text-muted" style="text-align: justify;"><?php echo $this->noticia["rec_descripcion_".$this->idioma];?></p>
+</div>
+<div class="bajar"></div>
+<div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+    <h3>Google map</h3>
+    
+  </div>
+<div class=" col-md-12 img-thumbnail">
+   
+    <?php if(count($this->noticia["rec_google_map"])>0){
+        echo $this->noticia["rec_google_map"];
+    }?>
+</div>

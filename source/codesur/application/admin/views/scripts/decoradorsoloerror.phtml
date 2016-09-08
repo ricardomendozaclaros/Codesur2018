@@ -1,0 +1,10 @@
+<div>
+    	<?php echo $this->content; ?>
+</div>    
+    <?php if ($this->element->getMessages()) { ?>    
+    <div class="bajar"></div>
+    <div class="errores2">   
+            <?php  echo implode('<br />', $this->element->getMessages());?>
+     </div>             
+    <?php }?>
+ <div class="bajar"></div>

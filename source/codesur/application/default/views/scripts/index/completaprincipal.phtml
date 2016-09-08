@@ -1,0 +1,12 @@
+<div class=" col-md-12" style="text-align: justify;">
+    <h2><?php echo $this->rotador["rot_nombre_".$this->idioma];?></h2>
+    <?php  
+//    $date=new Zend_Date($this->rotador["rot_fecha_creacion"]);
+//    $fecha= $date->toString("EEEE,  dd  'de' MMMM 'del' YYYY");?>
+    <!--<h4><small><?php echo $this->translate("Publicado")." ".$fecha?></small></h4>-->
+   
+    <div class="col-md-8 " style="text-align: center;margin-bottom: 17px;">
+        <img src="/upload/rotador/<?php echo $this->rotador["rot_img"]?>" title="<?php echo $this->rotador["rot_nombre_".$this->idioma]?>" class=" img-rounded img-thumbnail" />
+    </div>
+    <p class="text-muted" style="text-align: justify;"><?php echo $this->rotador["rot_descripcion_".$this->idioma];?></p>
+</div>

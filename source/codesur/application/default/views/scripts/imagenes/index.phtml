@@ -1,0 +1,94 @@
+<?php $sesion_pag=new Zend_Session_Namespace('secciones_pag');
+$titulo_sec=$sesion_pag->sec_titulo;
+?>
+<link rel="stylesheet" href="/css/lightbox/lightbox.min.css">
+<div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+    <h3><?php echo $this->translate("Galeria de imagenes").' '.$titulo_sec?></h3>
+    <p><?php //echo $this->translate("Calendario o tentativa")?></p>
+</div>
+<div  class="col-md-12">
+  <?php 
+
+$db = Zend_Registry::get ( 'db' );
+$sec='select * from fotos_seccion where sec_estado=1';
+$sec=$db->fetchAll($sec);
+?>
+    <table>
+        <tr>
+            <td>    <label class="col-lg-12 control-label">   <?php echo $this->translate("buscar imagene por secciones")?> : 
+                </label>
+            </td>
+            <td>
+                <select name="seccion" id="seccion"   class="form-control">
+                    <option value=""><?php echo $this->translate("Seleccione una opcion")?></option>
+                     <?php foreach ($sec as $s){?>
+                    <option  value="<?php echo $s['sec_id']?>"><?php echo $s['sec_nombre_'.$this->idioma]?></option>
+              <?php  }?>
+                </select>
+               
+            </td>
+            <td>
+                <div >
+                    <input type="submit" value="<?php echo $this->translate("buscar");?>" onclick="buscar()" >
+                </div>
+            </td>
+            <td>
+                <div id="load_seccion" style="margin-left: 5px;   height: 30px;    width: 31px;">
+                    
+                </div>
+            </td>
+        </tr>
+    </table>
+         <!--</form>--> 
+    
+</div>
+ 
+		<?php 
+                if(count($this->imagenes)>0){
+			foreach($this->imagenes as $v){ ?>
+                
+                  <div class="col-md-3">
+               <a class="example-image-link" href="/upload/galeria_fotos/<?php echo $v["fot_img"]?>" data-lightbox="example-set" 
+                  data-title="<?php echo "<p style='  border-bottom: 1px solid;    color: #fff;    text-align: center;'>".$v["fot_titulo_".$this->idioma]."</p><div style=' text-align: justify;'>".$v["fot_descripcion_".$this->idioma]."</div>"?>">
+                   <img class="example-image img-thumbnail" src="/upload/galeria_fotos/thumb/s<?php echo $v["fot_img"]?>" alt="" style="  width: 250px;  height: 150px;"/>
+               </a> 
+              <p style="text-align: center;font-size: 12px; color: #9d9d9d;"><?php echo $v["fot_titulo_".$this->idioma]?></p>
+          </div>
+                
+		<?php } ?>
+                    <div class="bajar"></div>
+                        <div id="not_paginacion">
+                           <div class="paginador_g3">	<?php	echo $this->paginationControl($this->imagenes,'Sliding',	'paginar_g2.phtml');?>	</div>  
+                        </div>
+		
+		<?php }else{ ?>
+                <h4>  <?php echo $this->translate("No se tiene informacion")?> </h4>
+               <?php  } ?>
+                
+<script src="/js/lightbox/lightbox-plus-jquery.min.js"></script>
+<?php   ?>
+<script type="text/javascript">
+    var no_c = jQuery.noConflict();
+    
+ function buscar(){
+     var sec_id=no_c('#seccion').val();
+  no_c.ajax({
+        async: true,
+        url: "/imagenes/llamada",
+        type: "POST",
+        data: {
+            'sec_id':sec_id,
+        },
+        beforeSend:function(){
+            no_c('#load_seccion').html('<img src="/img/cargando.gif" title="Buscando" style="   height: 30px;    width: 31px;"/>');
+                  },
+        dataType: "json",
+        success: function(res){
+            if(res.ok){
+                location.href="<?php echo $this->url(array('idioma'=>$this->idioma ,"pagina"=>"pagina01"),'imagenes_'.$this->idioma)?>";
+              //window.open("<?php echo $this->url(array('idioma'=>$this->idioma ,"pagina"=>"pagina01"),'imagenes_'.$this->idioma)?>");
+            }
+        }
+    });
+ }
+</script>

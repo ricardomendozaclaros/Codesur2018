@@ -1,0 +1,31 @@
+<div class="elemento_formulario">  
+      
+    <div class="contenido_elemento">  
+    <?php  
+        $attribs = $this->element->getAttribs(); 
+         $label = $this->element->getLabel();  
+  
+        //nuevo, verificamos si el elemento es requerido,  
+        //entonces agregamos un elemento en html al final de la etiqueta  
+        if ($this->element->isRequired()) {  
+            $attribs['escape'] = false;  
+            //$label = $this->escape($label).'<label class="requerido">*</label>';  
+            $label = $this->escape($label);
+        }  
+  
+        //echo $this->formLabel($this->element->getName(), $label, $attribs);
+        if(!is_null($label)&&$attribs['helper']!='formSubmit')
+        {	
+        	echo "<div class='label_elemento_formulario'>".$this->formLabel($this->element->getName(),$label)."</div>";
+        }  
+    ?>  
+    <?php echo $this->content; ?>
+    </div>
+    <div id="<?php echo $this->element->getName().'_valido';?>"></div>
+    <div class="errores">   
+    <?php if ($this->element->getMessages()) { ?>  
+            <?php echo implode('<br />', $this->element->getMessages());?>  
+    <?php }?>
+    </div>           
+    <div class="bajar"></div>
+</div>

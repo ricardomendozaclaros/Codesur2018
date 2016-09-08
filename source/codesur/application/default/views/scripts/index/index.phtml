@@ -1,0 +1,50 @@
+<div class="row" style="margin: 0px 0px 0px 0px;">
+    <div class="col-md-8" style=" border: 1px solid #cdcdcd;    padding: 3px 0 5px;">
+        <?php echo $this->partial('/layout/rotador.phtml',array('idioma'=>$this->idioma )); ?>
+         <?php //echo $this->partial('/layout/envivo.phtml',array('idioma'=>$this->idioma )); ?> 
+</div>
+    <div class="col-md-4" style="padding: 0px;">
+           <?php echo $this->partial('/layout/cronometro.phtml',array('idioma'=>$this->idioma )); ?> 
+          
+     
+     </div>
+
+</div>
+
+<div class="row" style="margin: 0px;">
+    <?php echo $this->partial('/layout/noticia.phtml',array("principal"=>$this->principal,'idioma'=>$this->idioma )); ?> 
+        <div class="col-md-4" style="padding: 0px;">
+           <?php echo $this->partial('/layout/losjuegos.phtml',array('idioma'=>$this->idioma )); ?> 
+    </div>
+    <div class="col-md-4" style="padding: 0px; text-align:  center;">
+           <?php echo $this->partial('/layout/facebook.phtml',array('idioma'=>$this->idioma )); ?> 
+     
+     </div>
+</div>
+	 <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+	    <h3><?php echo $this->translate("Galeria de videos");?>
+	        <a class="link_a" href="<?php echo $this->url(array('idioma'=>$this->idioma,"pagina"=>"pagina01"),'galeria_videos_'.$this->idioma)?>">
+	            <?php echo $this->translate("ver mas")?>
+	        </a>
+	    </h3>
+	   
+	</div>
+
+<div class="row"  >
+    <div class="col-md-12" style="text-align: center;">   
+           <?php echo $this->partial('/layout/galeria_videos.phtml',array('idioma'=>$this->idioma )); ?> 
+     </div>
+    </div>
+<div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+    <h3>
+        <?php echo $this->translate("Galeria de imagenes")?>
+<a  class="link_a"href="<?php echo $this->url(array('idioma'=>$this->idioma ,"pagina"=>"pagina01"),'portafolio_imagenes_'.$this->idioma)?>"><?php echo $this->translate("ver mas")?></a>
+    </h3>
+   
+</div>
+
+<div class="row"  >
+     <div class="col-md-12"> 
+           <?php echo $this->partial('/layout/imagenes.phtml',array('idioma'=>$this->idioma )); ?> 
+     </div>
+     </div>

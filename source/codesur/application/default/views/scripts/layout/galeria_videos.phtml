@@ -1,0 +1,98 @@
+
+    <script src="/js/galeria/jquery-1.11.3.min.js"></script>
+    <link href="/css/galeria/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <style>
+/*    body { background-color:#222; color:#fff;}
+    h1 { margin:150px auto 30px auto; text-align:center;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden
+    }*/
+
+    .clearfix {
+        *height: 1%;
+    }
+
+    .container_g {
+        height: 300px;
+        margin:0px auto;
+    }
+
+    .container_g ul {}
+
+    .container_g ul li {
+        /* transition: width .5s, height .5s, top .5s, left .5s;
+            -webkit-transition: width .5s, height .5s, top .5s, left .5s;
+            */
+            border:1px solid #fff;
+    }
+
+    .container_g ul li img {}
+
+    .left,
+    .right {
+        cursor: pointer;
+    }
+    </style>
+    <script src="js/galeria/Carousel.js"></script>
+    <script type="text/javascript">
+        var carr = jQuery.noConflict();
+    carr(document).ready(function() {
+        carr('.container_g').carousel({
+            num: 5,
+            maxWidth: 550,
+            maxHeight: 400,
+            distance: 50,
+            scale: 0.6,
+            animationTime: 1000,
+            showTime: 4000
+        });
+        carr('#container2').carousel({
+            num: 5,
+            maxWidth: 200,
+            maxHeight: 100,
+            showTime: 5000
+        });
+
+        carr('#container3').carousel({
+            num: 5,
+            maxWidth: 300,
+            maxHeight: 250,
+            distance: 30,
+            autoPlay: false
+        });
+    });
+    </script>
+
+
+<?php 
+$db=Zend_Registry::get('db');
+ $q="select * from video WHERE vid_estado=1";
+    $tabla_vid=$db->fetchAll($q);
+    $i=1;
+       $q="select * from video WHERE vid_estado=1 and vid_tipo=2 order by vid_id desc limit 0,2";
+    $vid=$db->fetchAll($q);
+
+foreach($vid as $v){
+    
+          $vi= str_replace("watch?v=", "embed/", $v['vid_youtube']);
+
+           if($vi)
+           {
+               ?>
+      <div class="col-md-6" style="text-align: center;"> 
+          <iframe id="ytplayer" type="text/html"   width="400" height="300"    src="<?php echo $vi?>"     frameborder="0"/></iframe>
+      </div>
+           
+           
+               <?php
+           }    }
+           ?>
+       <!--</div>-->
+
+
+
+

@@ -1,0 +1,23 @@
+<?php 
+$db=Zend_Registry::get('db');
+$n_anuncios=(int)$db->fetchOne("SELECT count(ban_id) FROM banner WHERE pos_id=?",$this->pos_banner);
+
+if($n_anuncios)
+{
+?>
+
+
+<div class="selector_ciudades" style="margin-top:10px;">
+<div class="titulo_g1_cont" style="margin: 0">
+ 		<div class="titulo_g1_iz"></div>
+ 		<div class="titulo_g1">
+ 		<h1 style="margin: 0;color: #373737;font-size: 14px;text-align: center;width: 180px">Publicidad</h1>
+ 		</div>
+ 		<div class="titulo_g1_de"></div>
+ 	</div>
+ <div class="banner_publicidad">
+ 		<?php echo $this->partial('banner/general.phtml',array('pos_id'=>$this->pos_banner));?>
+</div>
+
+</div>
+<?php }?>

@@ -1,0 +1,113 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<?php
+		
+		echo $this->headTitle();
+		echo $this->headMeta();
+		echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/default.css')
+                    ->prependStylesheet('/css/bootstrap/bootstrap.min.css') 
+                         ->prependStylesheet('/css/hover.css') 
+                    ->prependStylesheet('/css/bootstrap/asstes/ie10-viewport-bug-workaround.css');	
+		echo $this->headStyle();
+		echo $this->headScript()
+                ->prependFile('/js/bootstrap/assets/ie-emulation-modes-warning.js')	
+//		->appendFile('/js/default.js')			
+;
+		?>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="/js/bootstrap/assets/ie8-responsive-file-warning.js"></script><![endif]-->
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+<link rel="shortcut icon" href="/img/ico.ico" type="image/x-icon"/>
+</head>
+<body>
+    <div class="menu_head">
+   <nav class="navbar navbar-inverse navbar-fixed-top img_header" role="navigation">
+        <div class="container head_container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                   <a class=" logo_head  navbar-brand"  href="#">
+                       <img src="/img/logo.png" alt="XI Juegos Suramericanos" class="img-responsive"/>
+                   </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+             
+            </div>
+            <!--<div style="" class="div_cabecera">-->
+                <div class="social_header">
+                    <div class="links_social">
+                      <a class="social_link social_twitter   hvr-wobble-vertical" href="#"><img src="/img/red_twiter.png" alt="Twiter" /></a>
+                      <a class="social_link social_facebook  hvr-wobble-vertical" href="#"><img src="/img/red_face.png" alt="Facebook" /></a>
+                      <a class="social_link social_google    hvr-wobble-vertical" href="#"><img src="/img/red_gmail.png" alt="Google" /></a>
+                      <a class="social_link social_youtube   hvr-wobble-vertical" href="#"><img src="/img/red_you.png" alt="Youtobe" /></a>
+                      <a class="social_link social_instagram hvr-wobble-vertical" href="#"><img src="/img/red_instagram.png" alt="Twiter" /></a>
+                    </div>
+                  </div>
+            <!--</div>-->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav ul_letras menu_nav">
+                    <li>                        <a href="#">COCHA 2018</a>                    </li>
+                   <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          LOS JUEGOS<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu sub_menu">
+                          <li><a href="#">ORGANIZACION</a></li>
+                          <li><a href="#">PAISES</a></li>
+                          <li><a href="#">DEPORTES</a></li>
+                          <li class="divider">CALENDARIO</li>
+                          <li><a href="#">RECINTOS</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Acción #5</a></li>
+                        </ul>
+                      </li>
+                    <li>                        <a href="#">VOLUNTARIADOS</a>                  </li>
+                     <li>                       <a href="#">HISTORIA</a>                    </li>
+                    <li>                        <a href="#">CONTACTANOS</a>                 </li>
+                   
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>    
+    </div>
+    <div id="contenedor container" style="margin-top: 202px;" >
+
+        <div id="cuerpo" style="height: 1000px; float: left; width: 100%;">
+ <!-- CENTRO-->
+
+	<?php echo $this->layout()->content;?>
+			
+</div><!-- fin cuerpo -->
+
+<div class="bajar"></div>
+<!-- PIE -->
+<div id="pie">
+pie
+</div><!-- fin pie -->
+
+
+</div><!-- fin contenedor -->
+ <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/bootstrap/assets/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/js/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/js/bootstrap/assets/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript">
+   // alert('El ancho de la resolucion de pantalla es de '+screen.width+'pixeles'); 
+    </script>
+</body>
+
+</html>

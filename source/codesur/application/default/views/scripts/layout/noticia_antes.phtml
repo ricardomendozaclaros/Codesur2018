@@ -1,0 +1,54 @@
+  <script src="/noticia/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="/noticia/standalone.css">
+  <link rel="stylesheet" type="text/css" href="/noticia/scrollable-vertical.css">
+<div class="col-md-8" style="padding: 0px;">
+        <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+            <h3><?php echo $this->translate("noticias destacas")?>
+	        <a class="link_a" href="<?php echo $this->url(array('idioma'=>$this->idioma,"pagina"=>"pagina01"),'mas_noticias_'.$this->idioma)?>">
+	            <?php echo $this->translate("ver mas")?>
+	        </a>
+	    </h3>
+        </div>
+<div class="scrollable vertical">
+  <div class="items">
+      <?php if($this->principal){
+          $dat=$this->principal; $jj=1;
+          foreach ($dat as $d){
+              $enlace=$this->url(array('idioma'=>$this->idioma,'alias_noticia'=>$d['not_alias_'.$this->idioma]),'noticia_completa_'.$this->idioma);
+           //if($jj==6){ echo $div="<div>"; }      ?>
+                <div class="caja_noticia">
+                    <div class="caja_img col-md-4 thumbnail">
+                        <img src="/upload/noticia/thumb/s<?php echo $d["not_img"]?>" title="<?php echo $d["not_titulo_".$this->idioma]?>" style="border-radius:14px;" />
+                    </div>
+                    <div class="col-md-8 caja_decripcion">
+                    <h3>
+                        <a href="<?php echo $enlace?>"><?php echo $d["not_titulo_".$this->idioma]?></a></h3>
+                        <p style="text-align: justify;"><?php echo Util_Cortartexto::cortar_texto($d["not_cuerpo_".$this->idioma], 300);?></p> 
+                    </div>
+
+                </div>
+          <?php //if($jj==6){ echo $div="</div>"; } $jj=$jj+1;?>
+
+        <?php } }else{     ?>
+      <h3> <?php echo $this->translate("No se tiene informacion")?></h3>
+      <?php }?>
+  </div>
+</div>
+  </div>
+
+
+
+<!-- root element for scrollable -->
+
+
+<!-- javascript coding -->
+<script>
+var vertical = jQuery.noConflict();
+vertical(function() {
+    // initialize scrollable with mousewheel support
+   // $(".scrollable").scrollable({ vertical: true, mousewheel: true });
+    vertical(".scrollable").scrollable({vertical: true,circular: true, mousewheel: true}).navigator().autoscroll({
+	interval: 2500
+});
+});
+</script>

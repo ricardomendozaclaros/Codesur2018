@@ -1,0 +1,100 @@
+<script src="/js/deportes/jquery-1.8.2.min.js"></script>
+<link rel="stylesheet" href="/css/deportes/def.css">
+<script src="/js/deportes/jquery.popupoverlay.js"></script>
+<link rel='stylesheet' id='headway-general-css'  href="/css/deportes/general-83fd56f.css-ver=4.5.1.css"  type='text/css' media='all' />
+<!--[if lt IE 7]>
+<style>
+  div.apple_overlay {
+    background-image:url(/media/img/overlay/overlay_IE6.gif);
+    color:#fff;
+  }
+
+  /* default close button positioned on upper right corner */
+  div.apple_overlay div.close {
+    background-image:url(/media/img/overlay/overlay_close_IE6.gif);
+  }
+</style>
+<![endif]-->
+<?php $db = Zend_Registry::get ( 'db' );
+$dep="select * from deportes where dep_estado=1";
+$dep=$db->fetchAll($dep);
+?>
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+    <?php foreach ($dep as $d){        ?>
+    
+    .a<?php echo $d["dep_id"];?>:hover ~ .central{
+        background:url("/upload/deportes/<?php echo $d["dep_img2"];?>") no-repeat;background-position:center center;
+        /*margin-top: 10px;*/
+    }
+    <?php }?>
+
+
+#rs-demo-id {}
+</style>
+<div id="whitewrap">
+<div id="wrapper-wxr56facbb9bbc6e" class="wrapper wrapper-fixed wrapper-fixed-grid grid-fluid-24-47-3 responsive-grid" data-alias="">
+<div class="grid-container clearfix">
+<section class="row row-1">
+<section class="column column-1 grid-left-0 grid-width-24">
+<div id="block-bwi56facbb9c0103" class="block block-type-content block-fluid-height" data-alias="">
+<div class="block-content">
+<div class="loop">
+    <article id="post-134" class="post-134 page type-page status-publish hentry author-codesur " itemscope itemtype="http://schema.org/CreativeWork">
+       <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+         <h3><?php echo $this->translate("DEPORTES")?></h3>
+        </div>
+<div class="entry-content" itemprop="text">
+            <div class="paginanimacion">
+                <div class="accion" style="position: relative;">
+                    <?php for($i=1;$i<=48;$i++){                    ?>
+                    <a class="a<?php echo $i;?> initialism a<?php echo $i;?>_open btn"  href="#a<?php echo $i;?>" onclick="muestra('a<?php echo $i;?>');"></a><br />
+                   <?php }?>
+    <a class="central"></a>
+    </div>
+</div>
+</div>
+<?php     foreach ($dep as $dd){     $datos=$dd["dep_detalle_".$this->idioma];   ?>
+  
+<div id="a<?php echo $dd["dep_id"];?>"   class="well"style=" width: 700px; " >
+    <div class="col-md-12 " style="text-align: center;">
+         <h4 class="titulo_dep"> <?php echo $dd["dep_titulo_".$this->idioma];?></h4>
+         <img class="alignleft size-full wp-image-242 img-thumbnail" src="/upload/deportes/<?php echo $dd["dep_img1"];?>"  alt="<?php echo $dd["dep_titulo_".$this->idioma];?>" />
+    </div>
+    <div class="bajar"></div>
+    <p class="bg-info_" style="color: #000040;    padding-left: 10px;"> <?php echo $this->translate("descripcion")?></p>
+    <div class="txto_dep bs-callout bs-callout-info_" style="width: 100%;">
+        <?php echo $datos;?> 
+    </div>
+   
+</div>
+       
+    <?php }?>
+ </article>
+</div></div>
+</div>
+
+</div>
+
+</section>
+
+</section>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+<script>
+
+function muestra(ss){
+var npp = jQuery.noConflict();
+    npp('#'+ss).popup({
+        focusdelay: 100,
+        outline: true,
+        vertical: 'top'
+    });
+}
+</script>

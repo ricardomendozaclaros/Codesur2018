@@ -1,0 +1,1036 @@
+<link href="/mapas/external/jquery-ui.css" rel="stylesheet">
+<link href="/mapas/mapas.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/mapas/css/verticalmenu.css" media="screen">
+<script src="/mapas/external/jquery/jquery.js"></script>
+<script src="/mapas/external/jquery-ui.js"></script>
+   <script type="text/javascript">
+	   var menum = jQuery.noConflict();
+        menum(document).ready(function () {
+           menum('#nav li a').click(function(){
+                var s = menum(this).attr('id');
+                var imgid=menum("#"+s+" img").attr('id');
+                var imgsrc=menum("#"+imgid+"").attr('src');
+                if(imgsrc=="/mapas/images/insert.jpg")
+                {
+                    menum("#"+imgid+"").attr('src','/mapas/images/remove.jpg');
+                    menum(this).next().slideDown(800);
+                }
+                else
+                {
+                    menum("#"+imgid+"").attr('src','/mapas/images/insert.jpg');
+                    menum(this).next().slideUp(800);
+                }
+            });
+           menum("#menu li a").mouseover(function() {
+               var s = menum(this).attr('id');
+                var imgid=menum("#"+s+" img").attr('id');
+                var imgsrc=menum("#"+imgid+"").attr('src');
+                if(imgsrc=="/mapas/images/insert.jpg")
+                {
+                    menum("#"+imgid+"").attr('src','/mapas/images/remove.jpg');
+                    menum(this).parent().find(".count").slideDown('medium').show(); 
+                }
+		menum(this).parent().hover(function() 
+		{
+		}, 
+		function()
+		{	menum("#"+imgid+"").attr('src','/mapas/images/insert.jpg');
+			menum(this).parent().find(".count").slideUp('slow'); 
+		});
+                
+            });
+            menum('#onclick').attr('checked', true);
+            menum('#onclick').click(function(){
+                menum("#click").show();
+                menum("#onover").hide();
+                menum('#mouseover').attr('checked', false);
+            });
+            menum('#mouseover').click(function(){
+                 menum("#click").hide();
+                menum("#onover").show();
+                menum('#onclick').attr('checked', false);
+            });
+        });
+        </script>
+        
+<div class="social">
+    <ul>   <li><a id="dialog-link" class="ui-button ui-corner-all ui-widget map" title="Deportes"> </a></li>  </ul>
+</div>
+<!--<div class="social2">
+    <ul>   <li style="background: #fff;"><a id="dialog-link2" class="ui-button ui-corner-all ui-widget estadium" title="Escenarios deportivos "> </a></li></ul>
+</div>-->
+	<style>
+	.social { left: 261px;
+    position: absolute;
+    top: 55px;
+    z-index: 2000;}
+	.social ul {		list-style: none;}
+	.social ul li a {
+            display: inline-block;	color:#fff;		height: 61px;background: #000;
+            width: 47px;		padding: 10px 15px;	text-decoration: none;		-webkit-transition:all 500ms ease;		-o-transition:all 500ms ease;
+	    transition:all 500ms ease; 
+	}
+	.social ul li .map {background:	rgba(0, 0, 0, 0) url("/images/google_map.png") no-repeat scroll 0 0;} 
+        .social ul li .estadium {background:	rgba(0, 0, 0, 0) url("/images/escenarios.png") no-repeat scroll 0 0;}
+        /**************/
+        .social2 {position: fixed;    right: 39px;    top: 55px;    z-index: 2000;}
+	.social2 ul {		list-style: none;}
+	.social2 ul li a {
+            display: inline-block;	color:#fff;		height: 61px;background: #000;
+            width: 47px;		padding: 10px 15px;	text-decoration: none;		-webkit-transition:all 500ms ease;		-o-transition:all 500ms ease;
+	    transition:all 500ms ease; 
+	}
+	.social2 ul li .map {background:	rgba(0, 0, 0, 0) url("/images/google_map.png") no-repeat scroll 0 0;} 
+        .social2 ul li .estadium {background:	rgba(0, 0, 0, 0) url("/images/escenarios.png") no-repeat scroll 0 0;}
+	.map_table  td img{	margin:0px 5px 0px 5px;	}
+        .check_picto{           margin: 0px 5px 0px 0px;         }
+
+	</style>
+<div id="dialog2" title="Escenarios Deportivos">
+	 <ul id="menu">
+	 <li><a  id='im6' title="Av. Hernan Morales esq. Av. Del Chaco,  Parque Mariscal Santa Cruz">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	 <input type='checkbox'id='cc_0'  class='cc_0 check_picto'  onclick='recintoMuestraOculta("cc_0","-","0")'>Complejo Acuático GAMC</a>
+	  <ul class='count'>
+                <li><a >Natación Carrera</a></li>
+                <li><a >Nado Sincronizado</a></li>
+                <li><a >Clavado</a></li>
+                <li><a >Polo Acuatico</a></li>
+          </ul>
+	 </li>
+	 <li><a  id='im6' title="C. Estudiantes esq. C. El Torno">
+	 	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	 <input type='checkbox' id='cc_1' class='cc_1 check_picto' onclick='recintoMuestraOculta("cc_1","atletismo","1")'>Estadio de Atletismo GAMC</a>
+	  <ul class='count'>
+            <li><a >Atletismo</a></li>
+      </ul>
+	 </li>
+	 <li><a  id='im6' title="Cliza">
+	 	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_33' class='cc_33 check_picto' onclick='jsMuestraOculta("cc_33","badminton","33")'>Coliseo "CENTENARIO" de Cliza</a>
+	  <ul class='count'>
+            <li><a >Badminton</a></li>
+      </ul>
+	 </li>
+	 <li><a  id='im6' title="Municipio de Quillacollo ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_16' class='cc_16 check_picto' onclick='jsMuestraOculta("cc_16","baloncesto","16")'>Coliseo Polideportivo Quillacollo</a>
+	  <ul class='count'>
+            <li><a >Baloncesto</a></li>
+          </ul>
+	 </li>
+	<li><a  id='im6' title="Municipio de Sacaba-Coliseo Municipal">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_16' class='cc_16 check_picto' onclick='jsMuestraOculta("cc_17","balonmano","17")'>Coliseo Municipal Sacaba</a>
+	  <ul class='count'>
+            <li><a >Balonmano</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="Municipio de Cercado-Bolera Zona Pajcha ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_16' class='cc_16 check_picto' onclick='jsMuestraOculta("cc_2","bownling","2")'>Municipio de Cercado-Bolera Zona Pajcha</a>
+	  <ul class='count'>
+            <li><a >Bownling</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="Municipio de Punata-Punata ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_19' class='cc_19 check_picto' onclick='jsMuestraOculta("cc_19","bow","19")'>Coliseo Municipal Punata</a>
+	  <ul class='count'>
+            <li><a >Box</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio de Punata-Punata ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_19' class='cc_19 check_picto' onclick='jsMuestraOculta("cc_19","canotaje","19")'>Represa Angostura</a>
+	  <ul class='count'>
+            <li><a >Canotaje</a></li>
+          </ul>
+	 </li>
+         <li>
+             <a id='im8' title="Municipio Corani">
+                 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+                 <input type='checkbox' id='cc_21' class='cc_21 check_picto' onclick='jsMuestraOculta("cc_21","nauticos","21")'> Represa de La Angostura</a>
+            <ul class='count'>
+                <li><a >Canotaje</a></li>
+                <li><a >Esqui Nautico</a></li>
+                <li><a >Aguas Abiertas</a></li>
+                <li><a >Remo</a></li>
+                <li><a >Vela</a></li>
+            </ul>
+        </li>
+        <li><a  id='im6' title="Municipio de Cercado - Coña Coña ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_3' class='cc_3 check_picto' onclick='jsMuestraOculta("cc_3","bmx","3")'>Circuito BMX GAMC</a>
+	  <ul class='count'>
+            <li><a >BMX</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="Municipio de Cercado - Cerro San Pedro ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_4' class='cc_4 check_picto' onclick='jsMuestraOculta("cc_4","mtb","4")'>Cerro de San Pedro</a>
+	  <ul class='count'>
+            <li><a >MTB</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title=" SEDEDE - Parque Mariscal Santa Cruz ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_22' class='cc_22 check_picto' onclick='jsMuestraOculta("cc_22","pista","22")'>Velodromo Edgar Cueto</a>
+	  <ul class='count'>
+            <li><a >Ciclismo Pista</a></li>
+          </ul>
+	 </li>
+        <li><a  id='im6' title=" Municipio de Carcado - Circuito Cochabamba ">
+<!--	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_22' class='cc_22' onclick='jsMuestraOculta("cc_22","ruta","22")'>-->
+             Circuito Cochabamba</a>
+	  <ul class='count'>
+            <li><a >Ciclismo Ruta</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="Municipio de Tarata ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_28' class='cc_28 check_picto' onclick='jsMuestraOculta("cc_28","pista","28")'>Complejo Los Sargentos</a>
+	  <ul class='count'>
+            <li><a >Adiestramiento</a></li>
+             <li><a >Salto</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="Municipio de Tolata ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_32' class='cc_32 check_picto' onclick='jsMuestraOculta("cc_32","pista","32")'>Coliseo de Tolata</a>
+	  <ul class='count'>
+            <li><a >Esgrima</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="SEDEDE -Av. Libertador esq. Av. Juan de la Rosa  ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_23' class='cc_23 check_picto' onclick='jsMuestraOculta("cc_23","pista","23")'>Estadio Felix Capriles</a>
+	  <ul class='count'>
+            <li><a >Futbol</a></li>
+          </ul>
+	 </li>
+         
+          <li><a  id='im6' title="Municipio de Cercado - Av. Beijing y Av. Melchor Perez">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_6' class='cc_6 check_picto' onclick='jsMuestraOculta("cc_6","pista","6")'>Coliseo Municipal de Gimnasia GAMC</a>
+	  <ul class='count'>
+            <li><a >Gimnasia Artística</a></li>
+            <li><a >Gimnasia Ritmica</a></li>
+            <li><a >Gimnasia Trampolin</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="Circuito Bolivia ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_31' class='cc_31 check_picto' onclick='jsMuestraOculta("cc_31","pista","31")'>Country Club - CBBA</a>
+	  <ul class='count'>
+            <li><a >Golf</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="SEDEDE - Av. Juan de la Rosa esq. Julio Mendez ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_24' class='cc_24 check_picto' onclick='jsMuestraOculta("cc_24","pista","24")'>Complejo Felix Capriles</a>
+	  <ul class='count'>
+            <li><a >Hockey Cesped</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="Municipio de Vinto - Vinto ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_35' class='cc_35 check_picto' onclick='jsMuestraOculta("cc_35","pista","35")'>Coliseo de Vinto</a>
+	  <ul class='count'>
+            <li><a >Judo</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio de Colcapirhua - Av. Cap. Victor Ustariz  ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_14' class='cc_14 check_picto' onclick='jsMuestraOculta("cc_14","pista","14")'>Coliseo de Colcapirhua</a>
+	  <ul class='count'>
+            <li><a >Karate</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="SEDEDE - Costanera  ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_25' class='cc_25 check_picto' onclick='jsMuestraOculta("cc_25","pista","25")'>Coliseo Grover Suarez</a>
+	  <ul class='count'>
+            <li><a >Levantamiento de Pesas</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="Municipio Cercado - Av. Costanera esq. C. Ecuador  ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_5' class='cc_5 check_picto' onclick='jsMuestraOculta("cc_5","pista","5")'>Coliseo Jose Villazón</a>
+	  <ul class='count'>
+            <li><a >Lucha</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Av. Dorbigny esq. Av. Sexta(Carrera),Av. Circunvalacion esq. Av. Centenario(Artístico)  ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_78' class='cc_78 check_picto' onclick='jsMuestraOculta("cc_78","pista","7-8")'>Patinodromo Municipal GAMC</a>
+	  <ul class='count'>
+            <li><a >Patinaje Carrera</a></li>
+            <li><a >Patinaje Artístico</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio Cercado - Av. Dorbigny esq. C. Dr. Luis Pardo ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_9' class='cc_9 check_picto' onclick='jsMuestraOculta("cc_9","pista","9")'>Fronton Municipal GAMC</a>
+	  <ul class='count'>
+            <li><a >Pelota Fronton</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio Cercado - Av. Melchor Perez esq. C. Quilla">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_10' class='cc_10 check_picto' onclick='jsMuestraOculta("cc_10","pista","10")'>Complejo Sarco</a>
+	  <ul class='count'>
+            <li><a >Raquetbol</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio Sacaba - Av. Melchor Perez esq. C. Quilla">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_11' class='cc_11 check_picto' onclick='jsMuestraOculta("cc_11","pista","11")'>Fronton Municipal GAMC</a>
+	  <ul class='count'>
+            <li><a >Scuash</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio Sacaba - C. Bolivar esq. C. Porvenir">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_18' class='cc_18 check_picto' onclick='jsMuestraOculta("cc_18","pista","18")'>Estadio de Sacaba</a>
+	  <ul class='count'>
+            <li><a >Rugby</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio Tiquipaya - C. T Torrico  a una cuadra de la Av. Ecologica">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_15' class='cc_15 check_picto' onclick='jsMuestraOculta("cc_15","pista","15")'>Coliseo de Tiquipaya</a>
+	  <ul class='count'>
+            <li><a >Taekwondo</a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="SEDEDE - Av. Humboldt">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_26' class='cc_26 check_picto' onclick='jsMuestraOculta("cc_26","pista","26")'>Coliseo Polifuncional Evo Morales</a>
+	  <ul class='count'>
+            <li><a >Tenis de Mesa</a></li>
+          </ul>
+	 </li>
+           <li><a  id='im6' title="Municipio de Tarata">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_28' class='cc_28 check_picto' onclick='jsMuestraOculta("cc_28","pista","28")'>Complejo Los Sargentos</a>
+	  <ul class='count'>
+            <li><a >Ecuestre</a></li>
+             <li><a >Tiro Deportivo</a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio de Cercado - Circuito Bolivia">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_12' class='cc_12 check_picto' onclick='jsMuestraOculta("cc_12","pista","12")'>Complejo Municipal</a>
+	  <ul class='count'>
+             <li><a >Tiro Con Arco </a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio de Corani ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_20' class='cc_20 check_picto' onclick='jsMuestraOculta("cc_20","pista","20")'>Represa Angostura</a>
+	  <ul class='count'>
+             <li><a >Triatlon </a></li>
+          </ul>
+	 </li>
+         <li><a  id='im6' title="SEDEDE - Coronilla ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_27' class='cc_27 check_picto' onclick='jsMuestraOculta("cc_27","pista","27")'>Coliseo Jose Casto Mendez</a>
+	  <ul class='count'>
+             <li><a >Voleibol </a></li>
+          </ul>
+	 </li>
+          <li><a  id='im6' title="Municipio de Cercado ">
+	 <img src="/mapas/images/insert.jpg" id="4" align='left'>
+	     <input type='checkbox'id='cc_13' class='cc_13  check_picto' onclick='jsMuestraOculta("cc_13","pista","13")'>Complejo  GAMC</a>
+	  <ul class='count'>
+             <li><a >Voleibol de Playa</a></li>
+          </ul>
+	 </li>
+         
+         <li>	 
+	 </li>
+</ul>
+</div>
+<div id="dialog" title="Deportes" style=" z-index: 4000!important;">
+<div style="height:200px;">
+  <ul id="menu">
+        <li><a ><input type='checkbox' id='c_1' class='c_1 check_picto'  onclick='jsMuestraOculta("c_1","atletismo","1")'>Atletismo</a></li>
+        <li><a ><input type='checkbox'id='c_34' class='c_34 check_picto' onclick='jsMuestraOculta("c_34","badminton","34")'>Badminton</a></li>
+        <li><a ><input type='checkbox'id='c_17' class='c_17 check_picto' onclick='jsMuestraOculta("c_17","balonmano","17")'>Balon Mano</a></li>
+        <li><a ><input type='checkbox'id='c_16' class='c_16 check_picto' onclick='jsMuestraOculta("c_16","baloncesto","16")'>Baloncesto</a></li>
+        <li><a ><input type='checkbox' id='c_2' class='c_2 check_picto'  onclick='jsMuestraOculta("c_2","bownling","2")'>Bownling</a></li>
+        <li><a ><input type='checkbox'id='c_19' class='c_19 check_picto' onclick='jsMuestraOculta("c_19","box","19")'>Boxeo</a></li>
+        <li>           
+        <a id='im6' >
+            <img src="/mapas/images/insert.jpg" id="4" align='left'>
+            <input type='checkbox' id='c_0' class='c_0 check_picto'onclick='jsMuestraOculta("c_0","centroAcuatico","0")' >Centro acuatico</a>
+        <ul class='count'>
+        <li><a >Natación Carrera</a></li>
+        <li><a >Nado Sincronizado</a></li>
+        <li><a >Clavado</a></li>
+        <li><a >Polo Acuatico</a></li>
+        </ul>
+        </li>
+	<li><a id='im7' ><img src="/mapas/images/insert.jpg" id="5" align='left'>Ciclismo</a>
+            <ul class='count'>
+                <li><a ><input type='checkbox'id='c_3'  class='c_3 check_picto' onclick='jsMuestraOculta("c_3","bmx","3")'>BMX</a></li>
+                <li><a ><input type='checkbox'id='c_4'  class='c_4 check_picto' onclick='jsMuestraOculta("c_4","mtb","4")'>MTB</a></li>
+                <li><a ><input type='checkbox'id='c_22' class='c_22 check_picto' onclick='jsMuestraOculta("c_22","pista","22")'>Pista</a></li>
+            </ul>
+        </li>
+        <li><a ><input type='checkbox'id='c_28' class='c_28 check_picto' onclick='jsMuestraOculta("c_28","ecuestre","28")'>Ecuestre</a></li>
+        <li><a ><input type='checkbox'id='c_33' class='c_33 check_picto' onclick='jsMuestraOculta("c_33","esgrima","33")'>Esgrima</a></li>
+        <li><a ><input type='checkbox'id='c_23' class='c_23 check_picto' onclick='jsMuestraOculta("c_23","futbol","23")'>Futbol</a></li>
+        <li><a ><input type='checkbox'id='c_30' class='c_30 check_picto' onclick='jsMuestraOculta("c_30","futsal","30")'>Futsal</a></li>
+        <li><a ><input type='checkbox'id='c_6' class='c_6 check_picto' onclick='jsMuestraOculta("c_6","gimnacia","6")'>Gimnacia</a></li>
+        <li><a ><input type='checkbox'id='c_32' class='c_32 check_picto' onclick='jsMuestraOculta("c_32","golf","32")'>Golf</a></li>
+	<li><a ><input type='checkbox'id='c_24' class='c_24 check_picto' onclick='jsMuestraOculta("c_24","pesas","24")'>Hockey Cesped</a></li>
+        <li><a ><input type='checkbox'id='c_35' class='c_35 check_picto' onclick='jsMuestraOculta("c_35","judo","35")'>Judo</a></li>
+        <li><a ><input type='checkbox'id='c_14' class='c_14 check_picto' onclick='jsMuestraOculta("c_14","karate","14")'>Karate</a></li>
+        <li><a ><input type='checkbox'id='c_25' class='c_25 check_picto' onclick='jsMuestraOculta("c_25","pesas","25")'>Levantamiento De Pesas</a></li>
+        <li><a ><input type='checkbox'id='c_5' class='c_5 check_picto' onclick='jsMuestraOculta("c_5","lucha","5")'>Lucha</a></li>
+         <li><a id='im8' >
+               <input type='checkbox' id='c_21' class='c_21 check_picto' onclick='jsMuestraOculta("c_21","nauticos","21")'><img src="/mapas/images/insert.jpg" id="6" align='left'>Nauticos</a>
+                <ul class='count'>
+                <li><a >Canotaje</a></li>
+                <li><a >Esqui Nautico</a></li>
+                <li><a >Aguas Abiertas</a></li>
+                <li><a >Remo</a></li>
+                <li><a >Vela</a></li>
+                </ul>
+        </li>
+        <li><a id='im8' ><img src="/mapas/images/insert.jpg" id="6" align='left'>Patidronomo</a>
+            <ul class='count'>
+                <li><a ><input type='checkbox'id='c_7' class='c_7 check_picto' onclick='jsMuestraOculta("c_7","patinajeCarrera","7")'>Patinaje Carrera</a></li>
+                <li><a ><input type='checkbox'id='c_8' class='c_8 check_picto' onclick='jsMuestraOculta("c_8","patinajeArtistico","8")'>Patinaje Artisitico</a></li>
+            </ul>
+        </li>
+	<li><a ><input type='checkbox'id='c_9'  class='c_9 check_picto'  onclick='jsMuestraOculta( "c_9","fronton","9")'>Pelota Fronton</a></li>
+        <li><a ><input type='checkbox'id='c_10' class='c_10 check_picto' onclick='jsMuestraOculta("c_10","raquetbol","10")'>Raquetbol</a></li>
+        <li><a ><input type='checkbox'id='c_18' class='c_18 check_picto' onclick='jsMuestraOculta("c_18","rugby","18")'>Rugby</a></li>   
+        
+        
+        
+		
+		<li><a ><input type='checkbox'id='c_11' class='c_11 check_picto' onclick='jsMuestraOculta("c_11","squash","11")'>Squash</a></li>
+                <li><a ><input type='checkbox'id='c_15' class='c_15 check_picto' onclick='jsMuestraOculta("c_15","taekwondo","15")'>Taekwondo</a></li>
+		<li><a ><input type='checkbox'id='c_12' class='c_12 check_picto' onclick='jsMuestraOculta("c_12","tiroarco","12")'>Tiro Con Arco</a></li>
+		
+		<li><a ><input type='checkbox'id='c_20' class='c_20 check_picto' onclick='jsMuestraOculta("c_20","triatlon","20")'>Triatlon</a></li>
+		<li><a ><input type='checkbox'id='c_26' class='c_26 check_picto' onclick='jsMuestraOculta("c_26","tenisMesa","26")'>Tenis De Mesa</a></li>
+		<li><a ><input type='checkbox'id='c_29' class='c_29 check_picto' onclick='jsMuestraOculta("c_29","tiro","28")'>Tiro</a></li>
+		<li><a ><input type='checkbox'id='c_31' class='c_31 check_picto' onclick='jsMuestraOculta("c_31","tenis","31")'>Tenis</a></li>
+                <li><a ><input type='checkbox'id='c_27' class='c_27 check_picto' onclick='jsMuestraOculta("c_27","voleibol","27")'>Voleibol</a></li>
+                <li><a ><input type='checkbox'id='c_13' class='c_13 check_picto' onclick='jsMuestraOculta("c_13","voleibolPlaya","13")'>Voleibol Playa</a></li>
+                
+		
+		
+
+	</ul>
+</div>
+</div>
+        <div class="principal">
+            <table>
+                <tr>
+                    <td>
+                        
+<!--                            <table>
+                                <tr>
+                                    <td><input type="submit" value="" class="boton_mapa boton_img1" title="Atletismo"/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="submit" value="" class="boton_mapa boton_img2" title="Badminton"/></td>
+                                </tr>
+                           </table>-->
+                       
+                    </td>
+                    <td class="col-md-12 ">
+                       <div class="col-md-12 img-rounded img-thumbnail" style=" height: 550px; width: 100%;margin: 0px auto;" id="mapa_trabajo"></div> 
+                    </td>
+                    <td>
+                       
+<!--                            <table>
+                                <tr>
+                                    <td><input type="submit" value="" class="boton_mapa boton_img3" title="Atletismo"/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="submit" value="" class="boton_mapa boton_img4" title="Badminton"/></td>
+                                </tr>
+                           </table>-->
+                    
+                    </td>
+                </tr>
+            </table>
+           
+        
+        
+            
+        </div>    
+<script>
+var ventana = jQuery.noConflict();
+var availableTags = [
+	"ActionScript",	"AppleScript",	"Asp",	"BASIC",	"C",	"C++",	"Clojure",	"COBOL",	"ColdFusion",	"Erlang",	"Fortran",	"Groovy",	"Haskell",	"Java",	"JavaScript",	"Lisp",	"Perl",	"PHP",	"Python",	"Ruby",	"Scala",	"Scheme"
+];
+
+ventana( "#button" ).button();
+ventana( "#button-icon" ).button({
+	icon: "ui-icon-gear",
+	showLabel: false
+});
+
+ventana( "#dialog" ).dialog({
+	autoOpen: false,	width: 300,	height:300,
+	buttons: [
+	{			text: "Nueva Selección",click: function() {	jsOculta();}},
+	{			text: "Salir",	click: function() {ventana( this ).dialog( "close" );}},
+		
+	]
+});
+ventana( "#dialog2" ).dialog({
+	autoOpen: false,	width: 450,	height:300,
+	buttons: [
+	{			text: "Nueva Selección",click: function() {	jsOculta();}},
+	{			text: "Salir",	click: function() {ventana( this ).dialog( "close" );}},
+		
+	]
+});
+
+// Link to open the dialog
+ventana( "#dialog-link" ).click(function( event ) {
+	ventana( "#dialog" ).dialog( "open" );
+	event.preventDefault();
+});
+ventana( "#dialog-link2" ).click(function( event ) {
+	ventana( "#dialog2" ).dialog( "open" );
+	event.preventDefault();
+});
+</script>
+<script type="text/javascript">
+ //en esta lista guardaremos los markers para poder tener acceso desde cualquier funcion de javascript
+ var lstMarkers= [];
+
+//variable global que guardara el objeto mapa de google, es global para tener acceso a ella en cualquier funcion
+var map;
+var posicionCentro 
+//inicializamos el mapa ejecutando la funcion de abajo que crea los markers
+inicializaMapa();
+
+function inicializaMapa() {
+			 posicionCentro = new google.maps.LatLng(-17.4194 , -66.1325);
+			//posiciones de los markers
+			var centroAcuatico    = new google.maps.LatLng(-17.40158, -66.17401);/*centro acuatico*/
+			var atletismo = new google.maps.LatLng(-17.41033, -66.14797);/*atletismo*/
+			var bownling          = new google.maps.LatLng(-17.35979, -66.16821);/*bowling*/
+			var bmx               = new google.maps.LatLng(-17.38476, -66.20544);/*ciclismo BMX*/
+			var mtb               = new google.maps.LatLng(-17.39208, -66.13525);/*ciclismo MTB*/
+			var lucha             = new google.maps.LatLng(-17.39062, -66.16534);/*lucha*/
+			var gimnacia          = new google.maps.LatLng(-17.40505, -66.18532);/*gimnacia*/
+		    var patinajecarrera   = new google.maps.LatLng(-17.38483, -66.20735);/*patinaje carrera*/
+			var patinajeartistico = new google.maps.LatLng(-17.35087, -66.1863);/*patinaje artistico*/
+			var fronton 		  = new google.maps.LatLng(-17.38581, -66.20635);/*fronton*/
+			var raquetbol 		  = new google.maps.LatLng(-17.36956, -66.17625);/*raquetbol*/
+		    var squash 			  = new google.maps.LatLng(-17.40382, -66.17055);/*squash*/
+			var tiroarco 		  = new google.maps.LatLng(-17.40568, -66.131);/*tiro con arco*/
+			var voleibolplaya 	  = new google.maps.LatLng(-17.40765, -66.18018);/*voleibol de playa*/
+			var karate 	          = new google.maps.LatLng(-17.3956, -66.24268);/*karate*/
+		    var taekwondo 	      = new google.maps.LatLng(-17.33884, -66.21253);/*Taekwondo*/
+			var baloncesto 	      = new google.maps.LatLng(-17.40814, -66.28917);/*baloncesto*/
+			var balonmano 	      = new google.maps.LatLng(-17.39868, -66.02221);/*balonmano*/
+			var rugby 	          = new google.maps.LatLng(-17.40697, -66.03919);/*rugby*/
+			var box 	          = new google.maps.LatLng(-17.54295, -65.83655);/*box*/
+			var triatlon 	      = new google.maps.LatLng(-17.22713, -65.89153);/*triatlon*/
+		    var nauticos 	      = new google.maps.LatLng(-17.52945, -66.08515);/*nauticos*/
+			var ciclismopista     = new google.maps.LatLng(-17.39934, -66.17348);/*ciclismo pista*/
+			var futbol    		  = new google.maps.LatLng(-17.3793, -66.16176);/*futbol*/
+			var hokeycesped    	  = new google.maps.LatLng(17.37953, -66.16351);/*hokeycesped*/
+			var pesas    	  = new google.maps.LatLng(-17.3895, -66.16472);/*pesas*/
+			var tenismesa    	  = new google.maps.LatLng(-17.38113, -66.16128);/*tenis de mesa*/
+			var voleibol    	  = new google.maps.LatLng(-17.40115, -66.16105);/*voleibol*/
+			var ecuestre    	  = new google.maps.LatLng(-17.60033, -66.03861);/*ecuestre - tiro*/
+			var futsal    	  = new google.maps.LatLng(-17.00691, -65.44175);/*futsal*/
+			var tenis    	  = new google.maps.LatLng(-16.95674, -65.39987);/*tenis*/
+			var golf    	  = new google.maps.LatLng(-17.40485, -66.12904);/*golf*/
+			var esgrima    	  = new google.maps.LatLng(-17.52569, -65.9659);/*esgrima*/
+			var badminton    	  = new google.maps.LatLng(-17.58974, -65.93008);/*badminton*/
+			var judo    	  = new google.maps.LatLng(-17.39133, -66.31467);/*judo*/
+            //opciones de mapa
+            var mapOptions = {   zoom: 13,     center: posicionCentro,   mapTypeId: google.maps.MapTypeId.ROADMAP  };
+
+           //creamos el mapa en el div con el id "mapa"
+            map = new google.maps.Map(document.getElementById('mapa_trabajo'),
+            mapOptions);
+
+		/* agregamos 2 iconos rojos y 2 iconos azules
+		para ello crearemos 4 objetos de javascript que contendra el marker y aparte una bandera
+		la cual dira que tipo es, si es tipo ROJO o tipo AZUL
+		*/
+		var TipoCentroAcuatico=new Object();var Tipoatletismo=new Object();	var TipoBowling=new Object();
+		var TipoBmx=new Object();			var TipoMtb=new Object();				var TipoLucha=new Object();
+		var TipoGimnacia=new Object();		var TipoPatinajeCarrera=new Object();	var TipoPatinajeArtistico=new Object();
+		var TipoFronton=new Object();		var TipoRaquetbol=new Object();			var TipoScuash=new Object();
+		var TipoTiroArco=new Object();		var TipoVoleiboPlaya=new Object();		var TipoKarate=new Object();
+		var TipoTaekwondo=new Object();		var TipoBaloncesto=new Object();		var TipoBalonmano=new Object();
+		var TipoRugby=new Object();	   	    var TipoBox=new Object();				var TipoTriatlon=new Object();
+		var TipoNauticos=new Object();		var TipoCiclismoPista=new Object();		var TipoFutbol=new Object();
+		var TipoHokeyCesped=new Object();	var TipoPesas=new Object();				var TipoTenisMesa=new Object();
+		var TipoVoleibol=new Object();		var TipoEcuestre=new Object();			var TipoFutsal=new Object();
+		var TipoTenis=new Object();			var TipoGolf=new Object();				var TipoEsgrima=new Object();
+		var TipoBadminton=new Object();		var TipoJudo=new Object();
+		
+		//procedemos a crear el marker y asignarselos a los objetos junto a su tipo
+		TipoCentroAcuatico.tipo="acuatico";
+        TipoCentroAcuatico.marker = new google.maps.Marker({
+            position: centroAcuatico,    map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Centro Acuatico'
+        });
+		Tipoatletismo.tipo="atletismo";
+        Tipoatletismo.marker = new google.maps.Marker({
+            position: atletismo,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Atletismo'
+        });
+		TipoBowling.tipo="bowling";
+        TipoBowling.marker = new google.maps.Marker({
+            position: bownling,   map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Bowling'
+        });
+		TipoBmx.tipo="bmx";
+        TipoBmx.marker = new google.maps.Marker({
+            position: bmx,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Ciclismo BMX'
+        });
+		TipoMtb.tipo="mtb";
+        TipoMtb.marker = new google.maps.Marker({
+            position: mtb,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Ciclismo MTB'
+        });
+		TipoLucha.tipo="lucha";
+        TipoLucha.marker = new google.maps.Marker({
+            position: lucha,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Lucha'
+        });
+		TipoGimnacia.tipo="gimnacia";
+        TipoGimnacia.marker = new google.maps.Marker({
+            position: gimnacia,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Gimnacia'
+        });
+		TipoPatinajeCarrera.tipo="patinajeCarrera";
+        TipoPatinajeCarrera.marker = new google.maps.Marker({
+            position: patinajecarrera,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Patinaje Carrera'
+        });
+		TipoPatinajeArtistico.tipo="patinajeArtistico";
+        TipoPatinajeArtistico.marker = new google.maps.Marker({
+            position: patinajeartistico,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Patinaje Artistico'
+        });
+		TipoFronton.tipo="fronton";
+        TipoFronton.marker = new google.maps.Marker({
+            position: fronton,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Fronton'
+        });
+		TipoRaquetbol.tipo="raquetbol";
+        TipoRaquetbol.marker = new google.maps.Marker({
+            position: raquetbol,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Raquetbol'
+        });
+		TipoScuash.tipo="squash";
+        TipoScuash.marker = new google.maps.Marker({
+            position: squash,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Squash'
+        });
+		TipoTiroArco.tipo="tiroArco";
+        TipoTiroArco.marker = new google.maps.Marker({
+            position: tiroarco,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Tiro Con Arco'
+        });
+		TipoVoleiboPlaya.tipo="voleibolPlaya";
+        TipoVoleiboPlaya.marker = new google.maps.Marker({
+            position: voleibolplaya,  map: map,	icon:"/images/punto_kantuta.png",
+            title: 'Voleibol De Playa'
+        });
+		TipoKarate.tipo="karate";
+        TipoKarate.marker = new google.maps.Marker({
+            position: karate,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Karate'
+        });
+		TipoTaekwondo.tipo="taekwondo";
+        TipoTaekwondo.marker = new google.maps.Marker({
+            position: karate,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Taekwondo'
+        });
+		TipoBaloncesto.tipo="baloncesto";
+        TipoBaloncesto.marker = new google.maps.Marker({
+            position: baloncesto,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Baloncesto'
+        });
+		TipoBalonmano.tipo="balonmano";
+        TipoBalonmano.marker = new google.maps.Marker({
+            position: balonmano,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Balonmano'
+        });
+		TipoRugby.tipo="rugby";
+        TipoRugby.marker = new google.maps.Marker({
+            position: rugby,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Rugby'
+        });
+		TipoBox.tipo="box";
+        TipoBox.marker = new google.maps.Marker({
+            position: box,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Box'
+        });
+		TipoTriatlon.tipo="triatlon";
+        TipoTriatlon.marker = new google.maps.Marker({
+            position: triatlon,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Triatlon'
+        });
+		TipoNauticos.tipo="nauticos";
+        TipoNauticos.marker = new google.maps.Marker({
+            position: nauticos,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Nauticos'
+        });
+		TipoCiclismoPista.tipo="ciclismoPista";
+        TipoCiclismoPista.marker = new google.maps.Marker({
+            position: ciclismopista,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Ciclismo Pista'
+        });
+		TipoFutbol.tipo="Futbol";
+        TipoFutbol.marker = new google.maps.Marker({
+            position: futbol,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Futbol'
+        });
+		TipoHokeyCesped.tipo="hockeyCesped";
+        TipoHokeyCesped.marker = new google.maps.Marker({
+            position: hokeycesped,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Hockey Cesped'
+        });
+		TipoPesas.tipo="Levantamiento De Pesas";
+        TipoPesas.marker = new google.maps.Marker({
+            position: pesas,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Levantamiento De Pesas'
+        });
+		TipoTenisMesa.tipo="tenisMesa";
+        TipoTenisMesa.marker = new google.maps.Marker({
+            position: tenismesa,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Tenis De Mesa'
+        });
+		TipoVoleibol.tipo="voleibol";
+        TipoVoleibol.marker = new google.maps.Marker({
+            position: voleibol,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Voleibol'
+        });
+		TipoEcuestre.tipo="ecuestreTiro";
+        TipoEcuestre.marker = new google.maps.Marker({
+            position: ecuestre,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Ecuestre - Tiro'
+        });
+		TipoFutsal.tipo="futsal";
+        TipoFutsal.marker = new google.maps.Marker({
+            position: futsal,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Futsal'
+        });
+		TipoTenis.tipo="tenis";
+        TipoTenis.marker = new google.maps.Marker({
+            position: tenis,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Tenis'
+        });
+		TipoGolf.tipo="golf";
+        TipoGolf.marker = new google.maps.Marker({
+            position: golf,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Golf'
+        });
+		TipoEsgrima.tipo="esgrima";
+        TipoEsgrima.marker = new google.maps.Marker({
+            position: golf,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Esgrima'
+        });
+		TipoBadminton.tipo="badminton";
+        TipoBadminton.marker = new google.maps.Marker({
+            position: badminton,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Badminton'
+        });
+		TipoJudo.tipo="judo";
+        TipoJudo.marker = new google.maps.Marker({
+            position: judo,  map: map,icon:"/images/punto_kantuta.png",
+            title: 'Judo'
+        });
+/**********************************************************************************/
+		var infowindow = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Bowling</td><td><img src="/images/pic_bownling.png"  title="Bowling"/></td></tr></table> Bowling '	});
+		  google.maps.event.addListener(TipoBowling.marker, 'click', function() {
+		  infowindow.open(map,TipoBowling.marker);
+		});
+		var infowindow1 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Ciclismo BMX </td><td><img src="/images/pic_bmx.png"  title="ciclismo"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoBmx.marker, 'click', function() {
+		  infowindow1.open(map,TipoBmx.marker);
+		});
+		var infowindow2 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Atletismo</td><td><img src="/images/pic_atletismo.png"  title="Atletismo"/></td></tr></table>  '	});
+		  google.maps.event.addListener(Tipoatletismo.marker, 'click', function() {
+		  infowindow2.open(map,Tipoatletismo.marker);
+		});
+		var infowindow3 = new google.maps.InfoWindow({  content: '<table class="map_table" style="width:100%;"><tr><td class="titulo_gmap">Centro Acuatico</td></tr><tr><td>Natación Carrera </td><td>    <img src="/images/pic_natacion.png"  title="Natación"/></td></tr> <tr><td>Nado Sincronizado</td><td><img src="/images/pic_nado_sinc.png"  title="Nado Sincronizado"/></td></tr> <tr><td>Clavado</td><td><img src="/images/pic_clavado.png"  title="Clavado"/></td></tr> <tr><td>Polo Acuatico </td><td><img src="/images/pic_water_polo.png"  title="Waterpolo"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoCentroAcuatico.marker, 'click', function() {
+		  infowindow3.open(map,TipoCentroAcuatico.marker);
+		});
+		var infowindow4 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Ciclismo MTB</td><td><img src="/images/pic_mtb.png"  title="MTB"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoMtb.marker, 'click', function() {
+		  infowindow4.open(map,TipoMtb.marker);
+		});
+		var infowindow5 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Lucha</td><td><img src="/images/pic_lucha.png"  title="Lucha"/></td></tr></table> '	});
+		  google.maps.event.addListener(TipoLucha.marker, 'click', function() {
+		  infowindow5.open(map,TipoLucha.marker);
+		});
+		var infowindow6 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Gimnacia</td><td></td></tr> <tr><td>Artistica</td><td><img src="/images/pic_artistica.png"  title="Artistica"/></td></tr> <tr><td>Ritmica</td><td><img src="/images/pic_ritmica.png"  title="Ritmica"/></td></tr><tr><td>Trampolin</td><td><img src="/images/pic_trampolin.png"  title="Trampolin"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoGimnacia.marker, 'click', function() {
+		  infowindow6.open(map,TipoGimnacia.marker);
+		});
+		var infowindow7 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Patinaje Carrera </td><td><img src="/images/pic_patinaje_carrera.png"  title="Patinaje Carrera"/></td></tr></table> '	});
+		  google.maps.event.addListener(TipoPatinajeCarrera.marker, 'click', function() {
+		  infowindow7.open(map,TipoPatinajeCarrera.marker);
+		});
+		var infowindow8 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Patinaje Artistico</td><td><img src="/images/pic_patinaje_artistico.png"  title="Patinaje Artistico"/></td></tr></table> '	});
+		  google.maps.event.addListener(TipoPatinajeArtistico.marker, 'click', function() {
+		  infowindow8.open(map,TipoPatinajeArtistico.marker);
+		});
+		var infowindow9 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Fronton</td><td><img src="/images/pic_fronton.png"  title="Fronton"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoFronton.marker, 'click', function() {
+		  infowindow9.open(map,TipoFronton.marker);
+		});
+		var infowindow10 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Raquetbol</td><td><img src="/images/pic_raquetbol.png"  title="Raquetbol"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoRaquetbol.marker, 'click', function() {
+		  infowindow10.open(map,TipoRaquetbol.marker);
+		});
+		var infowindow11 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Squash</td><td><img src="/images/pic_scuash.png"  title="Squash"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoScuash.marker, 'click', function() {
+		  infowindow11.open(map,TipoScuash.marker);
+		});
+		var infowindow12 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Tiro Con Arco </td><td><img src="/images/pic_arco.png"  title="Tiro Con Arco "/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoTiroArco.marker, 'click', function() {
+		  infowindow12.open(map,TipoTiroArco.marker);
+		});
+		var infowindow13 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Voleibol De Playa</td><td><img src="/images/pic_playa.png"  title="Voleibol De Playa"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoVoleiboPlaya.marker, 'click', function() {
+		  infowindow13.open(map,TipoVoleiboPlaya.marker);
+		});
+		var infowindow14 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Karate</td><td><img src="/images/pic_karate.png"  title="Karate"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoKarate.marker, 'click', function() {
+		  infowindow14.open(map,TipoKarate.marker);
+		});
+		var infowindow15 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Taekwondo</td><td><img src="/images/pic_taekwondo.png"  title="Taekwondo"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoTaekwondo.marker, 'click', function() {
+		  infowindow15.open(map,TipoTaekwondo.marker);
+		});
+		var infowindow16 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Baloncesto</td><td><img src="/images/pic_baloncesto.png"  title="Baloncesto"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoBaloncesto.marker, 'click', function() {
+		  infowindow16.open(map,TipoBaloncesto.marker);
+		});
+		var infowindow17 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Balonmano</td><td><img src="/images/pic_balonmano.png"  title="Balonmano"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoBalonmano.marker, 'click', function() {
+		  infowindow17.open(map,TipoBalonmano.marker);
+		});
+		var infowindow18 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Rugby</td><td><img src="/images/pic_rugbi.png"  title="Rugby"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoRugby.marker, 'click', function() {
+		  infowindow18.open(map,TipoRugby.marker);
+		});
+		var infowindow19 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Box</td><td><img src="/images/pic_box.png"  title="Box"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoBox.marker, 'click', function() {
+		  infowindow19.open(map,TipoBox.marker);
+		});
+		var infowindow20 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Triatlon</td><td><img src="/images/pic_triatlon.png"  title="Triatlon"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoTriatlon.marker, 'click', function() {
+		  infowindow20.open(map,TipoTriatlon.marker);
+		});
+		var infowindow21 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Nauticos</td><td></td></tr><tr><td>Canotaje</td><td><img src="/images/pic_canotaje.png"  title="Canotaje"/></td></tr>tr><td>Esqui Nautico</td><td><img src="/images/pic_ski_nautico.png"  title="Esqui Nautico"/></td></tr><tr><td>Aguas Abiertas</td><td><img src="/images/pic_aguas_abiertas.png"  title="Aguas Abiertas"/></td></tr><tr><td>Remo</td><td><img src="/images/pic_remo.png"  title="Remo"/></td></tr><tr><td>Vela</td><td><img src="/images/pic_vela.png"  title="Vela"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoNauticos.marker, 'click', function() {
+		  infowindow21.open(map,TipoNauticos.marker);
+		});
+		var infowindow22 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Ciclismo<td></tr><tr><td> Ciclismos Pista</td><td> <img src="/images/pic_ciclismo.png"  title="ciclismo"/></td></tr>'	});
+		  google.maps.event.addListener(TipoCiclismoPista.marker, 'click', function() {
+		  infowindow22.open(map,TipoCiclismoPista.marker);
+		});
+		var infowindow23 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Futbol</td><td><img src="/images/pic_futbol.png"  title="Futbol"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoFutbol.marker, 'click', function() {
+		  infowindow23.open(map,TipoFutbol.marker);
+		});
+		var infowindow24 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Hockey Cesped</td><td><img src="/images/pic_hokey_cesped.png"  title="Hockey Cesped"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoHokeyCesped.marker, 'click', function() {
+		  infowindow24.open(map,TipoHokeyCesped.marker);
+		});
+		var infowindow25 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Levantamiento De Pesas</td><td><img src="/images/pic_pesas.png"  title="Levantamiento De Pesas"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoPesas.marker, 'click', function() {
+		  infowindow25.open(map,TipoPesas.marker);
+		});
+		var infowindow26 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Tenis De Mesa</td><td><img src="/images/pic_tenis_mesa.png"  title="Tenis De Mesa"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoTenisMesa.marker, 'click', function() {
+		  infowindow26.open(map,TipoTenisMesa.marker);
+		});
+		var infowindow27 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Voleibol</td><td><img src="/images/pic_voleibol.png"  title="Voleibol"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoVoleibol.marker, 'click', function() {
+		  infowindow27.open(map,TipoVoleibol.marker);
+		});
+		var infowindow28 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td>Ecuestre</td><td></td></tr><tr><td>Adiestramiento</td><td><img src="/images/pic_adestramiento.png"  title="Adiestramiento"/></td></tr><tr><td>Salto</td><td><img src="/images/pic_salto.png"  title="Salto"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoEcuestre.marker, 'click', function() {
+		  infowindow28.open(map,TipoEcuestre.marker);
+		});
+		var infowindow29 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Futsal</td><td><img src="/images/pic_futsal.png"  title="Futsal"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoFutsal.marker, 'click', function() {
+		  infowindow29.open(map,TipoFutsal.marker);
+		});
+		var infowindow30 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Tenis De Mesa</td><td><img src="/images/pic_tenis_mesa.png"  title="Tenis De Mesa"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoTenis.marker, 'click', function() {
+		  infowindow30.open(map,TipoTenis.marker);
+		});
+		var infowindow31 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Golf</td><td><img src="/images/pic_golf.png"  title="Golf"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoGolf.marker, 'click', function() {
+		  infowindow31.open(map,TipoGolf.marker);
+		});
+		var infowindow32 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Esgrima</td><td><img src="/images/pic_esgrima.png"  title="Esgrima"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoEsgrima.marker, 'click', function() {
+		  infowindow32.open(map,TipoEsgrima.marker);
+		});
+		var infowindow33 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Badminton</td><td><img src="/images/pic_badminton.png"  title="Badminton"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoBadminton.marker, 'click', function() {
+		  infowindow33.open(map,TipoBadminton.marker);
+		});
+		var infowindow34 = new google.maps.InfoWindow({  content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Judo</td><td><img src="/images/pic_judo.png"  title="Judo"/></td></tr></table>'	});
+		  google.maps.event.addListener(TipoJudo.marker, 'click', function() {
+		  infowindow34.open(map,TipoJudo.marker);
+		});
+		
+/*********************bmx**********************/
+
+//var popup = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Ciclismo BMX </td><td><img src="/images/pic_bmx.png"  title="ciclismo"/></td></tr></table>'});
+//popup.open(map, TipoBmx.marker);
+//var popup1 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Bowling</td><td><img src="/images/pic_bownling.png"  title="Bowling"/></td></tr></table>'});
+//popup1.open(map, TipoBowling.marker);
+//var popup2 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Atletismo</td><td><img src="/images/pic_atletismo.png"  title="Atletismo"/></td></tr></table>  '});
+//popup2.open(map, Tipoatletismo.marker);
+//var popup3 = new google.maps.InfoWindow({content: '<table class="map_table" style="width:100%;"><tr><td class="titulo_gmap">Centro Acuatico</td></tr><tr><td>Natación Carrera </td><td>    <img src="/images/pic_natacion.png"  title="Natación"/></td></tr> <tr><td>Nado Sincronizado</td><td><img src="/images/pic_nado_sinc.png"  title="Nado Sincronizado"/></td></tr> <tr><td>Clavado</td><td><img src="/images/pic_clavado.png"  title="Clavado"/></td></tr> <tr><td>Polo Acuatico </td><td><img src="/images/pic_water_polo.png"  title="Waterpolo"/></td></tr></table>'});
+//popup3.open(map, TipoCentroAcuatico.marker);
+//var popup4 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Ciclismo MTB</td><td><img src="/images/pic_mtb.png"  title="MTB"/></td></tr></table>'});
+//popup4.open(map, TipoMtb.marker);
+//var popup5 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Lucha</td><td><img src="/images/pic_lucha.png"  title="Lucha"/></td></tr></table> '});
+//popup5.open(map, TipoLucha.marker);
+//var popup6 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Gimnacia</td><td></td></tr> <tr><td>Artistica</td><td><img src="/images/pic_artistica.png"  title="Artistica"/></td></tr> <tr><td>Ritmica</td><td><img src="/images/pic_ritmica.png"  title="Ritmica"/></td></tr><tr><td>Trampolin</td><td><img src="/images/pic_trampolin.png"  title="Trampolin"/></td></tr></table>'});
+//
+//popup6.open(map, TipoGimnacia.marker);
+//var popup7 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Patinaje Carrera </td><td><img src="/images/pic_patinaje_carrera.png"  title="Patinaje Carrera"/></td></tr></table> '});
+//popup7.open(map, TipoPatinajeCarrera.marker);
+//var popup8 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Patinaje Artistico</td><td><img src="/images/pic_patinaje_artistico.png"  title="Patinaje Artistico"/></td></tr></table> '});
+//popup8.open(map, TipoPatinajeArtistico.marker);
+//
+//var popup9 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Fronton</td><td><img src="/images/pic_fronton.png"  title="Fronton"/></td></tr></table>'});
+//popup9.open(map, TipoFronton.marker);
+//var popup10 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Raquetbol</td><td><img src="/images/pic_raquetbol.png"  title="Raquetbol"/></td></tr></table>'});
+//popup10.open(map, TipoRaquetbol.marker);
+//var popup11 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Squash</td><td><img src="/images/pic_scuash.png"  title="Squash"/></td></tr></table>'});
+//popup11.open(map, TipoScuash.marker);
+//
+//var popup12 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Tiro Con Arco </td><td><img src="/images/pic_arco.png"  title="Tiro Con Arco "/></td></tr></table>'});
+//popup12.open(map, TipoTiroArco.marker);
+//var popup13 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Voleibol De Playa</td><td><img src="/images/pic_playa.png"  title="Voleibol De Playa"/></td></tr></table>'});
+//popup13.open(map, TipoVoleiboPlaya.marker);
+//var popup14 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Karate</td><td><img src="/images/pic_karate.png"  title="Karate"/></td></tr></table>'});
+//popup14.open(map, TipoKarate.marker);
+//var popup15 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Taekwondo</td><td><img src="/images/pic_taekwondo.png"  title="Taekwondo"/></td></tr></table>'});
+//popup15.open(map, TipoTaekwondo.marker);
+//
+//var popup16 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Baloncesto</td><td><img src="/images/pic_baloncesto.png"  title="Baloncesto"/></td></tr></table>'});
+//popup16.open(map, TipoBaloncesto.marker);
+//var popup17 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Balonmano</td><td><img src="/images/pic_balonmano.png"  title="Balonmano"/></td></tr></table>'});
+//popup17.open(map, TipoBalonmano.marker);
+//var popup18 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Rugby</td><td><img src="/images/pic_rugbi.png"  title="Rugby"/></td></tr></table>'});
+//popup18.open(map, TipoRugby.marker);
+//var popup19 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Box</td><td><img src="/images/pic_box.png"  title="Box"/></td></tr></table>'});
+//popup19.open(map, TipoBox.marker);
+//
+//var popup20 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Triatlon</td><td><img src="/images/pic_triatlon.png"  title="Triatlon"/></td></tr></table>'});
+//popup20.open(map, TipoTriatlon.marker);
+//var popup21 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Nauticos</td><td></td></tr><tr><td>Canotaje</td><td><img src="/images/pic_canotaje.png"  title="Canotaje"/></td></tr>tr><td>Esqui Nautico</td><td><img src="/images/pic_ski_nautico.png"  title="Esqui Nautico"/></td></tr><tr><td>Aguas Abiertas</td><td><img src="/images/pic_aguas_abiertas.png"  title="Aguas Abiertas"/></td></tr><tr><td>Remo</td><td><img src="/images/pic_remo.png"  title="Remo"/></td></tr><tr><td>Vela</td><td><img src="/images/pic_vela.png"  title="Vela"/></td></tr></table>'});
+//popup21.open(map, TipoNauticos.marker);
+//var popup22 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Ciclismo<td></tr><tr><td> Ciclismos Pista</td><td> <img src="/images/pic_ciclismo.png"  title="ciclismo"/></td></tr>'});
+//popup22.open(map, TipoCiclismoPista.marker);
+//
+//var popup23 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Futbol</td><td><img src="/images/pic_futbol.png"  title="Futbol"/></td></tr></table>'});
+//popup23.open(map, TipoFutbol.marker);
+//var popup24 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Hockey Cesped</td><td><img src="/images/pic_hokey_cesped.png"  title="Hockey Cesped"/></td></tr></table>'});
+//popup24.open(map, TipoHokeyCesped.marker);
+//var popup25 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Levantamiento De Pesas</td><td><img src="/images/pic_pesas.png"  title="Levantamiento De Pesas"/></td></tr></table>'});
+//popup25.open(map, TipoPesas.marker);
+//
+//var popup26 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Tenis De Mesa</td><td><img src="/images/pic_tenis_mesa.png"  title="Tenis De Mesa"/></td></tr></table>'});
+//popup26.open(map, TipoTenisMesa.marker);
+//var popup27 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Voleibol</td><td><img src="/images/pic_voleibol.png"  title="Voleibol"/></td></tr></table>'});
+//popup27.open(map, TipoVoleibol.marker);
+//
+//var popup28 = new google.maps.InfoWindow({content: '<table class="map_table" style="widht:100%;"><tr><td>Ecuestre</td><td></td></tr><tr><td>Adiestramiento</td><td><img src="/images/pic_adestramiento.png"  title="Adiestramiento"/></td></tr><tr><td>Salto</td><td><img src="/images/pic_salto.png"  title="Salto"/></td></tr></table>'});
+//popup28.open(map, TipoEcuestre.marker);
+//var popup29 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Futsal</td><td><img src="/images/pic_futsal.png"  title="Futsal"/></td></tr></table>'});
+//popup29.open(map, TipoFutsal.marker);
+//var popup30 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Tenis</td><td><img src="/images/pic_tenis.png"  title="Tenis"/></td></tr></table>'});
+//popup30.open(map, TipoTenis.marker);
+//var popup31 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Golf</td><td><img src="/images/pic_golf.png"  title="Golf"/></td></tr></table>'});
+//popup31.open(map, TipoGolf.marker);
+//var popup32 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Esgrima</td><td><img src="/images/pic_esgrima.png"  title="Esgrima"/></td></tr></table>'});
+//popup32.open(map, TipoEsgrima.marker);
+//var popup33 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Badminton</td><td><img src="/images/pic_badminton.png"  title="Badminton"/></td></tr></table>'});
+//popup33.open(map, TipoBadminton.marker);
+//var popup34 = new google.maps.InfoWindow({content: ' <table class="map_table" style="widht:100%;"><tr><td class="titulo_gmap">Judo</td><td><img src="/images/pic_judo.png"  title="Judo"/></td></tr></table>'});
+//popup34.open(map, TipoJudo.marker);
+/*************************************************************************************/
+		//una vez creador los objetos junto con su marker y tipo los agregaremos a la lista global que creamos con anterioridad
+		lstMarkers.push(TipoCentroAcuatico);    lstMarkers.push(Tipoatletismo);                 lstMarkers.push(TipoBowling);
+		lstMarkers.push(TipoBmx);		lstMarkers.push(TipoMtb);                       lstMarkers.push(TipoLucha);
+		lstMarkers.push(TipoGimnacia);		lstMarkers.push(TipoPatinajeCarrera);           lstMarkers.push(TipoPatinajeArtistico);
+		lstMarkers.push(TipoFronton);/*9*/	lstMarkers.push(TipoRaquetbol);	/*10*/		lstMarkers.push(TipoScuash);
+		lstMarkers.push(TipoTiroArco);		lstMarkers.push(TipoVoleiboPlaya);		lstMarkers.push(TipoKarate);
+		lstMarkers.push(TipoTaekwondo);/*15*/	lstMarkers.push(TipoBaloncesto);		lstMarkers.push(TipoBalonmano);
+		lstMarkers.push(TipoRugby);/*18*/	lstMarkers.push(TipoBox);/*19*/			lstMarkers.push(TipoTriatlon);
+		lstMarkers.push(TipoNauticos);/*21*/	lstMarkers.push(TipoCiclismoPista);		lstMarkers.push(TipoFutbol);
+		lstMarkers.push(TipoHokeyCesped);/*24*/	lstMarkers.push(TipoPesas);			lstMarkers.push(TipoTenisMesa);
+		lstMarkers.push(TipoVoleibol);/*27*/	lstMarkers.push(TipoEcuestre);/*28*/            lstMarkers.push(TipoEcuestre);/*29-tiro*/		lstMarkers.push(TipoFutsal);
+		lstMarkers.push(TipoTenis);		lstMarkers.push(TipoGolf);			lstMarkers.push(TipoEsgrima);
+		lstMarkers.push(TipoBadminton);		lstMarkers.push(TipoJudo);
+/***************************************************************/
+for( var i=0;i<=35;i++){
+	lstMarkers[i].marker.setMap(map);
+}
+		
+    }
+
+//función que realiza la operacion de evaluar los markers y si estos se ocultaran o mostraran dependiendo el checkbox presionado
+function jsMuestraOculta(tipoIcono,nombre,ind){
+
+	if(document.getElementById(tipoIcono).checked){var muestra=true;}else{var muestra=false;}
+	if(muestra)
+		lstMarkers[ind].marker.setMap(map);
+			else
+		lstMarkers[ind].marker.setMap(null);
+}
+
+function recintoMuestraOculta(tipoIcono,x,ind){
+var ii=ind.split("-");var nu=ii.length;var muestra1=false;var muestra=false;
+if(document.getElementById(tipoIcono).checked){var muestra=true;}else{var muestra=false;}
+for(var jj=0;jj<nu;jj++){
+	if(muestra)
+		lstMarkers[ii[jj]].marker.setMap(map);
+			else
+		lstMarkers[ii[jj]].marker.setMap(null);
+  }
+}
+function jsOculta(){
+for( var i=0;i<=34;i++){
+    if(document.getElementById("c_"+i).checked)
+    {$("#c_"+i).attr('checked', false);}
+    else
+    {$("#c_"+i).attr('checked', true);}
+    
+    if(document.getElementById("cc_"+i).checked)
+    {$("#cc_"+i).attr('checked', false);}
+    else
+    {$("#cc_"+i).attr('checked', true);}
+	lstMarkers[i].marker.setMap(null);
+}
+}
+
+</script>

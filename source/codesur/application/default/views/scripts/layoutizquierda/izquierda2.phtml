@@ -1,0 +1,10 @@
+<?php 
+echo $this->partial("layoutizquierda/boton.phtml",array('pais'=>$this->pais,'ciudad'=>$this->ciudad));
+echo $this->partial("layoutizquierda/categorias.phtml",array('pais'=>$this->pais,'categorias'=>$this->categorias,'subcategorias'=>$this->subcategorias,'cat'=>$this->cat,'sub'=>$this->sub));
+echo $this->partial("layoutizquierda/subcategorias.phtml",array('pais'=>$this->pais,'categorias'=>$this->categorias,'subcategorias'=>$this->subcategorias,'cat'=>$this->cat,'sub'=>$this->sub));
+echo $this->partial("layoutizquierda/buscador.phtml",array('pais'=>$this->pais));
+echo $this->partial("layoutizquierda/publicidad.phtml",array('pais'=>$this->pais,'pos_banner'=>$this->pos_banner));
+
+?>
+
+

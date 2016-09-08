@@ -1,0 +1,25 @@
+<?php 
+if ($this->pageCount) {
+	
+	echo '<div class="pag_g3_pn">';
+    if (isset($this->previous))
+		echo '<a href="'.$this->url(array('pagina'=>$this->translate("pagina").$this->previous)).'" class="a_pag3_txt pagina_comentario_prev_g3" style="background:url(/../img/'.(($this->idioma=="en")? 'back_en.png':'back.png').') no-repeat scroll 0 0 transparent;"></a> ';
+	echo '</div>';
+	echo '<div class="pag_g3_pa">';		
+	foreach ($this->pagesInRange as $page) {
+		if ($page != $this->current)
+			echo '<span class="pag_noactivo"><a href="'.$this->url(array('pagina'=>$this->translate("pagina").$page)).'" class="a_pag1_g3">'.$page.'</a></span> ';
+		else
+			echo "<span class='pag_activo_g3'><span class='a_pag2'>".$page."</span></span> ";
+		
+
+	}
+	echo '</div>';
+	echo '<div class="pag_g3_pn">';	
+	if (isset($this->next))
+		echo '<a href="'.$this->url(array('pagina'=>$this->translate("pagina").$this->next)).'" class="a_pag3_txt pagina_comentario_next_g3" style="background:url(/../img/'.(($this->idioma=="en")? 'next_en.png':'next.png').') no-repeat scroll 0 0 transparent;"></a>';
+	echo '</div>';
+	
+		
+	
+}

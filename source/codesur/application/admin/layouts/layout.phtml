@@ -1,0 +1,157 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<?php
+		echo $this->headTitle();
+		echo $this->headMeta();
+		echo $this->headLink()
+		->appendStylesheet('/css/admin.css')
+		->prependStylesheet('/css/bootstrap/bootstrap.min.css') 
+		;
+		
+		$this->headScript()
+		->prependFile("/js/jquery/jquery-1.4.2.min.js")
+		->appendFile("/js/jquery/tiny_mce/jquery.tinymce.js")
+		//->appendFile("/js/jquery/jquery.accordion.js")
+		->appendFile('/js/jquery/acordion/jquery.dimensions.js')
+		->appendFile('/js/jquery/acordion/jquery.accordion.js')	
+		->appendFile('/js/jquery/roundies/DD_roundies_0.0.2a-min.js')		
+		->appendFile('/js/admin.js')
+		;
+		
+		echo $this->headScript();
+		echo $this->headStyle()		
+		?>
+		
+		<script type="text/javascript">
+		jQuery().ready(function(){
+			jQuery('ul.navigation').accordion({
+				autoheight: false,
+				active: false,
+				header: '.head',
+				navigation: true
+			});
+			});		
+		</script>
+	</head>
+	<body>
+<div id="contenedor">
+ <!-- CABECERA -->
+ <div id="cabecera">
+<div>
+
+<div class="datos cabecera" style="position:relative;display:block;width:350px;float:right;padding:3px 10px;font:normal .7em Tahoma,Georigia;background: #f0f0f0;border-bottom:2px solid #505050;border-top:2px solid #505050;text-align: right;">
+<?php echo NOMBRE_SITIO;?> - 
+Módulo de Administración v3.5ml -  
+<span><a href="<?php echo $this->url(array('module'=>'admin','controller'=>'index','action'=>'cerrarsesion'),'default',true) ?>">&nbsp;Cerrar Sesión</a></span>
+</div>
+<div class="bajar"></div>
+</div>
+ </div><!-- fin cabecera -->
+ <div id="cuerpo">
+ <!-- CENTRO--> 
+<table style="width: 100%;">
+<tr>
+<td valign="top" style="width: 201px;" id="col_nav">
+
+ <div id="lateral_iz">
+ 
+ 	<div id="nav" style="float:left;" class="borde_cir">				
+		<div class="bajar"></div>
+		<div id="menuData">
+			<h4 class='titulo_menu round_top fondo_generico'>Menú</h4>	
+			<?php  
+			//$menu = $this->navigation()->findOneByLabel('Noticia');
+		/*	
+			echo $this->navigation()
+						->menu()
+						->renderMenu(null,array(
+								'minDepth'=> null,
+								'maxDepth'=> 1,
+								'onlyActiveBranch'=>false,
+								'renderParents'=>true,			    
+						
+						));
+	
+*/			
+			$partial = array('menu.phtml', 'default');
+			$this->navigation()->menu()->setPartial($partial);
+			echo $this->navigation()->menu()->render();
+			
+
+			//echo $this->navigation()->menu();
+			
+			
+			$identidad=Zend_Auth::getInstance()->getIdentity();
+			
+			
+			switch ($identidad->rol)
+			{				
+				case 'contrataciones':
+					$rol="Contrataciones";
+					break;
+				case 'noticias':
+					$rol="Noticias";
+					break;
+				case 'administrador':
+					$rol="Administrator";
+					break;
+				default:				
+					$rol="Desconocido";
+					break;
+			}
+			
+			if(strtotime($identidad->ultimo_login))
+				$fecha=new Zend_Date(strtotime($identidad->ultimo_login));
+			else 
+				$fecha=new Zend_Date(strtotime($identidad->fecha));
+			$fecha_actual=" ";
+			$fecha_actual=ucfirst($fecha->toString("EEEE"));
+			$fecha_actual.=", ";
+			$fecha_actual.=$fecha->toString("dd");
+			$fecha_actual.= ' de ';
+			$fecha_actual.=ucfirst($fecha->toString("MMMM"));
+			$fecha_actual.=' de ';
+			$fecha_actual.=$fecha->toString("yyyy ");
+			
+			?>
+		</div>
+		<div style="font-size: .7em;">
+		<strong>Usuario: </strong><span><?php echo $identidad->login;?></span><br/>
+		<strong>Tipo: </strong><span><?php echo $rol;?></span><br/>
+		<strong>Último Ingreso: </strong><br/><span><?php echo $fecha;?></span><br/>
+		<?php 
+			$db=Zend_Registry::get('db');
+			$total_visitas=$db->fetchOne("SELECT SUM(vis_visitas) FROM visita");
+		?>
+		<strong>Visitas Totales: </strong><span><?php echo $total_visitas;?></span>
+		</div>
+	</div>
+			
+ </div><!--fin lateral izquierda -->
+ 
+ </td>
+ <td valign="top">
+ <div id="centro">
+ 	<?php echo $this->layout()->content;?>  
+ </div><!-- fin centro-->
+ </td>
+ <td valign="top" style="width: 20px;">
+ <div id="lateral_de">&nbsp;
+ </div><!--fin lateral izquierda -->
+ </td>
+ </tr>
+ </table>	
+<div class="bajar"></div>	
+</div><!-- fin cuerpo -->
+<div class="bajar"></div>
+<!-- PIE -->
+<div id="pie">
+  
+
+</div><!-- fin pie -->
+</div><!-- fin contenedor -->
+<script src="/js/bootstrap/assets/ie10-viewport-bug-workaround.js"></script>
+	</body>
+</html>

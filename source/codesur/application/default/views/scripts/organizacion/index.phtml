@@ -1,0 +1,25 @@
+<div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info">
+    <h3><?php echo $this->translate('ORGANIZACION')?>     </h3>
+    <p ><?php //echo $this->translate("consejo nacional")?></p>
+</div>  
+<!--  <h3 class="well well-lg" style="margin: 0 0 13px;  text-align: center;   padding: 4px;" > 
+    <?php //echo $this->translate('consejo nacional')?>          </h3>-->
+<div class='col-md-12'>
+   <?php if($this->tabla){ 
+    $i=1;
+ foreach ($this->tabla as $d){ 
+     if($i==1 || $i==2)
+     {  $nivel="col-md-6"; $div_1="<div class='col-md-3'></div>"; $div_bajar="<div class='bajar'></div>"; $style="";$style1="";}
+     if($i>2)
+     {  $nivel="col-md-4"; $div_1="";$div_bajar="";$style="div_org_3  ";$style1="height: 110px;";}?>
+<?php echo $div_1;?>         
+    <div class="bs-callout-warning <?php echo $nivel;?> <?php echo $style;?> jumbotron" style="padding: 13px; border: 3px solid #6499d9; <?php echo $style1;?>">
+        <div style=""> <?php echo $d["org_descripcion_".$this->idioma]?></div>
+    </div>
+<?php echo $div_1;?> 
+<?php echo $div_bajar;?> 
+<?php $i++;} }else{    ?>
+<h3> <?php echo $this->translate("No se tiene informacion")?></h3>
+<?php  }?> 
+</div>
+

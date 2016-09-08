@@ -1,0 +1,108 @@
+<?php 
+function dias_transcurridos($fecha_i,$fecha_f)
+{ 
+	$dias	= (strtotime($fecha_i)-strtotime($fecha_f))/86400;
+	$dias 	= abs($dias); $dias = floor($dias);		
+	return $dias;
+}
+$date=new Zend_Date();
+$fech=  $date->toString("yyyy-MM-dd");
+$fecha=dias_transcurridos('2018-05-09',$fech);
+
+?>
+
+<!--<div class="full_container">-->
+ <div class="cronometro_mascota col-md-12" style=" margin-bottom: 8px; ">
+     <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info" style="background: none; background-color:#c73625 ">
+	    <h3><?php echo $this->translate("nuestras mascotas");?></h3>
+	</div>
+ <a href="<?php echo $this->url(array('idioma'=>$this->idioma,'alias'=>"nuna"),'mascotas_'.$this->idioma);?>">
+         <img src="/img/nuna.png" alt="Nuna" />
+     </a>
+     <a href="<?php echo $this->url(array('idioma'=>$this->idioma,'alias'=>"juki"),'mascotas_'.$this->idioma);?>">
+         <img src="/img/juky.png" alt="Juki" />
+     </a>
+     <div id="callout-helper-context-color-specificity" class="bs-callout bs-callout-info" style="background: none; background-color:#d78d22; ">
+	    <h3>
+                <?php echo $this->translate("Faltan");?>
+                
+            </h3>
+         
+	</div>
+     <p style="font-weight: bold;    font-size: 16px;">
+         <?php //echo $this->translate("Faltan Para los juegos Suramericanos");?>
+     </p>
+     
+     
+ <!--<div class="jumbotron"   style=" margin-bottom: 0;    padding: 1px;" >-->
+     
+  <p class="title_c"><?php //echo $this->translate("Para los juegos Suramericanos")?> </p>
+ <p class="title_c"><?php //echo $this->translate("Del 9 al 20 de Mayo 2018")?></p>  
+ 
+
+      <section class="center_container main_image" style="position:relative;">
+        <div class="count_container">
+          
+          <div class="countdown countdown-container " style=""><!--container-->
+              <div class="clock row col-md-12" style="padding-left: 22px;height: 100px;margin: 0px auto;">
+                  <div class="clock-item clock-dayss countdown-time-value  col-md-6" style="float: left;">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div id="canvas-days" class="clock-canvas"></div>
+
+                            <div class="text">
+                                <p class="val"><?php echo $fecha;?></p>
+                                <p class="type-days type-time" style="margin-top:24px; color:#337ab7;">DIAS</p>
+                            </div><!-- /.text -->
+                        </div><!-- /.inner -->
+                    </div><!-- /.wrap -->
+                </div><!-- /.clock-item -->
+
+                <div class="clock-item clock-hours countdown-time-value  col-md-6" style="float: left;">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div id="canvas-hours" class="clock-canvas"></div>
+
+                            <div class="text">
+                                <p class="val">0</p>
+                                <p class="type-hours type-time" style="margin-top:24px;color:#337ab7;">HORAS</p>
+                            </div><!-- /.text -->
+                        </div><!-- /.inner -->
+                    </div><!-- /.wrap -->
+                </div><!-- /.clock-item -->
+
+                <div class="clock-item clock-minutes countdown-time-value  col-md-6" style="float: left;">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div id="canvas-minutes" class="clock-canvas"></div>
+
+                            <div class="text">
+                                <p class="val">0</p>
+                                <p class="type-minutes type-time" style="margin-top:24px;color:#337ab7;">MINUTOS</p>
+                            </div><!-- /.text -->
+                        </div><!-- /.inner -->
+                    </div><!-- /.wrap -->
+                </div><!-- /.clock-item -->
+
+                <div class="clock-item clock-seconds countdown-time-value col-md-6" style="float: left;">
+                    <div class="wrap">
+                        <div class="inner">
+                            <div id="canvas-seconds" class="clock-canvas"></div>
+
+                            <div class="text">
+                                <p class="val">0</p>
+                                <p class="type-seconds type-time" style="margin-top:24px;color:#337ab7;">SEGUNDOS</p>
+                            </div><!-- /.text -->
+                        </div><!-- /.inner -->
+                    </div><!-- /.wrap -->
+                </div><!-- /.clock-item -->
+            </div><!-- /.clock -->
+        </div><!-- /.countdown-wrapper -->
+
+        </div>
+      </section>
+    <!--</div>-->
+    <p style="font-weight: bold;    font-size: 16px;">
+                <?php echo $this->translate("Del 9 al 20 de Mayo 2018")?>
+     </p>
+    </div>

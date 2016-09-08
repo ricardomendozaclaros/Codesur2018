@@ -1,0 +1,17 @@
+<div id="contenido_gen">
+	<div id="gen_cuadro_izq">
+		<div id="qso_banner">	
+			<?php echo $this->partial('banner/general.phtml',array('pos_id'=>7,'tipo'=>2,'idioma'=>$this->idioma));?>
+		</div>
+	</div>
+	<div id="gen_cuadro_der">	
+		<div id="qso_cuerpo">
+			<div id="qso_prin">	
+				<h1 class="direc tit_pri"><?php echo $this->mapa_sitio['est_nombre_'.$this->idioma];?></h1>
+				<div><?php echo $this->mapa_sitio['est_contenido_'.$this->idioma];?></div>		
+			</div>
+			
+		</div>
+	</div>
+<div class="bajar"></div>
+</div>

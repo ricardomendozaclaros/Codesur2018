@@ -1,0 +1,26 @@
+<?php 
+if ($this->pageCount) {
+	
+	echo '<div class="pag_g2_pn">';
+    if (isset($this->previous))
+		echo '<a href="'.$this->url(array('pagina'=>"pagina".$this->previous)).'" class="a_pag2 pagina_comentario_prev"><span class="pag_texto1_g1"></span>PAGINA ANTERIOR</a> ';
+	echo '</div>';
+	echo '<div class="pag_g2_pa">';		
+	foreach ($this->pagesInRange as $page) {
+		if ($page != $this->current)
+			echo ' <a href="'.$this->url(array('pagina'=>"pagina".$page)).'" class="a_pag1">'.$page.'</a> ';
+		else
+			echo "<span class='pag_texto2_g1'>".$page."</span> ";
+		if ($page!=$this->pageCount)
+			echo "<span class='pag_texto2_g1'> | </span> ";
+
+	}
+	echo '</div>';
+	echo '<div class="pag_g2_pn">';	
+	if (isset($this->next))
+		echo '<a href="'.$this->url(array('pagina'=>"pagina".$this->next)).'" class="a_pag2 pagina_comentario_next">PAGINA SIGUIENTE<span class="pag_texto1_g1"></span></a>';
+	echo '</div>';
+	
+		
+	
+}

@@ -1,0 +1,13 @@
+<div class="gen_izquierda">
+   	<ul class="menu_principal_iz">
+    	<li><a href="<?php echo $this->url(array("idioma"=>$this->idioma,"alias_grupo"=>""),"grupo_".$this->idioma)?>" <?php if($this->alias_grupo=="companex_group" || $this->alias_grupo=="grupo_companex"){ $img="logo_companex_inicio_".$this->idioma.".png"; echo "class='menu_activo'";}?>>GRUPO COMPANEX</a></li>
+    	<li><a style="margin-left:10px;" href="<?php echo $this->url(array("idioma"=>$this->idioma,"alias_grupo"=>"companex_bolivia"),"grupo_".$this->idioma)?>" <?php if($this->alias_grupo=="companex_bolivia"){ $img="companex_bolivia.jpg";echo "class='menu_activo'";}?>>Companex Bolivia S.A.</a></li>
+    	<li><a style="margin-left:10px;" href="<?php echo $this->url(array("idioma"=>$this->idioma,"alias_grupo"=>"supra_cosmos"),"grupo_".$this->idioma)?>" <?php if($this->alias_grupo=="supra_cosmos"){ $img="supracosmos.jpg";echo "class='menu_activo'";}?>>Supra Cosmos</a></li>
+    	<li><a style="margin-left:10px;" href="<?php echo $this->url(array("idioma"=>$this->idioma,"alias_grupo"=>"bonanza_xxi"),"grupo_".$this->idioma)?>" <?php if($this->alias_grupo=="bonanza_xxi"){ $img="bonanza.jpg";echo "class='menu_activo'";}?>>Bonanza XXI Ltda.</a></li>
+    	<li><a style="margin-left:10px;" href="<?php echo $this->url(array("idioma"=>$this->idioma,"alias_grupo"=>"companex_peru"),"grupo_".$this->idioma)?>" <?php if($this->alias_grupo=="companex_peru"){ $img="companex_peru.jpg";echo "class='menu_activo'";}?>>Companex Perú S.A.</a></li>
+    	<li><a style="margin-left:10px;" href="<?php echo $this->url(array("idioma"=>$this->idioma,"alias_grupo"=>"trans_cpx"),"grupo_".$this->idioma)?>" <?php if($this->alias_grupo=="trans_cpx"){ $img="cpx.jpg";echo "class='menu_activo'";}?>>Trans CPX Ltda.</a></li>
+   	</ul>
+   	<div style="width: 197px;height: 115px;margin: 230px auto 0 auto">
+   		<img style="max-width:180px;" alt="Grupo Companex" src="/img/<?php echo $img;?>"/>
+   	</div>
+</div>
